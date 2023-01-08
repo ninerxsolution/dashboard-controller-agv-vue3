@@ -5,11 +5,76 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class>
-                            CONSUMPTION
+                            CONSUMPTION PRODUCTION TOTAL
                         </h5>
                         <div class="row">
                             <div class="col-12">
-                                Yeah yeah!
+                                <ul class="list-ticked text-muted mb-0">
+                                    <li>
+                                        PRODUCTION TOTAL (ton)
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 10%"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right h6">
+                                        50 ton
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <ul class="list-ticked text-muted mb-0">
+                                    <li>
+                                        ENERGY (kWh)
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right h6">
+                                        6069 kWh
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <ul class="list-ticked text-muted mb-0">
+                                    <li>
+                                        BATTERY (kWh)
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 65%"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right h6">
+                                        562 kWh
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <ul class="list-ticked text-muted mb-0">
+                                    <li>
+                                        CO2 (kg)
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%"
+                                            aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-4 text-right h6">
+                                        4061 kg
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -21,7 +86,18 @@
                         <h5>
                             TREND YIELD AND ENEGY TOTAL
                         </h5>
-                        <BarChart/>
+                        <BarChart />
+                        <div class="col-12 mt-3">
+                            <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-outline-secondary">
+                                    Year </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    Month </button>
+                                <button type="button" class="btn btn-outline-secondary">
+                                    Week </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

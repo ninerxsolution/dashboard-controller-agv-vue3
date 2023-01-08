@@ -37,8 +37,25 @@ export default {
 </script>
 
 <style>
-#my-chart-id {
-    max-height: 70%;
-    /* background-color: aqua; */
+
+@media (min-width: 1000px) {
+    #my-chart-id {
+        max-height: 140px;
+    }
+}
+@media (min-width: 1100px) {
+    #my-chart-id {
+        max-height: 160px;
+    }
+}
+@media (min-width: 1300px) {
+    #my-chart-id {
+        max-height: 185px;
+    }
+}
+@media (min-width: 1600px) {
+    #my-chart-id {
+        max-height: 200px;
+    }
 }
 </style>

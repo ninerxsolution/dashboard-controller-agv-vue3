@@ -11,10 +11,7 @@ export default {
   components: {
     Dashboard
   },
-  
-
 }
-
 </script>
 
 <style lang="scss">
