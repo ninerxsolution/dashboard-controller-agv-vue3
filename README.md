@@ -1,4 +1,4 @@
-# dashboard-controller-agv
+# dashboard-controller-agv-vue3
 
 ## Project setup
 ```
