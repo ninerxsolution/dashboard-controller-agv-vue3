@@ -6,7 +6,9 @@
             <swiper-slide>
                 <slideComsumption />
             </swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
+            <swiper-slide>
+                <SlideMonitor/>
+            </swiper-slide>
             <swiper-slide>Slide 3</swiper-slide>
             <swiper-slide>Slide 4</swiper-slide>
             <swiper-slide>Slide 5</swiper-slide>
@@ -24,12 +26,15 @@ import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
 
 import SlideComsumption from './slides/slide_comsumption.vue';
+import SlideMonitor from './slides/slide_monitor.vue';
+
 import SwiperNav from './swiper_navbar.vue';
 export default {
     components: {
         Swiper,
         SwiperSlide,
         SlideComsumption,
+        SlideMonitor,
         SwiperNav,
     },
     setup() {
@@ -82,21 +87,21 @@ body {
 }
 @media (min-width: 1100px) {
     .content {
-        height: 625px;
+        height: 690px;
         max-height: auto;
 
     }
 }
 @media (min-width: 1300px) {
     .content {
-        height: 700px;
+        height: 770px;
         max-height: auto;
 
     }
 }
 @media (min-width: 1600px) {
     .content {
-        height: 750px;
+        height: 800px;
         max-height: auto;
 
     }
