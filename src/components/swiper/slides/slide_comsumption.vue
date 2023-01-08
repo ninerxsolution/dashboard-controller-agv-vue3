@@ -18,7 +18,10 @@
             <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        TREND YIELD AND ENEGY TOTAL
+                        <h5>
+                            TREND YIELD AND ENEGY TOTAL
+                        </h5>
+                        <BarChart/>
                     </div>
                 </div>
             </div>
@@ -66,25 +69,25 @@
                         MOTOR
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
     </div>
 </template>
 
 <script>
+import BarChart from '@/components/Chart/BarChart.vue';
 export default {
-
+    name: 'App',
+    components: {
+        BarChart,
+    }
 }
 </script>
 
 <style>
-/* @import '../../../assets/css/style.css'; */
 .row {
-    /* margin-left: auto !important;
-    margin-right: auto !important; */
     height: 50%;
-    justify-content: center;
 }
 </style>
