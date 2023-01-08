@@ -125,8 +125,7 @@
                                 <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
                                 </div> -->
                                 <div>
-                                    <circle-progress :percent="40" :unit="kg / hr" :show-percent="true" :size="140"
-                                        :class="circle - progress" />
+                                    <circle-progress :percent="10" :unit="''" :show-percent="true" :size="100" />
                                 </div>
                                 <div class="pt-1 text-muted">
                                     <small>
@@ -146,7 +145,7 @@
                                 </small><br>
                                 <small class="d-flex">
                                     STATUS
-                                    <div class="text-muted mx-3">
+                                    <div class="text-primary mx-3">
                                         Running
                                     </div>
                                 </small>
@@ -156,36 +155,172 @@
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        DATA AGV
+                        <h5 class="mb-0">
+                            DATA AGV TRACK
+                        </h5>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-ticked text-muted mb-0 justify-centent-between">
+                                <li>
+                                    <small class="text-muted d-flex justify-centent-between">
+                                        Transpot today
+                                    </small>
+                                </li>
+                            </ul>
+                            <div class="text-right">
+                                200/400 ton
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-ticked text-muted mb-0 justify-centent-between">
+                                <li>
+                                    <small class="text-muted d-flex justify-centent-between">
+                                        Working mode
+                                    </small>
+                                </li>
+                            </ul>
+                            <div class="text-right">
+                                Auto
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-ticked text-muted mb-0 justify-centent-between">
+                                <li>
+                                    <small class="text-muted d-flex justify-centent-between">
+                                        Status cycle
+                                    </small>
+                                </li>
+                            </ul>
+                            <div class="text-right">
+                                50/100 Cycle
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-ticked text-muted mb-0 justify-centent-between">
+                                <li>
+                                    <small class="text-muted d-flex justify-centent-between">
+                                        Maximum load
+                                    </small>
+                                </li>
+                            </ul>
+                            <div class="text-right">
+                                4 ton
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <ul class="list-ticked text-muted mb-0 justify-centent-between">
+                                <li>
+                                    <small class="text-muted d-flex justify-centent-between">
+                                        Tranking guide
+                                    </small>
+                                </li>
+                            </ul>
+                            <div class="text-right">
+                                camera
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 grid-margin">
                 <div class="card mb-4">
                     <div class="card-body">
-                        SELECT AGV
+                        <h5>
+                            SELECT AGV
+                        </h5>
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        IMG
+                        <h5>
+                            AGV ICON
+                        </h5>
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        BATTERY CAPACITY
+                        <h5>
+                            BATTERY CAPACITY
+                        </h5>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 grid-margin">
                 <div class="card mb-4">
                     <div class="card-body">
-                        VOLT AGV
+                        <h5>
+                            ELECTRICAL VOLTAGE AGV
+                        </h5>
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
+                                </div> -->
+                                <div>
+                                    <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
+                                        :fill-color="'#ffd000'" />
+                                </div>
+                                <div class="pt-1 text-muted">
+                                    <small>
+                                        VOLTAGE AVERAGE
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="display-4">
+                                    50.6 v
+                                </div>
+                                <small>
+                                    VOL MAX 55.9 v
+                                </small><br>
+                                <small>
+                                    VOL MIN 48.9 v
+                                </small><br>
+                                <small class="d-flex">
+                                    STATUS
+                                    <div class="mx-3 text-warning">
+                                        Standby
+                                    </div>
+                                </small>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card mb-4 ">
+                <div class="card mb-4">
                     <div class="card-body">
-                        MOTOR
+                        <h5>
+                            AGV RUNNING NOW
+                        </h5>
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
+                                </div> -->
+                                <div>
+                                    <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
+                                        :class="circle - progress" />
+                                </div>
+                                <div class="pt-1 text-muted">
+                                    <small>
+                                        SPEED CURRENT
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="display-4">
+                                    49.9 A
+                                </div>
+                                <small>
+                                    CURRENT MAX 120.0 A
+                                </small><br>
+                                <small>
+                                    CURRENT AVE 35.0 A
+                                </small><br>
+                                <small class="d-flex">
+                                    STATUS
+                                    <div class="text-warning mx-3">
+                                        Forward
+                                    </div>
+                                </small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -229,7 +364,8 @@ export default {
 
 @media (min-width: 1406px) {
     .progress {
-        width: 70%
+        width: 70%;
+        color: #ffd000;
     }
 }
 </style>
