@@ -224,14 +224,29 @@
             <div class="col-md-4 grid-margin">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5>
-                            SELECT AGV
-                        </h5>
+                        <div class="col-12 d-flex justify-content-between">
+                            <h5>
+                                SELECT AGV
+                            </h5>
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> AGV 1
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <h6 class="dropdown-header">AGV</h6>
+                                    <a class="dropdown-item" href="#">AGV 1</a>
+                                    <a class="dropdown-item" href="#">AGV 2</a>
+                                    <a class="dropdown-item" href="#">AGV 3</a>
+                                    <a class="dropdown-item" href="#">AGV 4</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h5>
+                        <h5 class="text-center">
                             AGV ICON
                         </h5>
                     </div>
@@ -241,6 +256,19 @@
                         <h5>
                             BATTERY CAPACITY
                         </h5>
+                        <div class="d-flex justify-content-between">
+                            <div class="progress mt-1">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 82.1%;"
+                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="text-right h6">
+                                82.1 %
+                            </div>
+                        </div>
+                        <div class="text text-sm text-center text-warning">
+                            Discharge
+                        </div>
                     </div>
                 </div>
             </div>
