@@ -1,31 +1,6 @@
 <template>
     <div class="container-fluid content bg-dark pt-3">
         <div class="row">
-            // Basic Usage
-            <circle-progress :percent="40" />
-
-            // Default Gradient
-            <circle-progress :is-gradient="true" />
-
-            // Customize Gradient
-            <circle-progress :is-gradient="true" :gradient="{
-                angle: 90,
-                startColor: '#ff0000',
-                stopColor: '#ffff00'
-            }" />
-
-            // Default Shadow
-            <circle-progress :is-bg-shadow="true" />
-
-            // Customize Shadow
-            <circle-progress :is-bg-shadow="true" :bg-shadow="{
-                inset: true,
-                vertical: 2,
-                horizontal: 2,
-                blur: 4,
-                opacity: .4,
-                color: '#000000'
-            }" empty-color="#f7f7f7" :border-width="6" :border-bg-width="30" />
             <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -146,14 +121,35 @@
                             AGV RUNNING NOW
                         </h5>
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-6 text-center">
                                 <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
-
                                 </div> -->
-
+                                <div>
+                                    <circle-progress :percent="40" :unit="kg / hr" :show-percent="true" :size="140"
+                                        :class="circle - progress" />
+                                </div>
+                                <div class="pt-1 text-muted">
+                                    <small>
+                                        SPEED CURRENT
+                                    </small>
+                                </div>
                             </div>
-                            <div class="col-5">
-
+                            <div class="col-6">
+                                <div class="display-4">
+                                    0.5 m/s
+                                </div>
+                                <small>
+                                    SPEED MAX 2.0 m/s
+                                </small><br>
+                                <small>
+                                    SET SPEED 0.5 m/s
+                                </small><br>
+                                <small class="d-flex">
+                                    STATUS
+                                    <div class="text-muted mx-3">
+                                        Running
+                                    </div>
+                                </small>
                             </div>
                         </div>
                     </div>
