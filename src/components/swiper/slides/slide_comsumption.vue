@@ -1,14 +1,16 @@
 <template>
-    <div class="container content bg-dark pt-3">
+    <div class="container-fluid content bg-dark pt-3">
         <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        <h5>
+                        <h5 class>
                             CONSUMPTION
                         </h5>
                         <div class="row">
-                            Yeah yaeh
+                            <div class="col-12">
+                                Yeah yeah!
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -16,7 +18,7 @@
             <div class="col-md-8 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
-                        hi there
+                        TREND YIELD AND ENEGY TOTAL
                     </div>
                 </div>
             </div>
