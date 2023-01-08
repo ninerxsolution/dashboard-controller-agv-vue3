@@ -14,13 +14,13 @@
                                         PRODUCTION TOTAL (ton)
                                     </li>
                                 </ul>
-                                <div class="d-flex">
-                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                <div class="d-flex justify-content-between">
+                                    <div class="progress mt-1">
                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 10%"
                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                         </div>
                                     </div>
-                                    <div class="col-4 text-right h6">
+                                    <div class="text-right h6">
                                         50 ton
                                     </div>
                                 </div>
@@ -31,13 +31,13 @@
                                         ENERGY (kWh)
                                     </li>
                                 </ul>
-                                <div class="d-flex">
-                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                <div class="d-flex justify-content-between">
+                                    <div class="progress mt-1">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"
                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                         </div>
                                     </div>
-                                    <div class="col-4 text-right h6">
+                                    <div class="text-right h6">
                                         6069 kWh
                                     </div>
                                 </div>
@@ -48,13 +48,13 @@
                                         BATTERY (kWh)
                                     </li>
                                 </ul>
-                                <div class="d-flex">
-                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
+                                <div class="d-flex justify-content-between">
+                                    <div class="progress mt-1">
                                         <div class="progress-bar bg-success" role="progressbar" style="width: 65%"
                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                         </div>
                                     </div>
-                                    <div class="col-4 text-right h6">
+                                    <div class="text-right h6">
                                         562 kWh
                                     </div>
                                 </div>
@@ -65,13 +65,13 @@
                                         CO2 (kg)
                                     </li>
                                 </ul>
-                                <div class="d-flex">
-                                    <div class="progress mt-1" style="width: 70%; margin: 0;">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 10%"
+                                <div class="d-flex justify-content-between">
+                                    <div class="progress mt-1">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                         </div>
                                     </div>
-                                    <div class="col-4 text-right h6">
+                                    <div class="text-right h6">
                                         4061 kg
                                     </div>
                                 </div>
@@ -163,7 +163,26 @@ export default {
 </script>
 
 <style>
-.row {
-    height: 50%;
+.progress {
+    width: 70%
 }
+
+@media (min-width: 1000px) {
+    .progress {
+    }
+}
+@media (min-width: 1100px) {
+    .progress {
+    }
+}
+@media (min-width: 1300px) {
+    .progress {
+    }
+}
+@media (min-width: 1406px) {
+    .progress {
+        width: 70%
+    }
+}
+
 </style>
