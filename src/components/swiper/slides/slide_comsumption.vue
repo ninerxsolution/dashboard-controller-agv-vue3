@@ -106,13 +106,10 @@
                             </div>
                         </div>
                         <BarChart />
-
                     </div>
                 </div>
             </div>
-
         </div>
-
         <div class="row">
             <div class="col-md-4 grid-margin">
                 <div class="card mb-4">
@@ -122,10 +119,8 @@
                         </h5>
                         <div class="row">
                             <div class="col-6 text-center">
-                                <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
-                                </div> -->
                                 <div>
-                                    <circle-progress :percent="10" :unit="''" :show-percent="true" :size="100" />
+                                    <circle-progress :percent="10" :unit="''" :show-percent="true" :size="100" class="dummy-meter"/>
                                 </div>
                                 <div class="pt-1 text-muted">
                                     <small>
@@ -241,7 +236,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="card mb-4">
@@ -257,12 +251,12 @@
                             BATTERY CAPACITY
                         </h5>
                         <div class="d-flex justify-content-between">
-                            <div class="progress mt-1">
+                            <div class="progress mt-1" style="height:2rem !important;">
                                 <div class="progress-bar bg-success" role="progressbar" style="width: 82.1%;"
                                     aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
-                            <div class="text-right h6">
+                            <div class="text-right h2">
                                 82.1 %
                             </div>
                         </div>
@@ -280,11 +274,9 @@
                         </h5>
                         <div class="row">
                             <div class="col-6 text-center">
-                                <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
-                                </div> -->
                                 <div>
                                     <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
-                                        :fill-color="'#ffd000'" />
+                                        :fill-color="'#ffd000'" class="dummy-meter"/>
                                 </div>
                                 <div class="pt-1 text-muted">
                                     <small>
@@ -319,11 +311,9 @@
                         </h5>
                         <div class="row">
                             <div class="col-6 text-center">
-                                <!-- <div class="meter-dummy" style="width:170px; height:120px; background-color:white;">
-                                </div> -->
                                 <div>
                                     <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
-                                        :class="circle - progress" />
+                                        :class="circle - progress" class="dummy-meter"/>
                                 </div>
                                 <div class="pt-1 text-muted">
                                     <small>
@@ -336,10 +326,10 @@
                                     49.9 A
                                 </div>
                                 <small>
-                                    CURRENT MAX 120.0 A
+                                    CURRENT MAX 120.0
                                 </small><br>
                                 <small>
-                                    CURRENT AVE 35.0 A
+                                    CURRENT AVE 35.0
                                 </small><br>
                                 <small class="d-flex">
                                     STATUS
@@ -347,20 +337,23 @@
                                         Forward
                                     </div>
                                 </small>
+                                <small class="d-flex">
+                                    WORKING
+                                    <div class="text-primary mx-3">
+                                        Ready
+                                    </div>
+                                </small>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
 import BarChart from '@/components/Chart/BarChart.vue';
-
 import "vue3-circle-progress/dist/circle-progress.css";
 import CircleProgress from "vue3-circle-progress";
 
