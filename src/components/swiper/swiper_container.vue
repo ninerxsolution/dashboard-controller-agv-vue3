@@ -4,14 +4,20 @@
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
             <swiper-slide>
-                <slideComsumption />
+                <SlideComsumption />
             </swiper-slide>
             <swiper-slide>
-                <SlideMonitor/>
+                <SlideMonitor />
             </swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-            <swiper-slide>Slide 4</swiper-slide>
-            <swiper-slide>Slide 5</swiper-slide>
+            <swiper-slide>
+                <SlideTrendChart/>
+            </swiper-slide>
+            <swiper-slide>
+                <SlideSetting/>
+            </swiper-slide>
+            <swiper-slide>
+                Slide 5
+            </swiper-slide>
         </swiper>
     </div>
 </template>
@@ -27,6 +33,10 @@ import { Pagination, Navigation } from "swiper";
 
 import SlideComsumption from './slides/slide_comsumption.vue';
 import SlideMonitor from './slides/slide_monitor.vue';
+import SlideTrendChart from './slides/slide_trendChart.vue';
+import SlideSetting from './slides/slide_setting.vue';
+
+// import SlideCustomChart from './slides/slide_customchart.vue';
 
 import SwiperNav from './swiper_navbar.vue';
 export default {
@@ -35,6 +45,9 @@ export default {
         SwiperSlide,
         SlideComsumption,
         SlideMonitor,
+        SlideTrendChart,
+        SlideSetting,
+        // SlideCustomChart,
         SwiperNav,
     },
     setup() {
@@ -79,12 +92,14 @@ body {
     max-height: auto;
 
 }
+
 @media (min-width: 1000px) {
     .content {
         height: 575px;
         max-height: auto;
     }
 }
+
 @media (min-width: 1100px) {
     .content {
         height: 690px;
@@ -92,6 +107,7 @@ body {
 
     }
 }
+
 @media (min-width: 1300px) {
     .content {
         height: 770px;
@@ -99,6 +115,7 @@ body {
 
     }
 }
+
 @media (min-width: 1600px) {
     .content {
         height: 800px;
@@ -106,6 +123,7 @@ body {
 
     }
 }
+
 .sidebar-icon-only .navbar {
     left: 0;
 }
