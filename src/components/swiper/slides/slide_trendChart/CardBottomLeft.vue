@@ -7,7 +7,8 @@
                 </div>
                 <div class="col-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-dark dropdown-toggle text-warning" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AGV1</button>
+                        <button class="btn btn-dark dropdown-toggle text-warning" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">AGV1</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Action</a>
                             <a class="dropdown-item" href="#">Another action</a>
@@ -24,11 +25,11 @@
             </div>
             <div class="scrollbar-bottom-left scrollbar-info">
                 <table class="table table-sm table-borderless force-overflow-bottom-left m-0">
-                <tbody>
-                    <tr>
-                        <!-- <LineChart/> -->
-                    </tr>
-                </tbody>
+                    <tbody>
+                        <tr>
+                            <!-- <LineChart/> -->
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -38,9 +39,9 @@
 <script>
 // import LineChart from '@/components/Chart/LineChart.vue'
 
-export default{
-    name:'CardBottomLeft',
-    components:{
+export default {
+    name: 'CardBottomLeft',
+    components: {
         // LineChart,
     }
 }
@@ -49,15 +50,16 @@ export default{
 <style>
 /* scrollbar */
 .scrollbar-bottom-left {
-  /* margin-left: 30px; */
-  /* float: left; */
-  height: 20rem;
-  /* width: 65px; */
-  /* background: #fff; */
-  overflow-y: scroll;
-  /* margin-bottom: 25px; */
+    /* margin-left: 30px; */
+    /* float: left; */
+    height: 20rem;
+    /* width: 65px; */
+    /* background: #fff; */
+    overflow-y: scroll;
+    /* margin-bottom: 25px; */
 }
-.force-overflow-bottom-left {
+
+/* .force-overflow-bottom-left {
   min-height: 450px;
 }
 
@@ -77,6 +79,5 @@ export default{
 }
 .card-full-height{
     height:100%;
-}
-
+} */
 </style>

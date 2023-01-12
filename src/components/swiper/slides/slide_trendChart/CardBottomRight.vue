@@ -82,7 +82,7 @@ export default{
   overflow-y: scroll;
   margin-bottom: 25px;
 }
-.force-overflow {
+/* .force-overflow {
   min-height: 450px;
 }
 
@@ -106,6 +106,6 @@ export default{
 }
 .td{
     padding:unset !important;
-}
+} */
 
 </style>

@@ -39,7 +39,7 @@ export default{
 </script>
 
 <style>
-.card-set-param{
+/* .card-set-param{
     height: 130%;
 }
 .agv-set-param{
@@ -49,6 +49,6 @@ export default{
 .contant-param{
     height:100%;
 
-}
+} */
 
 </style>

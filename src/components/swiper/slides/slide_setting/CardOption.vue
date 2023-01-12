@@ -53,7 +53,7 @@ export default{
 }
 </script>
 <style>
-.option-item-row{
+/* .option-item-row{
  height: 100%;
 }
 .card-option-content{
@@ -73,5 +73,5 @@ export default{
 }
 .img-social{
     border-radius: 20%;
-}
+} */
 </style>

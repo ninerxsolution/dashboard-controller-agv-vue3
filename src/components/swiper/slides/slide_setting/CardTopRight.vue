@@ -67,7 +67,7 @@ export default{
   overflow-y: scroll;
   /* margin-bottom: 25px; */
 }
-.force-overflow-setting {
+/* .force-overflow-setting {
   min-height: 450px;
 }
 
@@ -88,10 +88,12 @@ export default{
 .btn{
     width: 100%;
     height: 100%;
-}
+} */
+
 /* .td{
     padding:unset !important;
 } */
+/* 
 .space{
     width: 10%;
 }
@@ -105,6 +107,6 @@ export default{
 }
 .sup-val{
  width: 20%;
-}
+} */
 
 </style>
