@@ -1,6 +1,6 @@
 <template>
     <SwiperNav />
-    <div class="content mb-4">
+    <div class="content content-bg mb-4">
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
             <swiper-slide>
@@ -65,6 +65,11 @@ export default {
 };
 </script>
 <style scoped>
+.content {
+    background-size: 100%;
+    background-position: center;
+    /* background-image: url(@/assets/images/bg-agv-dash.jpg); */
+}
 .swiper-nav {
     left: 0;
 }

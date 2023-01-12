@@ -106,12 +106,12 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-9 mt-2">
+                            <div class="col-9 mt-2" style="height:24rem;">
                                 <div class="agv-set-param" v-for="cl in car_list" :key="cl">
                                     <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
                                 </div>
                             </div>
-                            <div class="col-3 bg-dark d-flex">
+                            <div class="col-3 bg-dark d-flex" style="height:24rem;">
                                 <div class="d-flex flex-column justify-content-around card-option-content">
                                     <div class="text-primary text-center"><small>WORNNING REPORT</small></div>
                                     <div class="app-option">
