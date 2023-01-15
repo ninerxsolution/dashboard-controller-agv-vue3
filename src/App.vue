@@ -3,6 +3,7 @@
     <Dashboard></Dashboard>
     อันนี้แบบว่าทดสอบนะว่ามันจะเป็นยังไง
     อันนี้ทดสอบ Pulling fetch นะะะะ โหล้ๆ
+    ทดสอบอีกรอบนะ อันนี้ commit มาจาก branch ชื่ออื่น ๆ
   </div>
 </template>
 
