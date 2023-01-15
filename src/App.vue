@@ -2,6 +2,7 @@
   <div id="app">
     <Dashboard></Dashboard>
     อันนี้แบบว่าทดสอบนะว่ามันจะเป็นยังไง
+    อันนี้ทดสอบ Pulling fetch นะะะะ โหล้ๆ
   </div>
 </template>
 
