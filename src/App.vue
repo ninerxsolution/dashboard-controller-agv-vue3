@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Dashboard></Dashboard>
+    อันนี้แบบว่าทดสอบนะว่ามันจะเป็นยังไง
   </div>
 </template>
 
