@@ -4,7 +4,7 @@
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
             <swiper-slide>
-                <SlideComsumption />
+                <SlideComsumption/>
             </swiper-slide>
             <swiper-slide>
                 <SlideMonitor />
@@ -34,8 +34,8 @@ import { Pagination, Navigation } from "swiper";
 
 import SlideComsumption from './slides/slide_comsumption.vue';
 import SlideMonitor from './slides/slide_monitor.vue';
-import SlideTrendChart from './slides/slide_TrendChart.vue';
-import SlideSetting from './slides/slide_Setting.vue'
+import SlideTrendChart from './slides/slide_trendChart.vue';
+import SlideSetting from './slides/slide_setting.vue'
 
 // import SlideCustomChart from './slides/slide_customchart.vue';
 
