@@ -1,12 +1,8 @@
 {
     "AVG": {
-        "_comment": "รถ",
         "1": {
-            "_comment": "คันที่",
             "CONSUMPTION": {
-                "_comment": "หัวเรื่อง",
                 "CONSUMPTION_PRODUCTION_TOTAL": {
-                    "_comment": "หัวข้อ",
                     "total_consumption": {
                         "value": 50,
                         "data_type": "float",
@@ -29,14 +25,12 @@
                     }
                 },
                 "TREND_YIELD_AND_ENERGY_TOTAL": {
-                    "_comment": "หัวข้อ",
                     "in_trend_ye_chart": {
                         "yield": 76,
                         "energy": 50
                     }
                 },
                 "AGV_RUNNING_NOW": {
-                    "_comment": "หัวข้อ",
                     "speed_current": {
                         "value": 0.5,
                         "data_type": "float",
@@ -58,7 +52,6 @@
                     }
                 },
                 "ELEECTRICAL_VOLTAGE_AGV": {
-                    "_comment": "หัวข้อ",
                     "voltage_average": {
                         "value": 50.6,
                         "data_type": "float",
@@ -80,7 +73,6 @@
                     }
                 },
                 "ELECTRICAL_CURRENT_FOR_MOTOR": {
-                    "_comment": "หัวข้อ",
                     "current_now": {
                         "value": 49.9,
                         "data_type": "float",

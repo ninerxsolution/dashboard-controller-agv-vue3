@@ -1,13 +1,6 @@
 <template>
   <div id="app">
     <Dashboard></Dashboard>
-    อันนี้แบบว่าทดสอบนะว่ามันจะเป็นยังไง
-    อันนี้ทดสอบ Pulling fetch นะะะะ โหล้ๆ
-    ทดสอบอีกรอบนะ อันนี้ commit มาจาก branch ชื่ออื่น ๆ
-
-    เมื่อกี้งงอะไรนะเอาใหม่ดิ๊ asd
-
-    ยิง Master มันตรง ๆ เลย
   </div>
 </template>
 

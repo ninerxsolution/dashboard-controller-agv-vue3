@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "name": "AGV_1",
+        "CONFIRM_RUNNING_SYSTEM": {
+            "status_agv": {
+                "label": "Running",
+                "value": true,
+                "data_type": "boolean"
+            }
+        },
+        "SET_PARAMETERS_SYSTEM": {
+            "agv_setting": {
+                "value": 1,
+                "data_type": "int"
+            },
+            "max_speed_setting": {
+                "value": "2",
+                "data_type": "float"
+            },
+            "cycle_time_setting": {
+                "value": 10,
+                "data_type": "time"
+            },
+            "distance_setting": {
+                "value": 500,
+                "data_type": "float"
+            },
+            "batter_time_setting": {
+                "value": 8,
+                "data_type": "time"
+            },
+            "product_setting": {
+                "value": 400,
+                "data_type": "float"
+            },
+            "max_load_setting": {
+                "value": 4,
+                "data_type": "float"
+            },
+            "camera_setting": {
+                "label": "YES",
+                "value": true,
+                "data_type": "boolean"
+            },
+            "lidar_setting": {
+                "label": "YES",
+                "value": true,
+                "data_type": "boolean"
+            }
+        },
+        "SET_PARAMETER_AGV": {
+            "function_camera_setting": {
+                "value": true,
+                "data_type": "boolean"
+            },
+            "function_lidar_setting": {
+                "value": true,
+                "data_type": "boolean"
+            },
+            "function_auto_mode_setting": {
+                "value": true,
+                "data_type": "boolean"
+            },
+            "function_network_setting": {
+                "value": true,
+                "data_type": "boolean"
+            }
+        },
+        "OPTION": {
+            "line_app_setting": {
+                "value": false,
+                "data_type": "boolean"
+            },
+            "gmail_setting": {
+                "value": false,
+                "data_type": "boolean"
+            }
+        }
+    }
+]

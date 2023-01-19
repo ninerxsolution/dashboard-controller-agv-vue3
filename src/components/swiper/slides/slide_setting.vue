@@ -2,161 +2,15 @@
     <div class="container-fluid content bg-dark pt-3">
         <div class="row">
             <div class="col-md-5 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-
-                        <h5>
-                            CONFIRM RUNNING SYSTEM
-                        </h5>
-
-                        <div class="d-flex justify-content-around bg-dark p-3">
-                            <div class="start-big-button bg-success">
-                                <div class="h2">
-                                    start
-                                </div>
-                            </div>
-                            <div class="stop-big-button bg-danger">
-                                <div class="h2">
-                                    stop
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="d-flex justify-content-center p-3">
-                            <div class="mx-3">
-                                <button class="btn btn-inverse-light text-warning">
-                                    STATUS: <small>Running</small>
-                                </button>
-                            </div>
-                            <div class="mt-2">
-                                <ButtonToggle />
-                            </div>
-                            <div class="h6 text-warning mt-2 mx-3">
-                                CONFIRM
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <CardConfirmSystem />
             </div>
-
             <div class="col-md-7 grid-margin stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="d-flex">
-                            SET PARAMETER SYSTEM
-                        </h5>
-                        <div class="col-12">
-                            <div class="scrollbar scrollbar-setting-setpara" style="height:10rem;">
-                                <table class="table table-sm table-borderless force-overflow-setting mt-2">
-                                    <tbody>
-                                        <tr v-for="sps in set_param_sys" :key="sps">
-                                            <td scope="row" class="text-left text-warning p-0">
-                                                <ul class="mb-2">
-                                                    <li>
-                                                        {{ sps.name_left }}
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td class="text-center text-primary sup-val">
-                                                <div class="val bg-dark p-2">
-                                                    {{ sps.val_left }}
-                                                </div>
-                                            </td>
-                                            <td class="space"></td>
-                                            <td scope="row" class="text-left text-warning p-0">
-                                                <ul>
-                                                    <li>
-                                                        {{ sps.name_right }}
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td class="text-center text-primary sup-val">
-                                                <div class="val bg-dark p-2">
-                                                    {{ sps.val_right }}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <CardSetParamsSys/>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12 grid-margin">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="row px-2">
-                            <div class="col-9 d-flex justify-content-started px-0">
-                                <div class="d-flex h5 mx-0 mt-1">
-                                    SET PARAMETER AGV
-                                </div>
-                                <div class="d-flex">
-                                    <div class="btn btn-dark text text-warning mx-3">
-                                        CONFIRM STANDBY AGV 1
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-3 d-flex px-3">
-                                OPTION
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-9 mt-2" style="height:24rem;">
-                                <div class="agv-set-param" v-for="cl in car_list" :key="cl">
-                                    <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
-                                </div>
-                            </div>
-                            <div class="col-3 bg-dark d-flex" style="height:24rem;">
-                                <div class="d-flex flex-column justify-content-around card-option-content">
-                                    <div class="text-primary text-center"><small>WORNNING REPORT</small></div>
-                                    <div class="app-option">
-                                        <div class="container card-option-content">
-                                            <div class="row option-item-row">
-                                                <div class="col-md-6 d-flex flex-column justify-content-center">
-                                                    <div>
-                                                        <img class="img-social"
-                                                            src="https://static.newmobilelife.com/wp-content/uploads/2014/10/LineforiPad00-210x210.png"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="col-md-6 d-flex flex-column justify-content-center text-center">
-                                                    <div class="text-warning mb-2"><small>LINE APP</small> </div>
-                                                    <div class="mb-2 mx-4"><button-toggle /></div>
-                                                    <div class="text-warning"><small>CONFIRM</small> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="app-option">
-                                        <div class="container card-option-content">
-                                            <div class="row option-item-row">
-                                                <div class="col-md-6 d-flex flex-column justify-content-center">
-                                                    <div>
-                                                        <img class="img-social"
-                                                            src="https://logos-download.com/wp-content/uploads/2016/05/Gmail_logo_icon.png"
-                                                            alt="">
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="col-md-6 d-flex flex-column justify-content-center text-center">
-                                                    <div class="text-warning mb-2"><small>GMAIL</small> </div>
-                                                    <div class="mb-2 mx-4"><button-toggle /></div>
-                                                    <div class="text-warning"><small>CONFIRM</small> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <CardSetParamsAgv/>
             </div>
         </div>
     </div>
@@ -164,16 +18,17 @@
 
 <script>
 import "vue3-circle-progress/dist/circle-progress.css";
-
-import ButtonToggle from '@/components/button/buttonToggle.vue';
-import ComSetParam from './slide_setting/ComSetParam.vue';
-
+import CardConfirmSystem from './slide_setting/card_confirm_running_system.vue';
+import CardSetParamsSys from './slide_setting/card_set_parameter_system.vue';
+import CardSetParamsAgv from './slide_setting/card_set_parameter_agv.vue';
 export default {
     name: 'App',
     components: {
         // buttonToggle,
-        ButtonToggle,
-        ComSetParam,
+        
+        CardConfirmSystem,
+        CardSetParamsSys,
+        CardSetParamsAgv
     },
     data() {
         return {

@@ -1,0 +1,116 @@
+[
+    {
+        "id": 1,
+        "name": "AGV_1",
+        "CONSUMPTION_PRODUCTION_TOTAL": {
+            "total_consumption": {
+                "value": 50,
+                "data_type": "float"
+            },
+            "energy_consumption": {
+                "value": 6069,
+                "data_type": "float"
+            },
+            "battery_life": {
+                "value": 562,
+                "data_type": "float"
+            },
+            "co2_emissions": {
+                "value": 4061,
+                "data_type": "float"
+            }
+        },
+        "TREND_YIELD_AND_ENERGY_TOTAL": {
+            "in_trend_ye_chart": {
+                "yield": 76,
+                "energy": 50
+            }
+        },
+        "AGV_RUNNING_NOW": {
+            "speed_current": {
+                "value": 0.5,
+                "data_type": "float"
+            },
+            "speed_max": {
+                "value": 2.0,
+                "data_type": "float"
+            },
+            "set_speed": {
+                "value": 0.5,
+                "data_type": "float"
+            },
+            "status": {
+                "value": "Running",
+                "data_type": "string"
+            }
+        },
+        "ELEECTRICAL_VOLTAGE_AGV": {
+            "voltage_average": {
+                "value": 50.6,
+                "data_type": "float"
+            },
+            "vol_max": {
+                "value": 55.9,
+                "data_type": "float"
+            },
+            "vol_min": {
+                "value": 48.9,
+                "data_type": "float"
+            },
+            "status": {
+                "value": "Standby",
+                "data_type": "string"
+            }
+        },
+        "ELECTRICAL_CURRENT_FOR_MOTOR": {
+            "current_now": {
+                "value": 49.9,
+                "data_type": "float"
+            },
+            "current_max": {
+                "value": 120.0,
+                "data_type": "float"
+            },
+            "current_ave": {
+                "value": 35.0,
+                "data_type": "float"
+            },
+            "status": {
+                "value": "Forward",
+                "data_type": "string"
+            },
+            "working": {
+                "value": "Ready",
+                "data_type": "string"
+            }
+        },
+        "BATTERY_CAPACITY": {
+            "value": 82.1,
+            "data_type": "float"
+        },
+        "DATA_AGV_TRACK": {
+            "transpot_today": {
+                "value": 200,
+                "max_value": 400,
+                "data_type": "float"
+            },
+            "working_mode": {
+                "value": "auto",
+                "data_type": "string"
+            },
+            "status_cycle": {
+                "value": 50,
+                "max_value": 100,
+                "data_type": "float"
+            },
+            "maximum_load": {
+                "value": 4,
+                "data_type": "float"
+            },
+            "tracking_guide": {
+                "value": "camera",
+                "data_type": "string"
+            }
+        }
+    }
+]

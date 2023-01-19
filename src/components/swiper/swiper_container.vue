@@ -3,19 +3,21 @@
     <div class="content content-bg mb-4">
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
+            <SwiperSlide>
+                <SlideCustomChart/>
+            </SwiperSlide>
             <swiper-slide>
-                <SlideComsumption/>
+                <SlideComsumption />
             </swiper-slide>
             <swiper-slide>
                 <SlideMonitor />
             </swiper-slide>
             <swiper-slide>
-                <SlideTrendChart/>
+                <SlideTrendChart />
             </swiper-slide>
             <swiper-slide>
-                <SlideSetting/>
+                <SlideSetting />
             </swiper-slide>
-            
             <swiper-slide>
                 Slide 5
             </swiper-slide>
@@ -37,7 +39,7 @@ import SlideMonitor from './slides/slide_monitor.vue';
 import SlideTrendChart from './slides/slide_trendChart.vue';
 import SlideSetting from './slides/slide_setting.vue'
 
-// import SlideCustomChart from './slides/slide_customchart.vue';
+import SlideCustomChart from './slides/slide_customchart.vue';
 
 import SwiperNav from './swiper_navbar.vue';
 export default {
@@ -48,7 +50,7 @@ export default {
         SlideMonitor,
         SlideTrendChart,
         SlideSetting,
-        // SlideCustomChart,
+        SlideCustomChart,
         SwiperNav,
     },
     setup() {
@@ -70,6 +72,7 @@ export default {
     background-position: center;
     /* background-image: url(@/assets/images/bg-agv-dash.jpg); */
 }
+
 .swiper-nav {
     left: 0;
 }

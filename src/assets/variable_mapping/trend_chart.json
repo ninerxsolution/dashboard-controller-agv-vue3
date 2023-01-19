@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "AGV_1",
+        "TREND_SELECT": {
+            "speed_trend": {
+                "value": 0.5,
+                "data_type": "float"
+            },
+            "power_trend": {
+                "value": 2.5,
+                "data_type": "float"
+            },
+            "current_trend": {
+                "value": 49.9,
+                "data_type": "float"
+            }
+        }
+    }
+]

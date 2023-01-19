@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "AGV_1",
+        "CONNECT_AGV": {
+            "total_agv": {
+                "value": 3,
+                "data_type": "float"
+            },
+            "online_agv": {
+                "value": 1,
+                "data_type": "float"
+            },
+            "offline_agv": {
+                "value": 2,
+                "data_type": "float"
+            }
+        },
+        "MAP_FOR_ROUTE": {
+            "total_distance": {
+                "value": 500,
+                "data_type": "float"
+            },
+            "cycle_maximum": {
+                "value": 10,
+                "data_type": "float"
+            },
+            "speed_maximum": {
+                "value": 2,
+                "data_type": "float"
+            }
+        }
+    }
+]
