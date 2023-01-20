@@ -3,9 +3,9 @@
     <div class="content content-bg mb-4">
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
-            <SwiperSlide>
+            <!-- <SwiperSlide>
                 <SlideCustomChart/>
-            </SwiperSlide>
+            </SwiperSlide> -->
             <swiper-slide>
                 <SlideComsumption />
             </swiper-slide>
@@ -39,7 +39,7 @@ import SlideMonitor from './slides/slide_monitor.vue';
 import SlideTrendChart from './slides/slide_trendChart.vue';
 import SlideSetting from './slides/slide_setting.vue'
 
-import SlideCustomChart from './slides/slide_customchart.vue';
+// import SlideCustomChart from './slides/slide_customchart.vue';
 
 import SwiperNav from './swiper_navbar.vue';
 export default {
@@ -50,7 +50,7 @@ export default {
         SlideMonitor,
         SlideTrendChart,
         SlideSetting,
-        SlideCustomChart,
+        // SlideCustomChart,
         SwiperNav,
     },
     setup() {
