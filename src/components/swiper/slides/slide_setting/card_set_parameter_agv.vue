@@ -18,19 +18,21 @@
             </div>
 
             <div class="row">
-                <div class="col-9 mt-2" style="height:24rem;">
+                <div class="col-9 mt-2" >
                     <div class="agv-set-param" v-for="cl in car_list" :key="cl">
                         <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
                     </div>
                 </div>
-                <div class="col-3 bg-dark d-flex" style="height:24rem;">
-                    <div class="d-flex flex-column justify-content-around card-option-content">
-                        <div class="text-primary text-center"><small>WORNNING REPORT</small></div>
-                        <div class="app-option">
+                <div class="col-3 bg-dark d-flex" >
+                    <div class="d-flex flex-column  card-option-content">
+                        <div class="text-primary text-center ">
+                            <small>WORNNING REPORT</small>
+                        </div>
+                        <div class="app-option mt-2">
                             <div class="container card-option-content">
                                 <div class="row option-item-row">
-                                    <div class="col-md-6 d-flex flex-column justify-content-center">
-                                        <div>
+                                    <div class="col-sm-6 d-flex flex-column justify-content-center">
+                                        <div >
                                             <img class="img-social"
                                                 src="https://static.newmobilelife.com/wp-content/uploads/2014/10/LineforiPad00-210x210.png"
                                                 alt="">
@@ -44,7 +46,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="app-option">
+                        <div class="app-option mt-5">
                             <div class="container card-option-content">
                                 <div class="row option-item-row">
                                     <div class="col-md-6 d-flex flex-column justify-content-center">
@@ -92,5 +94,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.img-social {
+    width: 100%;
+    border-radius: 20px;
+}
 </style>

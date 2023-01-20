@@ -6,7 +6,7 @@
             </h5>
             <div class="row">
                 <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-0">
+                    <ul class="list-ticked text-muted mb-3">
                         <li>
                             <small class="text-muted">
                                 TOTAL AGV
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-0">
+                    <ul class="list-ticked text-muted mb-3">
                         <li>
                             <small class="text-muted">
                                 AGV Online
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-0">
+                    <ul class="list-ticked text-muted mb-3">
                         <li>
                             <small class="text-muted">
                                 AGV Offline

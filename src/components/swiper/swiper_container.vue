@@ -101,7 +101,7 @@ body {
     max-height: auto;
 
 }
-
+/* 
 @media (min-width: 1000px) {
     .content {
         height: 575px;
@@ -115,23 +115,31 @@ body {
         max-height: auto;
 
     }
-}
+} */
 
-@media (min-width: 1300px) {
-    .content {
-        height: 770px;
-        max-height: auto;
-
-    }
-}
-
-@media (min-width: 1600px) {
-    .content {
+@media (max-width: 1300px) {
+    .swiper-slide {
         height: 800px;
         max-height: auto;
 
     }
 }
+
+@media (max-width: 1000px) {
+    .swiper-slide {
+        height: 800px;
+        max-height: auto;
+
+    }
+}
+
+/* @media (min-width: 1600px) {
+    .content {
+        height: 960px;
+        max-height: auto;
+
+    }
+} */
 
 .sidebar-icon-only .navbar {
     left: 0;
@@ -139,7 +147,7 @@ body {
 
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: 1vw;
     background: #191c24;
 
     display: -webkit-box;

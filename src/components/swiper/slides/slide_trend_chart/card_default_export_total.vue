@@ -12,7 +12,7 @@
                                 <tr v-for="tsa in detail_export" :key="tsa">
                                     <td scope="row" class="text-left text-warning d-flex justify-content-between">
                                         <ul class="mb-2">
-                                            <li>
+                                            <li style="font-size: 10px">
                                                 {{ tsa.name }}
                                             </li>
                                         </ul>

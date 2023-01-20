@@ -30,13 +30,13 @@
 
             <div class="row">
                 <div class="col-9 mt-2">
-                    <div class="row" style="height:;">
+                    <div class="row" style="height:120px;">
                         <SpeedChart />
                     </div>
-                    <div class="row" style="height:;">
+                    <div class="row" style="height:120px;">
                         <PowerChart />
                     </div>
-                    <div class="row" style="height:;">
+                    <div class="row" style="height:120px;">
                         <CurrentChart />
                     </div>
                 </div>

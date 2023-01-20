@@ -10,7 +10,7 @@
                         aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
-                <div class="text-right h2">
+                <div class="text-right h3">
                     82.1 %
                 </div>
             </div>

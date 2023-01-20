@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row bg-dark mb-3">
-            <div class="col-xl-2 my-2">
+        <div class="row bg-dark mb-2">
+            <div class="col-md-2 ">
                 <div class="d-flex felx-column justify-content-center">
                     <img class="img-agv" src="https://purepng.com/public/uploads/large/purepng.com-gray-bmw-m4-gts-carcarbmwvehicletransport-961524662033wmsm1.png" alt="">
                 </div>
@@ -9,9 +9,9 @@
                     <span>agv-1</span>
                 </div>
             </div>
-            <div class="col-xl-10 ">
+            <div class="col-sm-10 ">
                 <div class="row p-0 row-function mt-1s mt-4">
-                    <div class="col-xl-4 px-0">
+                    <div class="col-sm-4 px-0">
                         <table class="table table-sm table-borderless table-setparam text-warning px-0 table-resopns">
                             <tbody>
                                 <tr>
@@ -30,7 +30,7 @@
                         </table>
                         
                     </div>
-                    <div class="col-xl-5 px-0">
+                    <div class="col-sm-5 px-0">
                         <table class="table table-sm table-borderless table-setparam text-warning px-0">
                             <tbody>
                                 <tr>
@@ -44,7 +44,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-xl-3 px-0">
+                    <div class="col-sm-3 px-0">
                         <table class="table table-sm table-borderless table-setparam text-warning px-0">
                             <tbody>
                                 <tr>
