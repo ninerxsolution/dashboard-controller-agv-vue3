@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:90%;">
+                    <div class="scrollbar scrollbar-success my-3 bg-dark" style="height:90%;">
                         <table class="table table-sm table-borderless mt-2">
                             <tbody>
                                 <tr v-for="tsa in trend_select_agv" :key="tsa">
