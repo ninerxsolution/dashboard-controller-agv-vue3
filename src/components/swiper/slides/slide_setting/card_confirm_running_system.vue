@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center p-3">
+            <div class="d-flex justify-content-around p-3">
                 <div class="mx-3">
                     <button class="btn btn-inverse-light text-warning">
                         STATUS: <small>Running</small>
@@ -34,8 +34,11 @@
 </template>
 
 <script>
+import ButtonToggle from '@/components/button/buttonToggle.vue'
 export default {
-
+    components:{
+        ButtonToggle,
+    }
 }
 </script>
 
