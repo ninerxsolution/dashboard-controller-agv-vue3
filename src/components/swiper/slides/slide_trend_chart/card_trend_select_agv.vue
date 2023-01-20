@@ -74,12 +74,14 @@
 import SpeedChart from '@/components/Chart/SpeedChart.vue';
 import PowerChart from '@/components/Chart/PowerChart.vue';
 import CurrentChart from '@/components/Chart/CurrentChart.vue';
+// import LineChart from '@/components/Chart/LineChart.vue'
 
 export default {
     components: {
         SpeedChart,
         PowerChart,
-        CurrentChart,        
+        CurrentChart, 
+        // LineChart,       
     },
     data() {
         return {
