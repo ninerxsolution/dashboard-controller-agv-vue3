@@ -26,7 +26,8 @@
 
             <!-- Run test json : {{ jsonData.return.data.pages.page1.CONSUMPTION_PRODUCTION_TOTAL.total_consumption.value }} -->
             <!-- Run test json : {{ jsonData }} -->
-            Loop test api : <div v-for="loop in jsonData" :key="loop.return">{{ loop['2023'] }}</div>
+            Loop test api : <div v-for="loop of jsonData" :key="loop.id">{{ loop.time }}</div>
+            <!-- Unloop test api : {{ jsonData }} -->
             <br>
             <!-- <div v-for="jsonLoop in jsonData" v-bind:key="jsonLoop.id">
                 {{ jsonLoop.name }}
@@ -66,14 +67,28 @@ export default {
             jsonData: '',
         }
     },
-    async created() {
-        // let x = await fetch('https://se-sskru.com/ev-rail/json/-1');
+    created() {
+        // let x = await fetch('https://se-sskru.com/ev-rail/json/AGV_1/-1');
         // let y = await x.json();
-        // this.jsonData = y.info.time;
-        axios.get('https://se-sskru.com/ev-rail/json/AGV_1')
-            .then(response => {
-                this.jsonData = response.data;
-            })
+        // this.jsonData = y.return.time;
+        // axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+        //     .then(response => {
+        //         this.jsonData = response.data.return.time;
+        //     })
+        this.fetchData();
+        setInterval(() => {
+            this.fetchData()
+        }, 5000)
+    },
+    methods: {
+        async fetchData() {
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+                this.jsonData = response.data
+            } catch (error) {
+                console.error(error)
+            }
+        }
     }
 }
 </script>
