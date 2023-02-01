@@ -5,12 +5,12 @@
                 BATTERY CAPACITY {{ name }} {{ age }} {{ jsonData }}
             </h5>
             <div class="d-flex justify-content-between">
-                <div class="progress mt-1" style="height:2rem !important;">
+                <div class="progress" style="height:2rem !important;">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 82.1%;" aria-valuenow="90"
                         aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
-                <div class="text-right h3">
+                <div class="h3 align-self-center m-0">
                     82.1 %
                 </div>
             </div>

@@ -1,9 +1,9 @@
 <template>
     <div class="card mb-4">
         <div class="card-body">
-            <h5>
+            <h6>
                 ELECTRICAL CURRENT FOR MONITOR
-            </h5>
+            </h6>
             <div class="row">
                 <div class="col-6 text-center">
                     <div>

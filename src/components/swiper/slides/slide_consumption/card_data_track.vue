@@ -7,9 +7,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
-                        <small class="text-muted d-flex justify-centent-between">
+                        <div class="text-muted d-flex justify-centent-between">
                             Transpot today
-                        </small>
+                        </div>
                     </li>
                 </ul>
                 <div class="text-right">
@@ -19,9 +19,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
-                        <small class="text-muted d-flex justify-centent-between">
+                        <div class="text-muted d-flex justify-centent-between">
                             Working mode
-                        </small>
+                        </div>
                     </li>
                 </ul>
                 <div class="text-right">
@@ -31,9 +31,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
-                        <small class="text-muted d-flex justify-centent-between">
+                        <div class="text-muted d-flex justify-centent-between">
                             Status cycle
-                        </small>
+                        </div>
                     </li>
                 </ul>
                 <div class="text-right">
@@ -43,9 +43,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
-                        <small class="text-muted d-flex justify-centent-between">
+                        <div class="text-muted d-flex justify-centent-between">
                             Maximum load
-                        </small>
+                        </div>
                     </li>
                 </ul>
                 <div class="text-right">
@@ -55,9 +55,9 @@
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
-                        <small class="text-muted d-flex justify-centent-between">
+                        <div class="text-muted d-flex justify-centent-between">
                             Tranking guide
-                        </small>
+                        </div>
                     </li>
                 </ul>
                 <div class="text-right">

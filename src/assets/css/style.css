@@ -21,6 +21,10 @@
     color: #42b983;
   } */
 
+.card-body h6, .card-body h5, .card-body h4, .card-body h3, .card-body h2, .card-body h1{
+  margin: 0;
+  align-self: center;
+}
 
 .swiper {
   width: 100%;

@@ -5,32 +5,32 @@
                 CONNECT AGV
             </h5>
             <div class="row">
-                <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-3">
+                <div class="d-flex justify-content-between mt-2">
+                    <ul class="list-ticked text-muted m-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted align-self-center">
                                 TOTAL AGV
-                            </small>
+                            </div>
                         </li>
                     </ul>
-                    <div class="progress mt-1" style="width: 40%">
+                    <div class="progress align-self-center" style="width: 40%">
                         <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100"
                             aria-valuemin="0" aria-valuemax="100">
                         </div>
                     </div>
-                    <div class="text-right mx-1">
+                    <div class="text-right mx-1 align-self-center">
                         3
                     </div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-3">
+                <div class="d-flex justify-content-between mt-2">
+                    <ul class="list-ticked text-muted m-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 AGV Online
-                            </small>
+                            </div>
                         </li>
                     </ul>
-                    <div class="progress mt-1" style="width: 40%">
+                    <div class="progress align-self-center" style="width: 40%">
                         <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="100"
                             aria-valuemin="0" aria-valuemax="100">
                         </div>
@@ -39,12 +39,12 @@
                         1
                     </div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <ul class="list-ticked text-muted mb-3">
+                <div class="d-flex justify-content-between mt-2">
+                    <ul class="list-ticked text-muted m-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 AGV Offline
-                            </small>
+                            </div>
                         </li>
                     </ul>
                     <div class="progress mt-1" style="width: 40%">
@@ -56,10 +56,10 @@
                         2
                     </div>
                 </div>
-                <div class="pt-1 text-danger text-center">
-                    <small>
+                <div class="pt-2 text-danger text-center">
+                    <div>
                         For Maximum AGV : 3 connects
-                    </small>
+                    </div>
                 </div>
             </div>
         </div>

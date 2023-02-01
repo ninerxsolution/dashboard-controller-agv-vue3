@@ -10,7 +10,7 @@
             </button>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <h3>
+                    <h3 class="m-0 align-self-center">
                         COMSUMPTION
                     </h3>
                 </li>

@@ -6,10 +6,10 @@
                     TREND ENERGY AND AGV TOTAL
                 </h5>
                 <div class="text d-flex">
-                    <div class="col-sm-6 h6 pt-1 text-right">SELECT TYPE:</div>
+                    <div class="col-sm-6 h6 text-right m-0 align-self-center">SELECT TYPE:</div>
                     <div class="col-sm-6 text-warning pt-0">
-                        <div class="input-group-prependtop-left">
-                            <button class="btn btn-link dropdown-toggle text-warning pt-1" type="button"
+                        <div class="input-group-prependtop-left align-self-center">
+                            <button class="btn btn-link dropdown-toggle text-warning  align-self-center" type="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ENERGY & YIELD
                             </button>

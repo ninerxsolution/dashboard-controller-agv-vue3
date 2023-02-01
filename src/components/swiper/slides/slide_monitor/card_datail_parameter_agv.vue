@@ -5,20 +5,18 @@
                 <h5 class="d-flex">
                     DETAIL PARAMETER AGV
                 </h5>
-                <div class="text-success">
-                    <small>
+                <div class="text-success align-self-center">
+                    <div>
                         Enegy (kWh) : 54376
-                    </small>
+                    </div>
                 </div>
-                <div class="text-danger">
-                    <small>
+                <div class="text-danger align-self-center">
+                    <div>
                         CO2 (kg) : 3456
-                    </small>
+                    </div>
                 </div>
-                <div class="text">
-
-                </div>
-                <div class="progress mt-1" style="width: 10%">
+                
+                <div class="progress align-self-center" style="width: 10%">
                     <div class="progress-bar bg-success" role="progressbar" style="width: 66%" aria-valuenow="100"
                         aria-valuemin="0" aria-valuemax="100">
                         81.2%
@@ -44,17 +42,17 @@
                             :fill-color="'#89b8e0'" class="dummy-meter" />
                     </div>
                     <div class="pt-1 text-muted text-center">
-                        <small>
+                        <div>
                             Current speed
-                        </small>
+                        </div>
                     </div>
                     <div class="h3 mb-0 text-center">
                         0.5 m/s
                     </div>
                     <div class="text-primary text-center">
-                        <small>
+                        <div>
                             Running
-                        </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3">
@@ -63,17 +61,17 @@
                             :fill-color="'#ffd000'" class="dummy-meter" />
                     </div>
                     <div class="pt-1 text-muted text-center">
-                        <small>
+                        <div>
                             Voltage average
-                        </small>
+                        </div>
                     </div>
                     <div class="h3 mb-0 text-center">
                         50.6 V
                     </div>
                     <div class="text-warning text-center">
-                        <small>
+                        <div>
                             Standby
-                        </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3">
@@ -82,17 +80,17 @@
                             :fill-color="'#00a2ff'" class="dummy-meter" />
                     </div>
                     <div class="pt-1 text-muted text-center">
-                        <small>
+                        <div>
                             Current now
-                        </small>
+                        </div>
                     </div>
                     <div class="h3 mb-0 text-center">
                         49.9 A
                     </div>
                     <div class="text-primary text-center">
-                        <small>
+                        <div>
                             Ready
-                        </small>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3">
@@ -101,17 +99,17 @@
                             :fill-color="'#4cff45'" class="dummy-meter" />
                     </div>
                     <div class="pt-1 text-muted text-center">
-                        <small>
+                        <div>
                             Power now
-                        </small>
+                        </div>
                     </div>
                     <div class="h3 mb-0 text-center">
                         2.5 kW
                     </div>
                     <div class="text-success text-center">
-                        <small>
+                        <div>
                             Using
-                        </small>
+                        </div>
                     </div>
                 </div>
             </div>
