@@ -1,7 +1,6 @@
 <template>
     <div class="card mb-4">
         <div class="card-body">
-
             <div class="col-12 d-flex justify-content-between px-0">
                 <div class="d-flex h5 mx-0 mt-1">
                     TREND SELECT AGV
@@ -27,7 +26,6 @@
                     <span class="text-success mx-4 align-self-center">Online</span>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-9 mt-2">
                     <div class="row" style="height:120px;">
@@ -40,25 +38,32 @@
                         <CurrentChart />
                     </div>
                 </div>
-                <div class="col-3 pt-2">
+                <div class="col-3">
                     <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:90%;">
-                        <table class="table table-sm table-borderless mt-2">
-                            <tbody>
-                                <tr v-for="tsa in trend_select_agv" :key="tsa">
-                                    <!-- <td class="text-warning p-0">·</td> -->
-                                    <td scope="row" class="text-left text-warning d-flex justify-content-between">
-                                        <ul class="mb-2">
-                                            <li>
-                                                {{ tsa.name }}
-                                            </li>
-                                        </ul>
-                                        <div class="form-check p-0 m-0">
-                                            <input type="checkbox" class="form-check-input my-0" :checked="tsa.check">
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col">
+                            <div class="scrollbar scrollbar-success my-3 bg-dark" style="height:90%;">
+                                <table class="table table-sm table-borderless mt-2">
+                                    <tbody>
+                                        <tr v-for="tsa in trend_select_agv" :key="tsa">
+                                            <!-- <td class="text-warning p-0">·</td> -->
+                                            <td scope="row"
+                                                class="text-left text-warning d-flex justify-content-between">
+                                                <ul class="mb-2">
+                                                    <li>
+                                                        {{ tsa.name }}
+                                                    </li>
+                                                </ul>
+                                                <div class="form-check p-0 m-0">
+                                                    <input type="checkbox" class="form-check-input my-0"
+                                                        :checked="tsa.check">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
                     </div>
                     <div class="col-12 d-flex justify-content-between p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
@@ -80,7 +85,7 @@ export default {
     components: {
         SpeedChart,
         PowerChart,
-        CurrentChart, 
+        CurrentChart,
         // LineChart,       
     },
     data() {
