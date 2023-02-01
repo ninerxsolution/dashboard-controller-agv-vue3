@@ -24135,7 +24135,7 @@ code {
   height: 85px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1300px) {
   .card.corona-gradient-card .gradient-corona-img {
     height: auto;
     min-height: 50px;
@@ -24143,7 +24143,7 @@ code {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1300px) {
   .card.corona-gradient-card h4 {
     font-size: 0.75rem;
   }
