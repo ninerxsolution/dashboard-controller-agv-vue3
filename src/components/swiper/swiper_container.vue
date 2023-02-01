@@ -120,7 +120,7 @@ body {
 
 @media (max-width: 1300px) {
     .swiper-slide {
-        height: 800px;
+        height: 780px;
         max-height: auto;
 
     }
@@ -128,7 +128,7 @@ body {
 
 @media (max-width: 1000px) {
     .swiper-slide {
-        height: 800px;
+        height: 780px;
         max-height: auto;
 
     }
