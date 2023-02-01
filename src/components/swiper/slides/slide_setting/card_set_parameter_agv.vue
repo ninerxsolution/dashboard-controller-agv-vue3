@@ -12,13 +12,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 d-flex px-3">
+                <div class="col-3 d-flex px-3 align-self-center">
                     OPTION
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-9 mt-2">
+            <div class="row mt-2">
+                <div class="col-9">
                     <div class="agv-set-param" v-for="cl in car_list" :key="cl">
                         <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
                     </div>

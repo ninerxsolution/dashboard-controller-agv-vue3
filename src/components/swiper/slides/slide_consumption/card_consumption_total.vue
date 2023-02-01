@@ -1,16 +1,16 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <h5>
+            <h5 class="">
                 CONSUMPTION PRODUCTION TOTAL
             </h5>
             <div class="row">
                 <div class="col-12">
                     <ul class="list-ticked text-muted mb-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 PRODUCTION TOTAL (ton)
-                            </small>
+                            </div>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-between">
@@ -27,9 +27,9 @@
                 <div class="col-12">
                     <ul class="list-ticked text-muted mb-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 ENERGY (kWh)
-                            </small>
+                            </div>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-between">
@@ -46,9 +46,9 @@
                 <div class="col-12">
                     <ul class="list-ticked text-muted mb-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 BATTERY (kWh)
-                            </small>
+                            </div>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-between">
@@ -65,9 +65,9 @@
                 <div class="col-12">
                     <ul class="list-ticked text-muted mb-0">
                         <li>
-                            <small class="text-muted">
+                            <div class="text-muted">
                                 CO2 (kg)
-                            </small>
+                            </div>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-between">

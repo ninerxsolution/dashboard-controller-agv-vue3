@@ -22,9 +22,9 @@
                     </div>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-dark mx-3">Date-time</button>
-                    <span class="text-warning mx-0">STATUS: </span>
-                    <span class="text-success mx-4">Online</span>
+                    <button class="btn btn-dark mx-3 align-self-center">Date-time</button>
+                    <span class="text-warning mx-0 align-self-center">STATUS: </span>
+                    <span class="text-success mx-4 align-self-center">Online</span>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                         <CurrentChart />
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 pt-2">
                     <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:90%;">
                         <table class="table table-sm table-borderless mt-2">
                             <tbody>

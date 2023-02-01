@@ -8,24 +8,24 @@
                 </h5>
                 <div class="d-flex">
                     <button class="btn-dark text-warning">
-                        <small>
+                        <div>
                             Non drawback AGV 1
-                        </small>
+                        </div>
                     </button>
-                    <i class="mdi mdi-eye px-2"></i>
+                    <i class="mdi mdi-eye px-2  align-self-center"></i>
                     <button class="btn-dark text-success">
-                        <small>
+                        <div>
                             Battery AGV 1 OK
-                        </small>
+                        </div>
                     </button>
-                    <i class="mdi mdi-truck px-2"></i>
+                    <i class="mdi mdi-truck px-2  align-self-center"></i>
                 </div>
 
                 <div class="d-flex">
-                    <div class="text">
+                    <div class="text align-self-center">
                         CONNECT :
                     </div>
-                    <button-toggle class="mx-2 mt-1" />
+                    <button-toggle class="mx-2 align-self-center" />
                     <button class="btn btn-warning text-dark mx-2 px-4">
                         UPDATE MAP
                     </button>
@@ -35,12 +35,12 @@
                 <div class="col-12 mt-2">
                     <div class="card-body bg-dark p-2">
                         <div class="card-title d-flex justify-content-between">
-                            <small>
+                            <div>
                                 Point Station
-                            </small>
-                            <small>
+                            </div>
+                            <div>
                                 Point End
-                            </small>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-between">
                             <ul>
@@ -81,63 +81,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <div class="col-3 card-body bg-dark mt-4">
-                        <div class="d-flex">
-                            <ul class="mb-0 ">
+
+                <div class="d-flex justify-content-between mt-3">
+                    <div class="col-3 bg-dark p-4">
+
+                        <div class="d-flex align-self-middle">
+                            <ul class="m-0">
                                 <li>
-                                    <div>
-                                        <span>AGV 1</span>
+                                    <div class="align-self-middle">
+                                        <span class="">AGV 1</span>
                                     </div>
                                 </li>
                             </ul>
-                            <div class="text-success">
-                                <div class="small mt-1 mx-4">
+                            <div class="text-success align-self-middle">
+                                <div class="div mx-4 align-self-middle">
                                     <span>Running</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex">
+
+                        <div class="d-flex align-self-middle">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
-                                       <span> AGV 2</span>
+                                    <div>
+                                        <span> AGV 2</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-danger">
-                                <div class="small mt-1 mx-4">
-                                   <span> Offline</span>
+                                <div class="div mt-1 mx-4">
+                                    <span> Offline</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex">
+                        <div class="d-flex align-self-middle">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
+                                    <div>
                                         <span>AGV 3</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-danger">
-                                <div class="small mt-1 mx-4">
+                                <div class="div mt-1 mx-4">
                                     <span>Offline</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-3  bg-dark mt-4 pt-4">
-                        <div class="d-flex">
+                    <div class="col-3 bg-dark p-4">
+                        <div class="d-flex ">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
-                                       <span> AGV 1</span>
+                                    <div>
+                                        <span> AGV 1</span>
                                     </div>
                                 </li>
                             </ul>
-                            <div class="text-primary">
-                                <div class="small mt-1 mx-4">
+                            <div class="text-primary m-0">
+                                <div class="div mt-1 mx-4">
                                     <span>200 ton</span>
                                 </div>
                             </div>
@@ -145,13 +148,13 @@
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
+                                    <div>
                                         <span>AGV 2</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-warning">
-                                <div class="small mt-1 mx-4">
+                                <div class="div mt-1 mx-4">
                                     <span>0 ton</span>
                                 </div>
                             </div>
@@ -159,14 +162,14 @@
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
-                                       <span> AGV 3</span>
+                                    <div>
+                                        <span> AGV 3</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-warning">
-                                <div class="small mt-1 mx-4">
-                                   <span> 0 ton</span>
+                                <div class="div mt-1 mx-4">
+                                    <span> 0 ton</span>
                                 </div>
                             </div>
                         </div>
@@ -175,13 +178,13 @@
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
+                                    <div>
                                         <span>AGV 1</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-primary">
-                                <div class="small mt-1 mx-4">
+                                <div class="div mt-1 mx-4">
                                     <span>200 ton</span>
                                 </div>
                             </div>
@@ -189,13 +192,13 @@
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
+                                    <div>
                                         <span>AGV 2</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-warning">
-                                <div class="small mt-1 mx-4">
+                                <div class="div mt-1 mx-4">
                                     <span>0 ton</span>
                                 </div>
                             </div>
@@ -203,30 +206,30 @@
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
-                                    <div >
+                                    <div>
                                         <span>AGV 3</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-warning">
-                                <div class="small mt-1 mx-4">
-                                   <span> 0 ton</span>
+                                <div class="div mt-1 mx-4">
+                                    <span> 0 ton</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-3 card-body bg-dark mt-4">
+                    <div class="col-3  bg-dark mt-4 pt-4">
                         <div class="d-flex text-warning justify-content-between">
                             <ul class="mb-0">
                                 <li>
                                     <div>
-                                       <span> DISTANCE TOTAL</span>
+                                        <span> DISTANCE TOTAL</span>
                                     </div>
                                 </li>
                             </ul>
                             <div class="text-right">
-                                <div class="small mt-1 mx-2">
+                                <div class="div mt-1 mx-2">
                                     500 m
                                 </div>
                             </div>
@@ -240,7 +243,7 @@
                                 </li>
                             </ul>
                             <div class="text-right">
-                                <div class="small mt-1 mx-2">
+                                <div class="div mt-1 mx-2">
                                     10 min
                                 </div>
                             </div>
@@ -254,7 +257,7 @@
                                 </li>
                             </ul>
                             <div class="text-right">
-                                <div class="small mt-1 mx-2">
+                                <div class="div mt-1 mx-2">
                                     2 m/s
                                 </div>
                             </div>

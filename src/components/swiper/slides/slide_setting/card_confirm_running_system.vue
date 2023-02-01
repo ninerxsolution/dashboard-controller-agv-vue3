@@ -4,7 +4,7 @@
             <h5>
                 CONFIRM RUNNING SYSTEM
             </h5>
-            <div class="d-flex justify-content-around bg-dark p-3">
+            <div class="d-flex justify-content-around bg-dark p-3 mt-2">
                 <div class="start-big-button bg-success">
                     <div class="h2">
                         start

@@ -49,7 +49,6 @@ export default{
     background: #00acee;
 }
 .toggle-btn.active > .inner-circle{
-
     margin-left: 50%;
 }
 </style>

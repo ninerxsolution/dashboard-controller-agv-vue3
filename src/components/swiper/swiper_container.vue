@@ -23,6 +23,7 @@
             </swiper-slide>
         </swiper>
     </div>
+    <!-- hi there -->
 </template>
 
 <script>
@@ -97,8 +98,8 @@ body {
 }
 
 .content {
-    height: 800px;
-    max-height: auto;
+    height: 100%;
+    max-height: 100%;
 
 }
 /* 
@@ -186,4 +187,5 @@ body {
     color: rgb(255, 255, 255);
     background: #007aff;
 } */
+
 </style>
