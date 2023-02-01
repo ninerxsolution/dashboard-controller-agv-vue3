@@ -23,6 +23,14 @@
                 <CardElecVol />
                 <CardElecCurrMon />
             </div>
+
+            <!-- Run test json : {{ jsonData.return.data.pages.page1.CONSUMPTION_PRODUCTION_TOTAL.total_consumption.value }} -->
+            <!-- Run test json : {{ jsonData }} -->
+            Loop test api : <div v-for="loop in jsonData" :key="loop.return">{{ loop['2023'] }}</div>
+            <br>
+            <!-- <div v-for="jsonLoop in jsonData" v-bind:key="jsonLoop.id">
+                {{ jsonLoop.name }}
+            </div> -->
         </div>
     </div>
 </template>
@@ -37,11 +45,11 @@ import CardLogoAgv from './slide_consumption/card_logo_agv.vue';
 import CardBatteryCap from './slide_consumption/card_battery_capacity.vue';
 import CardElecVol from './slide_consumption/card_electrical_voltage_agv.vue';
 import CardElecCurrMon from './slide_consumption/card_electrical_current_for_monitor.vue';
-// import axios from 'axios';
+// import { response } from 'express';
+import axios from 'axios';
 
 export default {
     name: 'App',
-
     components: {
         CardConsumpTotal,
         CardTrendTotal,
@@ -53,7 +61,20 @@ export default {
         CardElecVol,
         CardElecCurrMon,
     },
-
+    data() {
+        return {
+            jsonData: '',
+        }
+    },
+    async created() {
+        // let x = await fetch('https://se-sskru.com/ev-rail/json/-1');
+        // let y = await x.json();
+        // this.jsonData = y.info.time;
+        axios.get('https://se-sskru.com/ev-rail/json/AGV_1')
+            .then(response => {
+                this.jsonData = response.data;
+            })
+    }
 }
 </script>
 
