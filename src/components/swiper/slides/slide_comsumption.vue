@@ -67,7 +67,7 @@ export default {
         return {
             jsonData: null,
             thrower: 'Annalists',
-            data_lists: [40, 20, 30, 61, 34, 59, 23, 61, 24, 47, 39, 51],
+            data_lists: [10000,2,3,5,4,3,2,4,5,4,3,2],
         }
     },
     created() {
@@ -75,6 +75,12 @@ export default {
         setInterval(() => {
             this.fetchData()
         }, 5000)
+        // this.data_lists = this.jsonData
+    },
+    computed: {
+        // returnDatalists(){
+        //     return this.data_lists;
+        // },
     },
     methods: {
         async fetchData() {

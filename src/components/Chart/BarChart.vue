@@ -1,8 +1,8 @@
 <template>
-    <div v-if="checkValid">
-        <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
-    </div>
-    AA {{ typeof energyData }} is type of {{ energyData }} AA
+    <!-- <div v-if="checkValid"> -->
+    <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <!-- </div> -->
+    AA {{ typeof get_lists }} is type of {{ get_lists }} AA
 </template>
   
 <script>
@@ -21,30 +21,35 @@ export default {
     },
     data() {
         return {
-            energyData: this.get_lists,
-            // yieldData: this.get_lists,
-            // get_throw: Object.values(this.get_lists),
-
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
                         label: 'Yield',
-                        data: this.get_lists, //: [10000,10000,10000,10000,10000,10000,2,4,5,4,3,2],
+                        data: [10000, 10000, 10000, 10000, 10000, 10000, 2, 4, 5, 4, 3, 2],
                         backgroundColor: 'yellow',
                     },
                     {
-                        label: 'Enegy', 
-                        data: this.get_lists, //: [10000,2,3,5,4,3,2,4,5,4,3,2],
+                        label: 'Enegy',
+                        data: [10000, 2, 3, 5, 4, 3, 2, 4, 5, 4, 3, 2],
                         backgroundColor: 'orange',
                     }
                 ],
-                
-            },
-            chartOptions: {
-                responsive: true
+
             },
         }
+    },
+    watch: {
+        data() {
+        // energyData: this.get_lists,
+            // yieldData: this.get_lists,
+            // get_throw: Object.values(this.get_lists),
+            this.chartData.datasets[0].data = this.get_lists.yield;
+        //     chartOptions: {
+        //     responsive: true
+        // },
+        }
+
     },
     // mounted() {
     //     this.chartData.datasets = this.chartData.rawData.map(item => ({
