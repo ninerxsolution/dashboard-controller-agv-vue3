@@ -5,7 +5,7 @@
                 <CardConsumpTotal />
             </div>
             <div class="col-md-8 grid-margin stretch-card">
-                <CardTrendTotal />
+                <CardTrendTotal :msg="jsonData"/>
             </div>
         </div>
 
@@ -27,6 +27,7 @@
             <!-- Run test json : {{ jsonData.return.data.pages.page1.CONSUMPTION_PRODUCTION_TOTAL.total_consumption.value }} -->
             <!-- Run test json : {{ jsonData }} -->
             Loop test api : <div v-for="loop of jsonData" :key="loop.id">{{ loop.time }}</div>
+            Json test here! : {{ jsonData }}
             <!-- Unloop test api : {{ jsonData }} -->
             <br>
             <!-- <div v-for="jsonLoop in jsonData" v-bind:key="jsonLoop.id">
@@ -64,17 +65,12 @@ export default {
     },
     data() {
         return {
-            jsonData: '',
+            jsonData: null,
+            thrower: 'Annalists',
+            data_lists: [40, 20, 30, 61, 34, 59, 23, 61, 24, 47, 39, 51],
         }
     },
     created() {
-        // let x = await fetch('https://se-sskru.com/ev-rail/json/AGV_1/-1');
-        // let y = await x.json();
-        // this.jsonData = y.return.time;
-        // axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-        //     .then(response => {
-        //         this.jsonData = response.data.return.time;
-        //     })
         this.fetchData();
         setInterval(() => {
             this.fetchData()
@@ -84,7 +80,9 @@ export default {
         async fetchData() {
             try {
                 const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-                this.jsonData = response.data
+                // const response = await axios.get('http://localhost:8000/students')
+                this.jsonData = response.data.graph.monthly
+                // this.thrower = response.data
             } catch (error) {
                 console.error(error)
             }

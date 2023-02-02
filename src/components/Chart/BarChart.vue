@@ -1,5 +1,8 @@
 <template>
-    <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <div v-if="checkValid">
+        <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+    </div>
+    AA {{ typeof energyData }} is type of {{ energyData }} AA
 </template>
   
 <script>
@@ -11,48 +14,73 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
     name: 'BarChart',
     components: { Bar },
+    computed: {
+        checkValid() {
+            return this.get_lists && this.get_lists.yield;
+        }
+    },
     data() {
         return {
+            energyData: this.get_lists,
+            // yieldData: this.get_lists,
+            // get_throw: Object.values(this.get_lists),
+
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [
                     {
                         label: 'Yield',
-                        data: [40, 20, 30, 61, 34, 59, 23, 61, 24, 47, 39, 51],
+                        data: this.get_lists, //: [10000,10000,10000,10000,10000,10000,2,4,5,4,3,2],
                         backgroundColor: 'yellow',
                     },
                     {
-                        label: 'Enegy',
-                        data: [23, 73, 14, 46, 34, 11, 76, 49, 50, 21, 53, 22],
+                        label: 'Enegy', 
+                        data: this.get_lists, //: [10000,2,3,5,4,3,2,4,5,4,3,2],
                         backgroundColor: 'orange',
                     }
                 ],
+                
             },
             chartOptions: {
                 responsive: true
-            }
+            },
+        }
+    },
+    // mounted() {
+    //     this.chartData.datasets = this.chartData.rawData.map(item => ({
+    //     label: item.label,
+    //     data: item.data.yield,
+    //     backgroundColor: item.backgroundColor
+    //     }))
+    //  },
+    props: {
+        get_lists: {
+            type: Object,
+            required: true
         }
     }
 }
 </script>
 
 <style>
-
 @media (min-width: 1000px) {
     #my-chart-id {
         max-height: 140px;
     }
 }
+
 @media (min-width: 1100px) {
     #my-chart-id {
         max-height: 160px;
     }
 }
+
 @media (min-width: 1300px) {
     #my-chart-id {
         max-height: 185px;
     }
 }
+
 @media (min-width: 1600px) {
     #my-chart-id {
         max-height: 200px;
