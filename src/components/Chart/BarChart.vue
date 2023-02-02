@@ -37,10 +37,23 @@ export default {
                 ],
 
             },
+            chartOptions: {
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                    type: 'linear',
+                    position: 'left',
+                    ticks: {
+                        beginAtZero: true
+                    }
+                    }]
+                }
+            },
         }
     },
     watch: {
-        data() {
+        get_lists(oldD, newD) {
+            console.log("Get List Changed:", oldD, newD, this.chartData.datasets[0].data, this.get_lists.yield);
         // energyData: this.get_lists,
             // yieldData: this.get_lists,
             // get_throw: Object.values(this.get_lists),
