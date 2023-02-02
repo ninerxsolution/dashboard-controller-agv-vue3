@@ -1,54 +1,60 @@
 <template>
-    <div class="container-fluid content bg-dark pt-3">
-        <div class="row">
-            {{ userId }} {{ jsonData }}
-            <div v-for="user in users" v-bind:key="user.id">
-                {{ user.address.suite }}
-            </div>
-        </div>
+    <div>
+        {{  }} {{ this.data.labels }} {{ getData }}
+        <Line :options="options" :type="type" :data="data" />
+        {{ this.data.datasets[0].data }}
     </div>
 </template>
 
 <script>
-import "vue3-circle-progress/dist/circle-progress.css";
-// import CircleProgress from "vue3-circle-progress";
-// import CustomChart from '@/components/Chart/CustomChart.vue';
-// import jsonSup from '@/assets/variable_mapping/jsonstring.json'
-import axios from 'axios';
+import { Line } from 'vue-chartjs'
+import axios from 'axios'
 
 export default {
-    name: 'App',
     components: {
-        // CircleProgress,
-        // CustomChart,
+        Line
     },
     data() {
         return {
-            userId: '',
-            users: [],
             jsonData: '',
-
+            getData: this.jsonData,
+            type: 'line',
+            options: {
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ]
+                }
+            },
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Data One',
+                        backgroundColor: '#f87979',
+                        data: []
+                    }
+                ]
+            }
         }
     },
-
-    created() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+    mounted() {
+        axios
+            .get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
             .then(response => {
-                this.users = response.data
-            });
-        // this.jsonData = require("@/assets/variable_mapping/jsonstring.json");
-        // this.jsonData = jsonSup;
-        // const jsonSet = {
-        //     "Home": {
-        //         "Number": 666,
-        //         "People": 600
-        //     }
-        // }
-        // this.jsonData = jsonSet;
+                this.jsonData = response.data
+                this.data.labels = Object.keys(response.data.graph.monthly)
+                this.data.datasets[0].data = response.data.graph.monthly.yield
+                this.renderChart(this.data, this.options)
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
 }
 </script>
 
-<style>
-
-</style>
