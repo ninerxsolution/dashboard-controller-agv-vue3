@@ -80,7 +80,7 @@ export default {
         async fetchData() {
             try {
                 const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-                this.jsonData = response.data
+                this.AllJson = response.data
             } catch (error) {
                 console.error(error)
             }

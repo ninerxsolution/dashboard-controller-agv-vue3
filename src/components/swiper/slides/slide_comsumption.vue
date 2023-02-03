@@ -1,6 +1,8 @@
 <template>
     <div class="container-fluid content bg-dark pt-3">
+        {{getJson}}
         <div class="row">
+            
             <div class="col-md-4 grid-margin stretch-card">
                 <CardConsumpTotal />
             </div>
@@ -8,7 +10,6 @@
                 <CardTrendTotal :msg="jsonData"/>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-4 grid-margin">
                 <CardAgvRunning />
@@ -23,11 +24,7 @@
                 <CardElecVol />
                 <CardElecCurrMon />
             </div>
-
-            Loop test api : <div v-for="loop of jsonData" :key="loop.id">{{ loop.time }}</div>
-            Json test here! : {{ jsonData }}
             <br>
-            
         </div>
     </div>
 </template>
@@ -42,8 +39,6 @@ import CardLogoAgv from './slide_consumption/card_logo_agv.vue';
 import CardBatteryCap from './slide_consumption/card_battery_capacity.vue';
 import CardElecVol from './slide_consumption/card_electrical_voltage_agv.vue';
 import CardElecCurrMon from './slide_consumption/card_electrical_current_for_monitor.vue';
-// import { response } from 'express';
-// import axios from 'axios';
 
 export default {
     name: 'App',
@@ -65,30 +60,9 @@ export default {
     },
     data() {
         return {
-            jsonData: null,
-            thrower: 'Annalists',
-            data_lists: [10000,2,3,5,4,3,2,4,5,4,3,2],
+            consump_total: this.getJson
         }
     },
-    // created() {
-    //     this.fetchData();
-    //     setInterval(() => {
-    //         this.fetchData()
-    //     },1000)
-    // },
-    // computed: {
-
-    // },
-    // methods: {
-    //     async fetchData() {
-    //         try {
-    //             const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-    //             this.jsonData = response.data.graph.monthly
-    //         } catch (error) {
-    //             console.error(error)
-    //         }
-    //     }
-    // }
 }
 </script>
 
