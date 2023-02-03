@@ -1,31 +1,30 @@
 <template>
     <div class="container-fluid content bg-dark pt-3">
-        {{getJson}}
         <div class="row">
-            
             <div class="col-md-4 grid-margin stretch-card">
-                <CardConsumpTotal />
+                <CardConsumpTotal :get_CONSUMPTION="consumpTotal" />
             </div>
             <div class="col-md-8 grid-margin stretch-card">
-                <CardTrendTotal :msg="jsonData"/>
+                <CardTrendTotal :msg="jsonData" />
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 grid-margin">
-                <CardAgvRunning />
-                <CardDataTrack />
+                <CardAgvRunning :get_AGV_RUNNING="consumpTotal" />
+                <CardDataTrack :get_DATA_TRACK="consumpTotal"/>
             </div>
             <div class="col-md-4 grid-margin">
                 <CardSelectAgv />
                 <CardLogoAgv />
-                <CardBatteryCap />
+                <CardBatteryCap :get_BATTERY="consumpTotal" />
             </div>
             <div class="col-md-4 grid-margin">
-                <CardElecVol />
-                <CardElecCurrMon />
+                <CardElecVol :get_ELECTRICAL="consumpTotal"/>
+                <CardElecCurrMon :get_ELECTRICAL_MONITOR="consumpTotal"/>
             </div>
             <br>
         </div>
+        {{ consumpTotal }}
     </div>
 </template>
 
@@ -56,12 +55,18 @@ export default {
     props: {
         getJson: {
             type: Object,
+            required: true
         }
     },
     data() {
         return {
-            consump_total: this.getJson
+            consumpTotal: 'Default',
         }
+    },
+    created() {
+        setInterval(() => {
+            this.consumpTotal = this.getJson.return.data.pages.page1
+        }, 1000)
     },
 }
 </script>

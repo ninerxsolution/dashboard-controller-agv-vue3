@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-6">
                     <div class="display-4">
-                        50.6 v
+                        {{ voltage_average }} v
                     </div>
                     <small>
                         VOL MAX 55.9 v
@@ -44,6 +44,21 @@ import CircleProgress from "vue3-circle-progress";
 export default {
     components: {
         CircleProgress,
+    },
+    data() {
+        return {
+            voltage_average: 'Default',
+        }
+    },
+    props: {
+        get_ELECTRICAL: {
+            type: Object
+        }
+    },
+    created() {
+        setInterval(()=>{
+            this.voltage_average = this.get_ELECTRICAL.ELEECTRICAL_VOLTAGE_AGV.voltage_average.value
+        },1000)
     }
 }
 </script>

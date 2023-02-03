@@ -13,7 +13,7 @@
                     </li>
                 </ul>
                 <div class="text-right">
-                    200/400 ton
+                    {{ transpot_today }}/400 ton
                 </div>
             </div>
             <div class="d-flex justify-content-between">
@@ -25,7 +25,7 @@
                     </li>
                 </ul>
                 <div class="text-right">
-                    Auto
+                    {{ working_mode }}
                 </div>
             </div>
             <div class="d-flex justify-content-between">
@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <div class="text-right">
-                    50/100 Cycle
+                    {{ status_cycle }}/100 Cycle
                 </div>
             </div>
             <div class="d-flex justify-content-between">
@@ -49,20 +49,21 @@
                     </li>
                 </ul>
                 <div class="text-right">
-                    4 ton
+                    {{ maximum_load }} ton
                 </div>
             </div>
             <div class="d-flex justify-content-between">
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Tranking guide
+                            Tracking guide
                         </div>
                     </li>
                 </ul>
                 <div class="text-right">
-                    camera
+                    {{ tracking_guide }}
                 </div>
+                <!-- {{ get_DATA_TRACK }} -->
             </div>
         </div>
     </div>
@@ -70,7 +71,30 @@
 
 <script>
 export default {
+    data() {
+        return {
+            transpot_today: 'Default',
+            working_mode: 'Default',
+            status_cycle: 'Default',
+            maximum_load: 'Default',
+            tracking_guide: 'Default',
+        }
+    },
+    props: {
+        get_DATA_TRACK: {
+            type: Object
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.transpot_today = this.get_DATA_TRACK.DATA_AGV_TRACK.transpot_today.value
+            this.working_mode = this.get_DATA_TRACK.DATA_AGV_TRACK.working_mode.value
+            this.status_cycle = this.get_DATA_TRACK.DATA_AGV_TRACK.status_cycle.value
+            this.maximum_load = this.get_DATA_TRACK.DATA_AGV_TRACK.maximum_load.value
+            this.tracking_guide = this.get_DATA_TRACK.DATA_AGV_TRACK.tracking_guide.value
 
+        }, 1000)
+    }
 }
 </script>
 

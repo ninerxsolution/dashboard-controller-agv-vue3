@@ -7,8 +7,8 @@
             <div class="row">
                 <div class="col-6 text-center">
                     <div>
-                        <circle-progress :percent="10" :unit="''" :show-percent="true" :size="100"
-                            class="dummy-meter" />
+                        <circle-progress :percent="(speed_current / 2.0) * 100" :unit="''" :show-percent="true"
+                            :size="100" class="dummy-meter" />
                     </div>
                     <div class="pt-1 text-muted">
                         <small>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-6">
                     <div class="display-4">
-                        0.5 m/s
+                        {{ speed_current }} m/s
                     </div>
                     <small>
                         SPEED MAX 2.0 m/s
@@ -44,6 +44,21 @@ import CircleProgress from "vue3-circle-progress";
 export default {
     components: {
         CircleProgress,
+    },
+    data() {
+        return {
+            speed_current: 'Default',
+        }
+    },
+    props: {
+        get_AGV_RUNNING: {
+            type: Object
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.speed_current = this.get_AGV_RUNNING.AGV_RUNNING_NOW.speed_current.value
+        }, 1000)
     }
 }
 </script>
