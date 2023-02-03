@@ -24,15 +24,10 @@
                 <CardElecCurrMon />
             </div>
 
-            <!-- Run test json : {{ jsonData.return.data.pages.page1.CONSUMPTION_PRODUCTION_TOTAL.total_consumption.value }} -->
-            <!-- Run test json : {{ jsonData }} -->
             Loop test api : <div v-for="loop of jsonData" :key="loop.id">{{ loop.time }}</div>
             Json test here! : {{ jsonData }}
-            <!-- Unloop test api : {{ jsonData }} -->
             <br>
-            <!-- <div v-for="jsonLoop in jsonData" v-bind:key="jsonLoop.id">
-                {{ jsonLoop.name }}
-            </div> -->
+            
         </div>
     </div>
 </template>
@@ -74,21 +69,16 @@ export default {
         this.fetchData();
         setInterval(() => {
             this.fetchData()
-        }, 5000)
-        // this.data_lists = this.jsonData
+        },1000)
     },
     computed: {
-        // returnDatalists(){
-        //     return this.data_lists;
-        // },
+
     },
     methods: {
         async fetchData() {
             try {
                 const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-                // const response = await axios.get('http://localhost:8000/students')
-                this.jsonData = response.data.graph.monthly
-                // this.thrower = response.data
+                this.jsonData = response.data.graph.monthly.energy
             } catch (error) {
                 console.error(error)
             }

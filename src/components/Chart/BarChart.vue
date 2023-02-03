@@ -1,24 +1,17 @@
 <template>
-    <!-- <div v-if="checkValid"> -->
     <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
-    <!-- </div> -->
-    AA {{ typeof get_lists }} is type of {{ get_lists }} AA
+    AA {{ typeof getJson }} is type of {{ getJson }} AA KEY: {{}}
 </template>
   
 <script>
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-
+import axios from 'axios'
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
     name: 'BarChart',
     components: { Bar },
-    computed: {
-        checkValid() {
-            return this.get_lists && this.get_lists.yield;
-        }
-    },
     data() {
         return {
             chartData: {
@@ -26,55 +19,103 @@ export default {
                 datasets: [
                     {
                         label: 'Yield',
-                        data: [10000, 10000, 10000, 10000, 10000, 10000, 2, 4, 5, 4, 3, 2],
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 89, 45, 23],
                         backgroundColor: 'yellow',
                     },
                     {
                         label: 'Enegy',
-                        data: [10000, 2, 3, 5, 4, 3, 2, 4, 5, 4, 3, 2],
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 67, 89, 45],
                         backgroundColor: 'orange',
                     }
                 ],
-
+            },
+            firstData: {
+                labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Yield',
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 89, 45, 23],
+                        backgroundColor: 'yellow',
+                    },
+                    {
+                        label: 'Enegy',
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 67, 89, 45],
+                        backgroundColor: 'orange',
+                    }
+                ],
+            },
+            secondData: {
+                labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Yield',
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 89, 45, 23],
+                        backgroundColor: 'yellow',
+                    },
+                    {
+                        label: 'Enegy',
+                        data: [23, 67, 89, 45, 23, 67, 89, 45, 23, 67, 89, 45],
+                        backgroundColor: 'orange',
+                    }
+                ],
             },
             chartOptions: {
-                responsive: true,
-                scales: {
-                    yAxes: [{
-                    type: 'linear',
-                    position: 'left',
-                    ticks: {
-                        beginAtZero: true
-                    }
-                    }]
-                }
+                responsive: true
             },
+            getJson: '',
+            getYield: '',
+            getEnergy: '',
         }
     },
-    watch: {
-        get_lists(oldD, newD) {
-            console.log("Get List Changed:", oldD, newD, this.chartData.datasets[0].data, this.get_lists.yield);
-        // energyData: this.get_lists,
-            // yieldData: this.get_lists,
-            // get_throw: Object.values(this.get_lists),
-            this.chartData.datasets[0].data = this.get_lists.yield;
-        //     chartOptions: {
-        //     responsive: true
-        // },
-        }
-
-    },
-    // mounted() {
-    //     this.chartData.datasets = this.chartData.rawData.map(item => ({
-    //     label: item.label,
-    //     data: item.data.yield,
-    //     backgroundColor: item.backgroundColor
-    //     }))
-    //  },
     props: {
         get_lists: {
             type: Object,
             required: true
+        }
+    },
+    created() {
+        this.fetchData();
+        setInterval(() => {
+            this.fetchData()
+        },1000)
+        
+        setInterval(()=>{
+            this.thrower_first()
+            setTimeout(() => {
+                this.thrower_second()
+            }, 1000);
+        },1000)
+    },
+    methods: {
+        async fetchData() {
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+                this.getJson = response.data.graph.monthly
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        re_fetch_first(){
+            this.firstData.datasets[0].data = this.getJson.yield
+            this.firstData.datasets[1].data = this.getJson.energy
+        },
+        re_fetch_second(){
+            this.secondData.datasets[0].data = this.getJson.yield
+            this.secondData.datasets[1].data = this.getJson.energy
+        },
+        get_first(call_first){
+            call_first()
+            this.chartData = this.firstData
+        },
+        get_second(call_second){
+            call_second();
+            this.chartData = this.secondData
+        },
+        thrower_first(){
+            this.get_first(this.re_fetch_first);
+        },
+        thrower_second(){
+            this.get_second(this.re_fetch_second);
         }
     }
 }

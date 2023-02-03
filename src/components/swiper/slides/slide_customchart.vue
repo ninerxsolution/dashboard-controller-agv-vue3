@@ -1,60 +1,28 @@
 <template>
     <div>
-        {{  }} {{ this.data.labels }} {{ getData }}
-        <Line :options="options" :type="type" :data="data" />
-        {{ this.data.datasets[0].data }}
+      <p>{{ message }}</p>
+      <p>Last update: {{ time }}</p>
     </div>
-</template>
-
-<script>
-import { Line } from 'vue-chartjs'
-import axios from 'axios'
-
-export default {
-    components: {
-        Line
-    },
+  </template>
+  
+  <script>
+  export default {
     data() {
-        return {
-            jsonData: '',
-            getData: this.jsonData,
-            type: 'line',
-            options: {
-                scales: {
-                    yAxes: [
-                        {
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }
-                    ]
-                }
-            },
-            data: {
-                labels: [],
-                datasets: [
-                    {
-                        label: 'Data One',
-                        backgroundColor: '#f87979',
-                        data: []
-                    }
-                ]
-            }
-        }
+      return {
+        message: 'Hello, Vue!',
+        time: '',
+      };
     },
     mounted() {
-        axios
-            .get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-            .then(response => {
-                this.jsonData = response.data
-                this.data.labels = Object.keys(response.data.graph.monthly)
-                this.data.datasets[0].data = response.data.graph.monthly.yield
-                this.renderChart(this.data, this.options)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
-}
-</script>
-
+      setInterval(() => {
+        this.message = 'The message was updated.';
+        this.time = new Date().toLocaleString();
+      }, 1000);
+    },
+  };
+  </script>
+  
+  
+  
+  
+  
