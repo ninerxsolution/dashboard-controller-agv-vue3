@@ -7,7 +7,7 @@
                 <SlideCustomChart/>
             </SwiperSlide> -->
             <swiper-slide>
-                <SlideComsumption />
+                <SlideComsumption :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
                 <SlideMonitor />

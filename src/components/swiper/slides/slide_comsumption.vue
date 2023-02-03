@@ -58,6 +58,11 @@ export default {
         CardElecVol,
         CardElecCurrMon,
     },
+    props: {
+        getJson: {
+            type: Object,
+        }
+    },
     data() {
         return {
             jsonData: null,
