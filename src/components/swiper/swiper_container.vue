@@ -3,9 +3,9 @@
     <div class="content content-bg mb-4">
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
-            <SwiperSlide>
+            <!-- <SwiperSlide>
                 <SlideCustomChart/>
-            </SwiperSlide>
+            </SwiperSlide> -->
             <swiper-slide>
                 <SlideComsumption />
             </swiper-slide>
@@ -34,13 +34,14 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
+import axios from "axios";
 
 import SlideComsumption from './slides/slide_comsumption.vue';
 import SlideMonitor from './slides/slide_monitor.vue';
 import SlideTrendChart from './slides/slide_trendChart.vue';
 import SlideSetting from './slides/slide_setting.vue'
 
-import SlideCustomChart from './slides/slide_customchart.vue';
+// import SlideCustomChart from './slides/slide_customchart.vue';
 
 import SwiperNav from './swiper_navbar.vue';
 export default {
@@ -51,8 +52,13 @@ export default {
         SlideMonitor,
         SlideTrendChart,
         SlideSetting,
-        SlideCustomChart,
+        // SlideCustomChart,
         SwiperNav,
+    },
+    data(){
+        return {
+            AllJson: '',
+        }
     },
     setup() {
         return {
@@ -65,6 +71,21 @@ export default {
             modules: [Pagination, Navigation],
         };
     },
+    created(){
+        setInterval(()=>{
+            this.fetchData()
+        },1000)
+    },  
+    methods: {
+        async fetchData() {
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+                this.jsonData = response.data
+            } catch (error) {
+                console.error(error)
+            }
+        }
+    }
 };
 </script>
 <style scoped>

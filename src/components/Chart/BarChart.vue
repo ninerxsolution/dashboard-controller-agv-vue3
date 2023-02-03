@@ -96,12 +96,12 @@ export default {
             }
         },
         re_fetch_first(){
-            this.firstData.datasets[0].data = this.getJson.yield
-            this.firstData.datasets[1].data = this.getJson.energy
+            this.firstData.datasets[0].data = this.get_lists.yield
+            this.firstData.datasets[1].data = this.get_lists.energy
         },
         re_fetch_second(){
-            this.secondData.datasets[0].data = this.getJson.yield
-            this.secondData.datasets[1].data = this.getJson.energy
+            this.secondData.datasets[0].data = this.get_lists.yield
+            this.secondData.datasets[1].data = this.get_lists.energy
         },
         get_first(call_first){
             call_first()

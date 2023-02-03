@@ -43,7 +43,7 @@ import CardBatteryCap from './slide_consumption/card_battery_capacity.vue';
 import CardElecVol from './slide_consumption/card_electrical_voltage_agv.vue';
 import CardElecCurrMon from './slide_consumption/card_electrical_current_for_monitor.vue';
 // import { response } from 'express';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
     name: 'App',
@@ -65,25 +65,25 @@ export default {
             data_lists: [10000,2,3,5,4,3,2,4,5,4,3,2],
         }
     },
-    created() {
-        this.fetchData();
-        setInterval(() => {
-            this.fetchData()
-        },1000)
-    },
-    computed: {
+    // created() {
+    //     this.fetchData();
+    //     setInterval(() => {
+    //         this.fetchData()
+    //     },1000)
+    // },
+    // computed: {
 
-    },
-    methods: {
-        async fetchData() {
-            try {
-                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
-                this.jsonData = response.data.graph.monthly.energy
-            } catch (error) {
-                console.error(error)
-            }
-        }
-    }
+    // },
+    // methods: {
+    //     async fetchData() {
+    //         try {
+    //             const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+    //             this.jsonData = response.data.graph.monthly
+    //         } catch (error) {
+    //             console.error(error)
+    //         }
+    //     }
+    // }
 }
 </script>
 
