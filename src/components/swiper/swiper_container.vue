@@ -10,13 +10,13 @@
                 <SlideComsumption :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideMonitor />
+                <SlideMonitor :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideTrendChart />
+                <SlideTrendChart :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideSetting />
+                <SlideSetting :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
                 Slide 5
