@@ -1,14 +1,20 @@
 <template>
     <div class="">
-        <div v-if="btn_is_clicked"></div>
-        <div ref="btn" class="toggle-btn" @click="btn_click">
+        <div></div>
+        <div ref="btn" class="toggle-btn" @click="btn_click ">
             <div class="inner-circle"></div>
         </div>
+        <!-- <span>{{ btn_is_clicked }}</span> -->
     </div>
 </template>
 <script>
 export default{
     name:'buttonToggle',
+    props:{
+        buttValue:{
+            type:Boolean
+        }
+    },
     data(){
         return{
             btn_is_clicked:false,
@@ -23,6 +29,14 @@ export default{
             }
             this.btn_is_clicked = !this.btn_is_clicked;
         }
+    },
+    created(){
+        setInterval(()=>{
+            this.btn_is_clicked = this.buttValue;
+            if(this.buttValue){
+                this.$refs.btn.className = 'toggle-btn active';
+            }
+        },1000)
     }
 }
 </script>
