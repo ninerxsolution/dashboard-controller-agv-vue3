@@ -5,7 +5,7 @@
                 <CardConsumpTotal :get_CONSUMPTION="consumpTotal" />
             </div>
             <div class="col-md-8 grid-margin stretch-card">
-                <CardTrendTotal :msg="jsonData" />
+                <CardTrendTotal :get_TREND_CHART="all_chart" />
             </div>
         </div>
         <div class="row">
@@ -61,11 +61,13 @@ export default {
     data() {
         return {
             consumpTotal: 'Default',
+            all_chart: 'Default',
         }
     },
     created() {
         setInterval(() => {
             this.consumpTotal = this.getJson.return.data.pages.page1
+            this.all_chart = this.getJson.graph
         }, 1000)
     },
 }

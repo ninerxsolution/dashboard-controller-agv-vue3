@@ -1,6 +1,5 @@
 <template>
     <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
-    AA {{ typeof getJson }} is type of {{ getJson }} AA KEY: {{}}
 </template>
   
 <script>
@@ -73,7 +72,7 @@ export default {
             required: true
         }
     },
-    // created() {
+        // created() {
     //     this.fetchData();
     //     setInterval(() => {
     //         this.fetchData()
