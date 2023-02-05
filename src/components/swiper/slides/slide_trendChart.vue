@@ -5,15 +5,19 @@
                 <CardDefExportTotal/>
             </div>
             <div class="col-md-9 grid-margin stretch-card">
-                <CardTrendTotal/>
+                <CardTrendTotal :barchartData="trendEnergy"/>
+                <!-- <span>{{ trendEnergy }}</span> -->
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 grid-margin">
-                <CardTrendSelectAgv/>
+                <CardTrendSelectAgv :powerChart="powerChart" :currentChart="currentChart" :speedchart="speedchart"/>
             </div>
         </div>
+        <!-- <span>{{ powerChart }}</span>
+        <span>{{ speedchart }}</span>
+        <span>{{ currentChart }}</span> -->
     </div>
 </template>
 
@@ -30,8 +34,17 @@ export default {
         CardTrendTotal,
         CardTrendSelectAgv,
     },
+    props:{
+        getJson:{
+            type:Object
+        },
+    },
     data() {
         return {
+            powerChart:'',
+            speedchart:'',
+            currentChart:'',
+            trendEnergy:'',
             detail_export: [
                 { name: 'ENERGY AGV TOTAL', check: true },
                 { name: 'PRODUCTION TOTAL', check: true },
@@ -56,6 +69,14 @@ export default {
 
             ]
         }
+    },
+    created(){
+        setInterval(()=>{
+            this.trendEnergy = this.getJson.graph.monthly
+            this.powerChart = this.getJson.return.data.pages.page4.TREND_SELECT.power_trend.value
+            this.speedchart = this.getJson.return.data.pages.page4.TREND_SELECT.speed_trend.value
+            this.currentChart = this.getJson.return.data.pages.page4.TREND_SELECT.current_trend.value
+        },1000)
     }
 }
 </script>
