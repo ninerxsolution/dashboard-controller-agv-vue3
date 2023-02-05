@@ -2,7 +2,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <div class="row px-2">
-                <div class="col-9 d-flex justify-content-started px-0">
+                <div class="col-9 d-flex justify-content-start px-0">
                     <div class="d-flex h5 mx-0 mt-1">
                         SET PARAMETER AGV
                     </div>
@@ -30,9 +30,9 @@
                     </div>
                 </div>
                 <div class="col-3 bg-dark d-flex">
-                    <div class="d-flex flex-column  card-option-content">
-                        <div class="text-primary text-center ">
-                            <small>WORNNING REPORT</small>
+                    <div class="d-flex flex-column justify-content-center card-option-content">
+                        <div class="text-primary text-center">
+                            <span>WORNNING REPORT</span>
                         </div>
                         <div class="app-option mt-2">
                             <div class="container card-option-content">

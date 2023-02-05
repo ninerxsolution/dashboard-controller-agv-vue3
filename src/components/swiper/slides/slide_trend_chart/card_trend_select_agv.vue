@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:90%;">
+                    <div class="scrollbar scrollbar-success my-2 bg-dark" style="height:90%;">
                         <div class="col">
                             <div class="scrollbar scrollbar-success my-3 bg-dark" style="height:90%;">
                                 <table class="table table-sm table-borderless mt-2">
@@ -65,7 +65,7 @@
 
                         </div>
                     </div>
-                    <div class="col-12 d-flex justify-content-between p-0 m-0">
+                    <div class="col-12 d-flex justify-content-around p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
                         <button class="btn btn-sm btn-primary text-dark">EXPORT EXCEL</button>
                     </div>
