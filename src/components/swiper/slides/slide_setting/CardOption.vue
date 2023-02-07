@@ -25,12 +25,12 @@
                 <div class="app-option">
                     <div class="container card-option-content">
                         <div class="row option-item-row">
-                            <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <div class="col-sm-6 d-flex flex-column justify-content-center">
                                 <div>
                                     <img class="img-social" src="https://logos-download.com/wp-content/uploads/2016/05/Gmail_logo_icon.png" alt="">
                                 </div>
                             </div>
-                            <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+                            <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                 <div class="text-warning mb-2"><small>GMAIL</small> </div>
                                 <div class="mb-2"><button-toggle/></div>
                                 <div class="text-warning"><small>CONFIRM</small> </div>

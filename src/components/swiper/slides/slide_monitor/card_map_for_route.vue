@@ -1,5 +1,5 @@
 <template>
-    <div class="card mb-4">
+    <div class="card  mb-4">
         <div class="card-body">
 
             <div class="d-flex justify-content-between">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 mt-2">
+                <div class="col-12 mt-4">
                     <div class="card-body bg-dark p-2">
                         <div class="card-title d-flex justify-content-between">
                             <div>
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="d-flex justify-content-between mt-3">
-                    <div class="col-3 bg-dark p-4">
+                    <div class="col-3 bg-dark mt-4 p-4">
 
                         <div class="d-flex align-self-middle">
                             <ul class="m-0">
@@ -104,7 +104,7 @@
                             <ul class="mb-0">
                                 <li>
                                     <div>
-                                        <span> AGV 2</span>
+                                        <span>AGV 2</span>
                                     </div>
                                 </li>
                             </ul>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 bg-dark p-4">
+                    <div class="col-3 bg-dark mt-4 p-4">
                         <div class="d-flex ">
                             <ul class="mb-0">
                                 <li>

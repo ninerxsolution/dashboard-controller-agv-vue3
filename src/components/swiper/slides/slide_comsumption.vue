@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid content bg-dark pt-3">
+    <div class="container-fluid content  pt-3">
         <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
                 <CardConsumpTotal :get_CONSUMPTION="consumpTotal" />
@@ -96,4 +96,5 @@ export default {
         color: #ffd000;
     }
 }
+
 </style>
