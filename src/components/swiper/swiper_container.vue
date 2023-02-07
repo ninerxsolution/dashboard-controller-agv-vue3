@@ -1,6 +1,6 @@
 <template>
     <SwiperNav />
-    <div class="content content-bg mb-4">
+    <div class="content  mb-4">
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
             <!-- <SwiperSlide>
@@ -71,7 +71,7 @@ export default {
 .content {
     background-size: 100%;
     background-position: center;
-    /* background-image: url(@/assets/images/bg-agv-dash.jpg); */
+    
 }
 
 .swiper-nav {
@@ -98,10 +98,10 @@ body {
 }
 
 .content {
-    height: 100%;
+    height: auto;
     max-height: 100%;
-
 }
+
 /* 
 @media (min-width: 1000px) {
     .content {
@@ -120,6 +120,7 @@ body {
 
 @media (max-width: 1300px) {
     .swiper-slide {
+        width: 100%;
         height: 780px;
         max-height: auto;
 
@@ -128,6 +129,7 @@ body {
 
 @media (max-width: 1000px) {
     .swiper-slide {
+        width: 100%;
         height: 780px;
         max-height: auto;
 
@@ -147,10 +149,11 @@ body {
 }
 
 .swiper-slide {
+    
     text-align: center;
     font-size: 1vw;
-    background: #191c24;
-
+    
+    height: 870px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

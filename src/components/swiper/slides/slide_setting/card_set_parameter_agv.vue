@@ -23,22 +23,22 @@
                         <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
                     </div>
                 </div>
-                <div class="col-3 bg-dark d-flex">
+                <div class="col-3  d-flex">
                     <div class="d-flex flex-column  card-option-content">
-                        <div class="text-primary text-center ">
+                        <div class="text-primary text-center">
                             <small>WORNNING REPORT</small>
                         </div>
                         <div class="app-option mt-2">
-                            <div class="container card-option-content">
+                            <div class="container card-option-content ">
                                 <div class="row option-item-row">
                                     <div class="col-sm-6 d-flex flex-column justify-content-center">
-                                        <div>
+                                        <div >
                                             <img class="img-social"
                                                 src="https://static.newmobilelife.com/wp-content/uploads/2014/10/LineforiPad00-210x210.png"
                                                 alt="">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+                                    <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>LINE APP</small> </div>
                                         <div class="mb-2 mx-4"><button-toggle /></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
@@ -49,14 +49,14 @@
                         <div class="app-option mt-5">
                             <div class="container card-option-content">
                                 <div class="row option-item-row">
-                                    <div class="col-md-6 d-flex flex-column justify-content-center">
-                                        <div>
+                                    <div class="col-sm-6 d-flex flex-column justify-content-center">
+                                        <div >
                                             <img class="img-social"
                                                 src="https://logos-download.com/wp-content/uploads/2016/05/Gmail_logo_icon.png"
                                                 alt="">
                                         </div>
                                     </div>
-                                    <div class="col-md-6 d-flex flex-column justify-content-center text-center">
+                                    <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>GMAIL</small> </div>
                                         <div class="mb-2 mx-4"><button-toggle /></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
@@ -96,6 +96,7 @@ export default {
 <style lang="scss" scoped>
 .img-social {
     width: 100%;
+    
     border-radius: 20px;
 }
 </style>

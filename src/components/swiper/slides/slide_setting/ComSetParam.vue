@@ -4,7 +4,7 @@
             <div class="col-md-2 ">
                 <div class="d-flex felx-column justify-content-center">
                     <img class="img-agv"
-                        src="https://purepng.com/public/uploads/large/purepng.com-gray-bmw-m4-gts-carcarbmwvehicletransport-961524662033wmsm1.png"
+                        src="@/assets/images/agv.png"
                         alt="">
                 </div>
                 <div class="text-center">

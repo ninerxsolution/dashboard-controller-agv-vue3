@@ -1,9 +1,9 @@
 <template>
     <div class="card">
         <div class="card-body">
-            <h5>
+            <h6>
                 DEFAULT EXPORT TOTAL
-            </h5>
+            </h6>
             <div class="row">
                 <div class="col-12">
                     <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:10rem;">

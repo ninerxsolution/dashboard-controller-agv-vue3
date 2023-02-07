@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid content bg-dark pt-3">
+    <div class="container-fluid content pt-3">
         <div class="row">
             {{ userId }} {{ jsonData }}
             <div v-for="user in users" v-bind:key="user.id">
