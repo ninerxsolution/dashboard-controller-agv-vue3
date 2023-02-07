@@ -29,17 +29,17 @@
             <div class="row">
                 <div class="col-9 mt-2">
                     <div class="row" style="height:120px;">
-                        <SpeedChart />
+                        <LineChart :chartval="speedData" />
                     </div>
                     <div class="row" style="height:120px;">
-                        <PowerChart />
+                        <LineChart :chartval="powerData" />
                     </div>
                     <div class="row" style="height:120px;">
-                        <CurrentChart />
+                        <LineChart :chartval="currentData" />
                     </div>
                 </div>
                 <div class="col-3">
-                    <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:90%;">
+                    <div class="scrollbar scrollbar-success my-2 bg-dark" style="height:90%;">
                         <div class="col">
                             <div class="scrollbar scrollbar-success my-3 bg-dark" style="height:90%;">
                                 <table class="table table-sm table-borderless mt-2">
@@ -65,7 +65,7 @@
 
                         </div>
                     </div>
-                    <div class="col-12 d-flex justify-content-between p-0 m-0">
+                    <div class="col-12 d-flex justify-content-around p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
                         <button class="btn btn-sm btn-primary text-dark">EXPORT EXCEL</button>
                     </div>
@@ -76,18 +76,19 @@
 </template>
 
 <script>
-import SpeedChart from '@/components/Chart/SpeedChart.vue';
-import PowerChart from '@/components/Chart/PowerChart.vue';
-import CurrentChart from '@/components/Chart/CurrentChart.vue';
-// import LineChart from '@/components/Chart/LineChart.vue'
+// import SpeedChart from '@/components/Chart/SpeedChart.vue';
+// import PowerChart from '@/components/Chart/PowerChart.vue';
+// import CurrentChart from '@/components/Chart/CurrentChart.vue';
+import LineChart from '@/components/Chart/LineChart.vue'
 
 export default {
     components: {
-        SpeedChart,
-        PowerChart,
-        CurrentChart,
-        // LineChart,       
+        // SpeedChart,
+        // PowerChart,
+        // CurrentChart,
+        LineChart,
     },
+    props: ['powerChart','speedchart','currentChart',],
     data() {
         return {
             trend_select_agv: [
@@ -101,8 +102,261 @@ export default {
                 { name: 'CURR AGV 2', check: false },
                 { name: 'CURR AGV 3', check: false },
 
-            ]
+            ],
+            // dataset speed          
+            baseSpeedData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            speedData: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Speed',
+                        borderColor: '#0090e7',
+                        backgroundColor: '#0090e7',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            speedDataFirst: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Speed',
+                        borderColor: '#0090e7',
+                        backgroundColor: '#0090e7',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            speedDataSecond: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Speed',
+                        borderColor: '#0090e7',
+                        backgroundColor: '#0090e7',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            // end dataset speed 
+            // dataset power          
+            basePowerData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            powerData: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Power',
+                        borderColor: '#ffab00',
+                        backgroundColor: '#ffab00',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            powerDataFirst: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Power',
+                        borderColor: '#ffab00',
+                        backgroundColor: '#ffab00',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            powerDataSecond: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Power',
+                        borderColor: '#ffab00',
+                        backgroundColor: '#ffab00',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            // end dataset power 
+            // dataset current          
+            baseCurrentData: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            currentData: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Current',
+                        borderColor: '#00d25b',
+                        backgroundColor: '#00d25b',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            currentDataFirst: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Current',
+                        borderColor: '#00d25b',
+                        backgroundColor: '#00d25b',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            currentDataSecond: {
+                labels: ['12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr', '12 hr', '11 hr', '10 hr', '9 hr', '8 hr', '7 hr', '6 hr', '5 hr', '4 hr', '3 hr', '2 hr', '1 hr',],
+                datasets: [
+                    {
+                        label: 'Current',
+                        borderColor: '#00d25b',
+                        backgroundColor: '#00d25b',
+                        data: [],
+                        lineTension: 0.4,
+                        borderWidth: 2.0,
+                        pointRadius: 0,
+                    }
+                ],
+            },
+            // end dataset current 
         }
+    }, created() {
+        setInterval(() => {
+            setTimeout(() => {
+                this.updateCurrentOne()
+                this.updatepowerOne()
+                this.updatespeedOne()
+            }, 3000)
+            this.updateCurrentTwo()
+            this.updatepowerTwo()
+            this.updatespeedTwo()
+        }, 3000)
+    },
+    methods: {
+        //speed 
+        //for speed dataset one
+        updatespeedOne() {
+            try {
+                this.setupspeedDataOne()
+                this.speedDataFirst.datasets[0].data = this.baseSpeedData
+                this.speedData = this.speedDataFirst
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setupspeedDataOne() {
+            this.baseSpeedData.shift()
+            this.baseSpeedData.push(this.speedchart)
+        },
+        //end speed dataset one
+        //------------------------------------------
+        //start speed dataset two
+        updatespeedTwo() {
+            try {
+                this.setupspeedDataTwo()
+                this.speedDataSecond.datasets[0].data = this.baseSpeedData
+                this.speedData = this.speedDataSecond
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setupspeedDataTwo() {
+            this.baseSpeedData.shift()
+            this.baseSpeedData.push(this.speedchart)
+        },
+        //end speed dataset two 
+        //end speed
+
+        //-------------------------------------------------------------------------------------------
+        //power 
+        //for power dataset one
+        updatepowerOne() {
+            try {
+                this.setuppowerDataOne()
+                this.powerDataFirst.datasets[0].data = this.basePowerData
+                this.powerData = this.powerDataFirst
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setuppowerDataOne() {
+            this.basePowerData.shift()
+            this.basePowerData.push(this.powerChart)
+        },
+        //end power dataset one
+        //------------------------------------------
+        //start power dataset two
+        updatepowerTwo() {
+            try {
+                this.setuppowerDataTwo()
+                this.powerDataSecond.datasets[0].data = this.basePowerData
+                this.powerData = this.powerDataSecond
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setuppowerDataTwo() {
+            this.basePowerData.shift()
+            this.basePowerData.push(this.powerChart)
+        },
+        //end power dataset two 
+        //end power
+
+        //-------------------------------------------------------------------------------------------
+
+        //current 
+        //for current dataset one
+        updateCurrentOne() {
+            try {
+                this.setupCurrentDataOne()
+                this.currentDataFirst.datasets[0].data = this.baseCurrentData
+                this.currentData = this.currentDataFirst
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setupCurrentDataOne() {
+            this.baseCurrentData.shift()
+            this.baseCurrentData.push(this.currentChart)
+        },
+        //end current dataset one
+        //------------------------------------------
+        //start current dataset two
+        updateCurrentTwo() {
+            try {
+                this.setupCurrentDataTwo()
+                this.currentDataSecond.datasets[0].data = this.baseCurrentData
+                this.currentData = this.currentDataSecond
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        setupCurrentDataTwo() {
+            this.baseCurrentData.shift()
+            this.baseCurrentData.push(this.currentChart)
+        },
+        //end current dataset two 
+        //end current
+
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+    <Bar id="my-chart-id" :options="chartOptions" :data="barchartData" />
 </template>
   
 <script>
@@ -11,23 +11,24 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
     name: 'BarChart',
     components: { Bar },
+    props:["barchartData"],
     data() {
         return {
-            chartData: {
-                labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Aug'],
-                datasets: [
-                    {
-                        label: 'Yield',
-                        data: [76, 20, 30, 61, 34, 59, 23, 61, 24, 47, 39, 51, 23, 61, 24, 47, 39, 51],
-                        backgroundColor: 'yellow',
-                    },
-                    {
-                        label: 'Enegy',
-                        data: [70, 73, 14, 46, 34, 11, 76, 49, 50, 21, 53, 22, 14, 46, 34, 11, 23, 11],
-                        backgroundColor: 'white',
-                    }
-                ],
-            },
+            // chartData: {
+            //     labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
+            //     datasets: [
+            //         {
+            //             label: 'Yield',
+            //             data: [76, 20, 30, 61, 34, 59, 23, 61, 24, 47, 39, 51],
+            //             backgroundColor: 'yellow',
+            //         },
+            //         {
+            //             label: 'Enegy',
+            //             data: [70, 73, 14, 46, 34, 11, 76, 49, 50, 21, 53, 22],
+            //             backgroundColor: 'white',
+            //         }
+            //     ],
+            // },
             chartOptions: {
                 responsive: true
             }

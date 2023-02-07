@@ -2,17 +2,15 @@
     <div class="container-fluid content      pt-3">
         <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
-                <CardConnect/>
-                
+                <CardConnect />
             </div>
-
             <div class="col-md-8 grid-margin stretch-card">
-                <CardDetailParams/>
+                <CardDetailParams />
             </div>
         </div>
         <div class="row">
             <div class="col-12 grid-margin">
-                <CardMapRoute/>
+                <CardMapRoute />
             </div>
         </div>
     </div>

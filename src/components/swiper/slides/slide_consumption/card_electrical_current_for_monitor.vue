@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-6">
                     <div class="display-4">
-                        49.9 A
+                        {{ current_now }} A
                     </div>
                     <small>
                         CURRENT MAX 120.0
@@ -50,7 +50,21 @@ import CircleProgress from "vue3-circle-progress";
 export default {
     components: {
         CircleProgress,
-
+    },
+    data() {
+        return {
+            current_now: 'Default',
+        }
+    },
+    props: {
+        get_ELECTRICAL_MONITOR: {
+            type: Object
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.current_now = this.get_ELECTRICAL_MONITOR.ELECTRICAL_CURRENT_FOR_MOTOR.current_now.value
+        }, 1000)
     }
 }
 </script>

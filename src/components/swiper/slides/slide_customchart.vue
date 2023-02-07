@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="container-fluid content pt-3">
         <div class="row">
             {{ userId }} {{ jsonData }}
@@ -6,49 +7,32 @@
                 {{ user.address.suite }}
             </div>
         </div>
+=======
+    <div>
+      <p>{{ message }}</p>
+      <p>Last update: {{ time }}</p>
+>>>>>>> b0f4018582d4372e464bc9a49bd9abbc8c7e9dd2
     </div>
-</template>
-
-<script>
-import "vue3-circle-progress/dist/circle-progress.css";
-// import CircleProgress from "vue3-circle-progress";
-// import CustomChart from '@/components/Chart/CustomChart.vue';
-// import jsonSup from '@/assets/variable_mapping/jsonstring.json'
-import axios from 'axios';
-
-export default {
-    name: 'App',
-    components: {
-        // CircleProgress,
-        // CustomChart,
-    },
+  </template>
+  
+  <script>
+  export default {
     data() {
-        return {
-            userId: '',
-            users: [],
-            jsonData: '',
-
-        }
+      return {
+        message: 'Hello, Vue!',
+        time: '',
+      };
     },
-
-    created() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
-            .then(response => {
-                this.users = response.data
-            });
-        // this.jsonData = require("@/assets/variable_mapping/jsonstring.json");
-        // this.jsonData = jsonSup;
-        // const jsonSet = {
-        //     "Home": {
-        //         "Number": 666,
-        //         "People": 600
-        //     }
-        // }
-        // this.jsonData = jsonSet;
-    }
-}
-</script>
-
-<style>
-
-</style>
+    mounted() {
+      setInterval(() => {
+        this.message = 'The message was updated.';
+        this.time = new Date().toLocaleString();
+      }, 1000);
+    },
+  };
+  </script>
+  
+  
+  
+  
+  

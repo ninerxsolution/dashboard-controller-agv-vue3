@@ -174,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3  bg-dark mt-4 pt-4">
+                    <div class="col-3  bg-dark pt-4">
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
@@ -219,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3  bg-dark mt-4 pt-4">
+                    <div class="col-3  bg-dark pt-4">
                         <div class="d-flex text-warning justify-content-between">
                             <ul class="mb-0">
                                 <li>

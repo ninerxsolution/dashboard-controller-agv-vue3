@@ -2,7 +2,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <h5>
-                BATTERY CAPACITY {{ name }} {{ age }} {{ jsonData }}
+                BATTERY CAPACITY
             </h5>
             <div class="d-flex justify-content-between">
                 <div class="progress" style="height:2rem !important;">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="h3 align-self-center m-0">
-                    82.1 %
+                    {{ battery_capacity }} %
                 </div>
             </div>
             <div class="text text-sm text-center text-warning">
@@ -23,7 +23,21 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            battery_capacity: 'Default',
+        }
+    },
+    props: {
+        get_BATTERY: {
+            type: Object
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.battery_capacity = this.get_BATTERY.BATTERY_CAPACITY.value
+        }, 1000)
+    }
 }
 </script>
 

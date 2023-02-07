@@ -2,17 +2,18 @@
     <div class="container-fluid content  pt-3">
         <div class="row">
             <div class="col-md-5 grid-margin stretch-card">
-                <CardConfirmSystem />
+                <CardConfirmSystem :getJson="confirmSys" />
             </div>
             <div class="col-md-7 grid-margin stretch-card">
-                <CardSetParamsSys/>
+                <CardSetParamsSys :getSetParamSys="setParamSys"/>
             </div>
         </div>
         <div class="row">
             <div class="col-12 grid-margin">
-                <CardSetParamsAgv/>
+                <CardSetParamsAgv :getSetParamAgv="setParamAgv" :getAgvSpeed="agvSpeed" :getAgvBatt="agvBatt" :getOption="setOption"/>
             </div>
         </div>
+        <!-- <span>{{ setOption }}</span> -->
     </div>
 </template>
 
@@ -30,8 +31,19 @@ export default {
         CardSetParamsSys,
         CardSetParamsAgv
     },
+    props:{
+        getJson:{
+            type:Object
+        }
+    },
     data() {
         return {
+            confirmSys:undefined,
+            setParamSys:undefined,
+            setParamAgv:undefined,
+            setOption:undefined,
+            agvSpeed:undefined,
+            agvBatt:undefined,
             detail_export: [
                 { name: 'ENERGY AGV TOTAL', check: true },
                 { name: 'PRODUCTION TOTAL', check: true },
@@ -71,7 +83,19 @@ export default {
                 { name: 'AGV 3', speed: '0 m/s', battery: '0 %' },
             ]
         }
+    },
+    created(){
+        setInterval(() =>{
+            // let set_Param_Agv = this.getJson.return.data.pages.page3.SET_PARAMETER_AGV 
+            this.confirmSys = this.getJson.return.data.pages.page3.CONFIRM_RUNNING_SYSTEM.status_agv
+            this.setParamSys = this.getJson.return.data.pages.page3.SET_PARAMETERS_SYSTEM
+            this.setParamAgv = this.getJson.return.data.pages.page3.SET_PARAMETER_AGV
+            this.setOption = this.getJson.return.data.pages.page3.OPTION
+            this.agvBatt = this.getJson.return.data.pages.page1.BATTERY_CAPACITY.value
+            this.agvSpeed = this.getJson.return.data.pages.page1.AGV_RUNNING_NOW.speed_max.value
+        },1000)
     }
+    
 }
 </script>
 

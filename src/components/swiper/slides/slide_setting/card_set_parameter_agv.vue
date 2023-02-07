@@ -2,7 +2,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <div class="row px-2">
-                <div class="col-9 d-flex justify-content-started px-0">
+                <div class="col-9 d-flex justify-content-start px-0">
                     <div class="d-flex h5 mx-0 mt-1">
                         SET PARAMETER AGV
                     </div>
@@ -19,13 +19,19 @@
 
             <div class="row mt-2">
                 <div class="col-9">
-                    <div class="agv-set-param" v-for="cl in car_list" :key="cl">
-                        <com-set-param :name="cl.name" :speed="cl.speed" :battery="cl.battery" />
+                    <div class="agv-set-param">
+                        <com-set-param :getParamAgv="getSetParamAgv" :getAgvSpeed="getAgvSpeed" :getAgvBatt="getAgvBatt" />
+                    </div>
+                    <div class="agv-set-param">
+                        <com-set-param :getParamAgv="getSetParamAgv" :getAgvSpeed="getAgvSpeed" :getAgvBatt="getAgvBatt" />
+                    </div>
+                    <div class="agv-set-param">
+                        <com-set-param :getParamAgv="getSetParamAgv" :getAgvSpeed="getAgvSpeed" :getAgvBatt="getAgvBatt" />
                     </div>
                 </div>
-                <div class="col-3  d-flex">
+                <div class="col-3 bg-dark d-flex">
                     <div class="d-flex flex-column  card-option-content">
-                        <div class="text-primary text-center">
+                        <div class="text-primary text-center ">
                             <small>WORNNING REPORT</small>
                         </div>
                         <div class="app-option mt-2">
@@ -40,7 +46,7 @@
                                     </div>
                                     <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>LINE APP</small> </div>
-                                        <div class="mb-2 mx-4"><button-toggle /></div>
+                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="lineOption" /></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
                                     </div>
                                 </div>
@@ -58,7 +64,7 @@
                                     </div>
                                     <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>GMAIL</small> </div>
-                                        <div class="mb-2 mx-4"><button-toggle /></div>
+                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="gmailOption" /></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
                                     </div>
                                 </div>
@@ -69,7 +75,7 @@
             </div>
         </div>
     </div>
-
+    <!-- <span>{{getOption}}</span> -->
 </template>
 
 <script>
@@ -81,14 +87,26 @@ export default {
         ButtonToggle,
         ComSetParam,
     },
+    props:[
+        'getSetParamAgv',
+        'getAgvSpeed',
+        'getAgvBatt',
+        'getOption'
+    ]
+    ,
     data() {
         return {
-            car_list: [
-                { name: 'AGV 1', speed: '2 m/s', battery: '25 %' },
-                { name: 'AGV 2', speed: '0 m/s', battery: '0 %' },
-                { name: 'AGV 3', speed: '0 m/s', battery: '0 %' },
-            ]
+            setParamAgv:'',
+            lineOption:'',
+            gmailOption:''
         }
+    },
+    created(){
+        setInterval(()=>{
+            this.setParamAgv = this.getSetParamAgv
+            this.lineOption = this.getOption.line_app_setting
+            this.gamilPotion = this.getOption.gmail_setting
+        },3000)
     }
 }
 </script>

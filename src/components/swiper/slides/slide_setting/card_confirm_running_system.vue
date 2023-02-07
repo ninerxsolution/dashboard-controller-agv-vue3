@@ -19,14 +19,17 @@
             <div class="d-flex justify-content-around p-3">
                 <div class="mx-3">
                     <button class="btn btn-inverse-light text-warning">
-                        STATUS: <small>Running</small>
+                        STATUS: <small>{{label}}</small>
                     </button>
                 </div>
                 <div class="mt-2">
-                    <ButtonToggle />
+                    <ButtonToggle :buttValue="buttonValue"/>
                 </div>
                 <div class="h6 text-warning mt-2 mx-3">
                     CONFIRM
+                </div>
+                <div>
+                    <!-- {{ buttonValue }} -->
                 </div>
             </div>
         </div>
@@ -36,8 +39,26 @@
 <script>
 import ButtonToggle from '@/components/button/buttonToggle.vue'
 export default {
+    data(){
+        return{
+            label:'',
+            buttonValue:'',
+        }
+    },
     components:{
         ButtonToggle,
+    },
+    props:{
+        getJson:{
+            type:Object
+        }
+    },
+    created(){
+        
+        setInterval(() =>{
+            this.label = this.getJson["label"];
+            this.buttonValue = this.getJson.value;
+        },1000)
     }
 }
 </script>

@@ -7,16 +7,16 @@
                 <SlideCustomChart/>
             </SwiperSlide> -->
             <swiper-slide>
-                <SlideComsumption />
+                <SlideComsumption :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideMonitor />
+                <SlideMonitor :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideTrendChart />
+                <SlideTrendChart :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
-                <SlideSetting />
+                <SlideSetting :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
                 Slide 5
@@ -34,6 +34,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
+import axios from "axios";
 
 import SlideComsumption from './slides/slide_comsumption.vue';
 import SlideMonitor from './slides/slide_monitor.vue';
@@ -54,6 +55,11 @@ export default {
         // SlideCustomChart,
         SwiperNav,
     },
+    data(){
+        return {
+            AllJson: '',
+        }
+    },
     setup() {
         return {
             pagination: {
@@ -65,6 +71,21 @@ export default {
             modules: [Pagination, Navigation],
         };
     },
+    created(){
+        setInterval(()=>{
+            this.fetchData()
+        },1000)
+    },  
+    methods: {
+        async fetchData() {
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1')
+                this.AllJson = response.data
+            } catch (error) {
+                console.error(error)
+            }
+        }
+    }
 };
 </script>
 <style scoped>

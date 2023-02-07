@@ -45,7 +45,6 @@ export default {
             lineTension: 0.4,
             borderWidth:2.0,
             pointRadius:0,
-
           }
         ],
 },

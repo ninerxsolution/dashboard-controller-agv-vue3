@@ -2,28 +2,29 @@
     <div class="container-fluid content  pt-3">
         <div class="row">
             <div class="col-md-4 grid-margin stretch-card">
-                <CardConsumpTotal />
+                <CardConsumpTotal :get_CONSUMPTION="consumpTotal" />
             </div>
             <div class="col-md-8 grid-margin stretch-card">
-                <CardTrendTotal />
+                <CardTrendTotal :get_TREND_CHART="all_chart" />
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-4 grid-margin">
-                <CardAgvRunning />
-                <CardDataTrack />
+                <CardAgvRunning :get_AGV_RUNNING="consumpTotal" />
+                <CardDataTrack :get_DATA_TRACK="consumpTotal"/>
             </div>
             <div class="col-md-4 grid-margin">
                 <CardSelectAgv />
                 <CardLogoAgv />
-                <CardBatteryCap />
+                <CardBatteryCap :get_BATTERY="consumpTotal" />
             </div>
             <div class="col-md-4 grid-margin">
-                <CardElecVol />
-                <CardElecCurrMon />
+                <CardElecVol :get_ELECTRICAL="consumpTotal"/>
+                <CardElecCurrMon :get_ELECTRICAL_MONITOR="consumpTotal"/>
             </div>
+            <br>
         </div>
+        {{ consumpTotal }}
     </div>
 </template>
 
@@ -37,11 +38,9 @@ import CardLogoAgv from './slide_consumption/card_logo_agv.vue';
 import CardBatteryCap from './slide_consumption/card_battery_capacity.vue';
 import CardElecVol from './slide_consumption/card_electrical_voltage_agv.vue';
 import CardElecCurrMon from './slide_consumption/card_electrical_current_for_monitor.vue';
-// import axios from 'axios';
 
 export default {
     name: 'App',
-
     components: {
         CardConsumpTotal,
         CardTrendTotal,
@@ -53,7 +52,24 @@ export default {
         CardElecVol,
         CardElecCurrMon,
     },
-
+    props: {
+        getJson: {
+            type: Object,
+            required: true
+        }
+    },
+    data() {
+        return {
+            consumpTotal: 'Default',
+            all_chart: 'Default',
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.consumpTotal = this.getJson.return.data.pages.page1
+            this.all_chart = this.getJson.graph
+        }, 1000)
+    },
 }
 </script>
 
