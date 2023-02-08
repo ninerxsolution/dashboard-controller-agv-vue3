@@ -36,6 +36,7 @@ export default {
             Choose: 'Default',
             num: 0,
             Hithere: 'Default',
+            ToSwitch: 'Day',
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
@@ -122,9 +123,9 @@ export default {
         setInterval(() => {
             setTimeout(() => {
                 this.updateChartOne(this.ToSwitch)
-            }, 1000);
+            }, 2500);
             this.updateChartTwo(this.ToSwitch)
-        }, 1000)
+        }, 2500)
     },
     methods: {
         updateChart(clicked) {
@@ -136,12 +137,10 @@ export default {
                 this.monthDataOne.datasets[0].data = this.get_TREND_CHART.monthly.yield
                 this.monthDataOne.datasets[1].data = this.get_TREND_CHART.monthly.energy
                 this.chartData = this.monthDataOne
-
             } else if (ToSwitch == 'Day') {
                 this.dayDataOne.datasets[0].data = this.get_TREND_CHART.daily.yield
                 this.dayDataOne.datasets[1].data = this.get_TREND_CHART.daily.energy
                 this.chartData = this.dayDataOne
-
             }
         },
         updateChartTwo(ToSwitch) {
@@ -154,7 +153,6 @@ export default {
                 this.dayDataTwo.datasets[0].data = this.get_TREND_CHART.daily.yield
                 this.dayDataTwo.datasets[1].data = this.get_TREND_CHART.daily.energy
                 this.chartData = this.dayDataTwo
-
             }
         },
     }
