@@ -6,23 +6,19 @@
                 <h5 class="d-flex">
                     TREND YIELD AND ENEGY TOTAL
                 </h5>
-                {{ num }} {{ Hithere }}
                 <div class="btn-group d-flex" role="group" aria-label="Basic example">
                     <!-- <button type="button" class="btn btn-outline-secondary">
                         Year 
-                    </button> --> 
-                    {{ Choose }}
+                    </button> -->
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
                         Month
                     </button>
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Day')">
                         Day
                     </button>
-                    {{ change_chart_check }}
                 </div>
             </div>
             <BarChart :barchartData="chartData" />
-            {{ GetChange[0] }}
         </div>
     </div>
 </template>
@@ -35,11 +31,11 @@ export default {
     },
     data() {
         return {
-            change_chart_check: 'Day',
+            change_chart_check: 'Default',
             GetChange: 'Default',
             Choose: 'Default',
-            num:0,
-            Hithere:'',
+            num: 0,
+            Hithere: 'Default',
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
@@ -123,65 +119,105 @@ export default {
         }
     },
     created() {
-        this.Hithere = "Hi there!"
-        // this.dailySet()
-        // this.monthlySet()
         setInterval(() => {
             setTimeout(() => {
-            this.num+=1
-                if (this.Choose == 1) {
-                    this.updateChartOne(this.dailySet())
-                    this.Hithere = this.Choose
-                } else if (this.Choose == 2) {
-                    this.updateChartOne(this.monthlySet())
-                    this.Hithere = this.Choose
-                }
+                this.updateChartOne(this.ToSwitch)
             }, 1000);
-            // this.updateChartTwo()
-            this.num+=1
-            if (this.Choose == 1) {
-                this.updateChartOne(this.dailySet())
-            } else if (this.Choose == 2) {
-                this.updateChartOne(this.monthlySet())
-            }
+            this.updateChartTwo(this.ToSwitch)
         }, 1000)
     },
     methods: {
-        updateChart(choose) {
-            if (choose == 'Month') {
-                this.GetChange = this.dailySet()
-                this.change_chart_check = choose
-                this.Choose = 2
-            } else if (choose == 'Day') {
-                this.change_chart_check = choose
-                this.GetChange = this.monthlySet()
-                this.Choose = 1
+        updateChart(clicked) {
+            this.ToSwitch = clicked
+            this.updateChartOne(this.ToSwitch)
+        },
+        updateChartOne(ToSwitch) {
+            if (ToSwitch == 'Month') {
+                this.monthDataOne.datasets[0].data = this.get_TREND_CHART.monthly.yield
+                this.monthDataOne.datasets[1].data = this.get_TREND_CHART.monthly.energy
+                this.chartData = this.monthDataOne
+
+            } else if (ToSwitch == 'Day') {
+                this.dayDataOne.datasets[0].data = this.get_TREND_CHART.daily.yield
+                this.dayDataOne.datasets[1].data = this.get_TREND_CHART.daily.energy
+                this.chartData = this.dayDataOne
+
             }
         },
-        dailySet() {
-            this.dayDataOne.datasets[0].data = this.get_TREND_CHART.daily.yield
-            this.dayDataOne.datasets[1].data = this.get_TREND_CHART.daily.energy
-            // this.dayDataTwo.datasets[0].data = this.get_TREND_CHART.daily.yield
-            // this.dayDataTwo.datasets[1].data = this.get_TREND_CHART.daily.energy
-            return [this.dayDataOne]
+        updateChartTwo(ToSwitch) {
+            if (ToSwitch == 'Month') {
+                this.monthDataTwo.datasets[0].data = this.get_TREND_CHART.monthly.yield
+                this.monthDataTwo.datasets[1].data = this.get_TREND_CHART.monthly.energy
+                this.chartData = this.monthDataTwo
 
+            } else if (ToSwitch == 'Day') {
+                this.dayDataTwo.datasets[0].data = this.get_TREND_CHART.daily.yield
+                this.dayDataTwo.datasets[1].data = this.get_TREND_CHART.daily.energy
+                this.chartData = this.dayDataTwo
+
+            }
         },
-        monthlySet() {
-            this.monthDataOne.datasets[0].data = this.get_TREND_CHART.monthly.yield
-            this.monthDataOne.datasets[1].data = this.get_TREND_CHART.monthly.energy
-            // this.monthDataTwo.datasets[0].data = this.get_TREND_CHART.monthly.yield
-            // this.monthDataTwo.datasets[1].data = this.get_TREND_CHART.monthly.energy
-            return [this.monthDataOne]
-        },
-        updateChartOne(dataSet) {
-            dataSet
-            this.chartData = this.dataSet
-        },
-        updateChartTwo(dataSet) {
-            dataSet
-            this.chartData = this.dataSet
-        }
     }
+    // created() {
+    // this.Hithere = "Hi there!"
+    // this.dailySet()
+    // this.monthlySet()
+    // setInterval(() => {
+    //     setTimeout(() => {
+    //     this.num+=1
+    //         if (this.Choose == 1) {
+    //             this.updateChartOne(this.dailySet())
+    //             this.Hithere = this.Choose
+    //         } else if (this.Choose == 2) {
+    //             this.updateChartOne(this.monthlySet())
+    //             this.Hithere = this.Choose
+    //         }
+    //     }, 1000);
+    // this.updateChartTwo()
+    //     this.num+=1
+    //     if (this.Choose == 1) {
+    //         this.updateChartOne(this.dailySet())
+    //     } else if (this.Choose == 2) {
+    //         this.updateChartOne(this.monthlySet())
+    //     }
+    // }, 1000)
+    // },
+    // methods: {
+    // updateChart(choose) {
+    //     if (choose == 'Month') {
+    //         this.GetChange = this.dailySet()
+    //         this.change_chart_check = choose
+    //         this.Choose = 2
+    //     } else if (choose == 'Day') {
+    //         this.change_chart_check = choose
+    //         this.GetChange = this.monthlySet()
+    //         this.Choose = 1
+    //     }
+    // },
+    // dailySet() {
+    //     this.dayDataOne.datasets[0].data = this.get_TREND_CHART.daily.yield
+    //     this.dayDataOne.datasets[1].data = this.get_TREND_CHART.daily.energy
+    //     // this.dayDataTwo.datasets[0].data = this.get_TREND_CHART.daily.yield
+    //     // this.dayDataTwo.datasets[1].data = this.get_TREND_CHART.daily.energy
+    //     return [this.dayDataOne]
+
+    // },
+    // monthlySet() {
+    //     this.monthDataOne.datasets[0].data = this.get_TREND_CHART.monthly.yield
+    //     this.monthDataOne.datasets[1].data = this.get_TREND_CHART.monthly.energy
+    //     // this.monthDataTwo.datasets[0].data = this.get_TREND_CHART.monthly.yield
+    //     // this.monthDataTwo.datasets[1].data = this.get_TREND_CHART.monthly.energy
+    //     return [this.monthDataOne]
+    // },
+    // updateChartOne(dataSet) {
+    //     dataSet
+    //     this.chartData = this.dataSet
+    // },
+    // updateChartTwo(dataSet) {
+    //     dataSet
+    //     this.chartData = this.dataSet
+    // }
+    // }
 }
 </script>
 
