@@ -24,7 +24,19 @@
                     </div>
                 </div>
             </div>
-            <BarChart :barchartData="chartData" />
+            <div class="col-12">
+                <BarChart :barchartData="chartData" />
+            </div>
+            <div class="col-12 d-flex justify-content-end" role="group" aria-label="Basic example">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
+                        Month
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" @click="updateChart('Day')">
+                        Day
+                    </button>
+                </div>
+            </div>
             <!-- <span>{{ barchartData }}</span> -->
         </div>
     </div>
