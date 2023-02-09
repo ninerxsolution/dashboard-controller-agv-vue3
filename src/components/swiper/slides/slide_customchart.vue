@@ -21,7 +21,7 @@
         {{ investor.investment }}
       </div>
     </div> -->
-    {{ setJson }} {{ getJson }}
+    {{ setJson }} {{ all_chart }}
   </div>
 </template>
 
@@ -40,6 +40,9 @@ export default {
     // this.id = this.getJson.return.data.id;
     // this.arr = this.id.split("-");
     // this.forceData = (this.arr[0] + this.arr[1] + this.arr[2]);
+    setInterval(() => {
+            this.all_chart = this.getJson.graph.monthly.yield
+        }, 1000)
   },
   methods: {
 
@@ -54,10 +57,11 @@ export default {
     },
     downloadFile() {
       this.id = this.getJson.return.data.id;
+      this.id = this.all_chart
       this.arr = this.id.split("-");
       this.forceData = (this.arr[0] + " " + this.arr[1] + " " + this.arr[2]);
 
-      const data = this.getJson.return.data.id;
+      const data = this.investorsList
       const fileName = "agv-default-export-data";
       const exportType = exportFromJSON.types.csv;
 
@@ -70,6 +74,7 @@ export default {
       forceData: 'Default',
       id: '',
       arr: '',
+      all_chart: '',
       setList: [
         {
           id: 0,

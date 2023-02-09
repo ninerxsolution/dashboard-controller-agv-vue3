@@ -21,10 +21,10 @@
                         Year 
                     </button> -->
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
-                        Month
+                        Year
                     </button>
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Day')">
-                        Day
+                        Month
                     </button>
                 </div>
             </div>
