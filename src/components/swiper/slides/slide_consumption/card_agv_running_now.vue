@@ -12,9 +12,10 @@
             </h5>
             <div class="row">
                 <div class="col-6 text-center">
-                    <div>
-                        <circle-progress :percent="(speed_current / 2.0) * 100" :unit="''" :show-percent="true"
-                            :size="100" class="dummy-meter" />
+                    <div class="mr-2">
+                        <currentMeter :getSpeedCurrent="speed_current"/>
+                        <!-- <circle-progress :percent="(speed_current / 2.0) * 100" :unit="''" :show-percent="true"
+                            :size="100" class="dummy-meter" /> -->
                     </div>
                     <div class="pt-1 text-muted">
                         <small>
@@ -22,7 +23,8 @@
                         </small>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <div class="display-4">
                         {{ speed_current }} m/s
                     </div>
@@ -46,10 +48,12 @@
 
 <script>
 import "vue3-circle-progress/dist/circle-progress.css";
-import CircleProgress from "vue3-circle-progress";
+// import CircleProgress from "vue3-circle-progress";
+import currentMeter from "@/components/speedOmeter/currentMeter.vue";
 export default {
     components: {
-        CircleProgress,
+        // CircleProgress,
+        currentMeter,
     },
     data() {
         return {
