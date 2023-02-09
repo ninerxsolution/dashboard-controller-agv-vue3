@@ -156,66 +156,6 @@ export default {
             }
         },
     }
-    // created() {
-    // this.Hithere = "Hi there!"
-    // this.dailySet()
-    // this.monthlySet()
-    // setInterval(() => {
-    //     setTimeout(() => {
-    //     this.num+=1
-    //         if (this.Choose == 1) {
-    //             this.updateChartOne(this.dailySet())
-    //             this.Hithere = this.Choose
-    //         } else if (this.Choose == 2) {
-    //             this.updateChartOne(this.monthlySet())
-    //             this.Hithere = this.Choose
-    //         }
-    //     }, 1000);
-    // this.updateChartTwo()
-    //     this.num+=1
-    //     if (this.Choose == 1) {
-    //         this.updateChartOne(this.dailySet())
-    //     } else if (this.Choose == 2) {
-    //         this.updateChartOne(this.monthlySet())
-    //     }
-    // }, 1000)
-    // },
-    // methods: {
-    // updateChart(choose) {
-    //     if (choose == 'Month') {
-    //         this.GetChange = this.dailySet()
-    //         this.change_chart_check = choose
-    //         this.Choose = 2
-    //     } else if (choose == 'Day') {
-    //         this.change_chart_check = choose
-    //         this.GetChange = this.monthlySet()
-    //         this.Choose = 1
-    //     }
-    // },
-    // dailySet() {
-    //     this.dayDataOne.datasets[0].data = this.get_TREND_CHART.daily.yield
-    //     this.dayDataOne.datasets[1].data = this.get_TREND_CHART.daily.energy
-    //     // this.dayDataTwo.datasets[0].data = this.get_TREND_CHART.daily.yield
-    //     // this.dayDataTwo.datasets[1].data = this.get_TREND_CHART.daily.energy
-    //     return [this.dayDataOne]
-
-    // },
-    // monthlySet() {
-    //     this.monthDataOne.datasets[0].data = this.get_TREND_CHART.monthly.yield
-    //     this.monthDataOne.datasets[1].data = this.get_TREND_CHART.monthly.energy
-    //     // this.monthDataTwo.datasets[0].data = this.get_TREND_CHART.monthly.yield
-    //     // this.monthDataTwo.datasets[1].data = this.get_TREND_CHART.monthly.energy
-    //     return [this.monthDataOne]
-    // },
-    // updateChartOne(dataSet) {
-    //     dataSet
-    //     this.chartData = this.dataSet
-    // },
-    // updateChartTwo(dataSet) {
-    //     dataSet
-    //     this.chartData = this.dataSet
-    // }
-    // }
 }
 </script>
 
