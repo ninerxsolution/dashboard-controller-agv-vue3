@@ -16,7 +16,7 @@
                 <h5 class="d-flex">
                     TREND YIELD AND ENEGY TOTAL
                 </h5>
-                <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                <div class="btn-group d-flex">
                     <!-- <button type="button" class="btn btn-outline-secondary">
                         Year 
                     </button> -->
