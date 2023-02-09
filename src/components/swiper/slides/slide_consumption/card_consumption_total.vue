@@ -1,5 +1,11 @@
 <template>
     <div class="card">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h5 class="">
                 CONSUMPTION PRODUCTION TOTAL
@@ -9,7 +15,7 @@
                     <ul class="list-ticked text-muted mb-0">
                         <li>
                             <div class="text-muted">
-                                PRODUCTION TOTAL (ton)
+                                <small>PRODUCTION TOTAL (ton)</small>
                             </div>
                         </li>
                     </ul>
@@ -29,7 +35,7 @@
                     <ul class="list-ticked text-muted mb-0">
                         <li>
                             <div class="text-muted">
-                                ENERGY (kWh)
+                                <small>ENERGY (kWh)</small>
                             </div>
                         </li>
                     </ul>
@@ -49,7 +55,7 @@
                     <ul class="list-ticked text-muted mb-0">
                         <li>
                             <div class="text-muted">
-                                BATTERY (kWh)
+                                <small>BATTERY (kWh)</small>
                             </div>
                         </li>
                     </ul>
@@ -68,7 +74,7 @@
                     <ul class="list-ticked text-muted mb-0">
                         <li>
                             <div class="text-muted">
-                                CO2 (kg)
+                               <small> CO2 (kg)</small>
                             </div>
                         </li>
                     </ul>

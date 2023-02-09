@@ -1,5 +1,11 @@
 <template>
     <div class="card mb-4">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body p-0 m-0 justify-content-between">
             <h5 class="text-center">
                 <img class="img-agv m-0"

@@ -27,13 +27,14 @@
   }
 
 .swiper {
-  background: #000;
+  
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 .content {
-  background-image: url("../bg-agv.png");
+  
   height: 100%;
   background-repeat:no-repeat;
 }
@@ -43,7 +44,7 @@
 .swiper-slide {
   text-align: justify !important;
   
-  background: #191c24;
+  
   
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9551,6 +9552,7 @@ strong {
 
 small {
   font-size: 1vw;
+  color: #fff;
 }
 
 sub,
@@ -15374,6 +15376,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
+  
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -15410,6 +15413,7 @@ input[type="button"].btn-block {
 }
 
 .navbar-nav {
+  background: #040123;
   display: flex;
   flex-direction: column;
   padding-left: 0;
@@ -15816,18 +15820,19 @@ input[type="button"].btn-block {
 }
 
 .card {
-  background: rgba(60, 60, 60, 0.7);
+  /* background:#1c1c1c; */
   color: #fff;
   position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  /* background-color: #191c24; */
+  background-color: #191c24;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+
 
 .card>hr {
   margin-right: 0;
@@ -18002,6 +18007,7 @@ button.bg-light:focus {
 
 .bg-dark {
   background-color: #0d0d0d !important;
+  border-radius: 1.25rem;
   
 }
 
@@ -24073,9 +24079,10 @@ code {
 
 /* Cards */
 .card {
-  border-radius: 2.25rem;
-  
+  border-radius: 0.25rem;
+  overflow: hidden;
 }
+
 
 .card .card-body {
   padding: 1.75rem 1.5625rem;
@@ -29650,7 +29657,7 @@ div.tagsinput span.tag a {
 /* Navbar */
 .navbar {
   font-weight: normal;
-  background: #191c24;
+
   left: 244px;
   transition: left 0.25s ease;
   -webkit-transition: left 0.25s ease;
@@ -30095,7 +30102,7 @@ div.tagsinput span.tag a {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #191c24;
+  background: #03011a;
   font-weight: normal;
   padding: 0;
   width: 244px;
@@ -30111,7 +30118,7 @@ div.tagsinput span.tag a {
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
   -ms-transition: width 0.25s ease, background 0.25s ease;
-  background: #191c24;
+  background: #03011a;
   width: 244px;
   height: 70px;
 }
@@ -30838,6 +30845,7 @@ div.tagsinput span.tag a {
   padding-right: 0;
   transition: all 0.25s ease;
   width: calc(100% - 244px);
+  
 }
 
 .page-body-wrapper.full-page-wrapper {
@@ -30875,11 +30883,249 @@ div.tagsinput span.tag a {
 }
 
 .content-wrapper {
-  background: #000000;
+  /* background-image: url("../bg5.jpg"); */
+  background-size: cover;
+  background-color: #03011a;
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+
+.bubbles {
+  position: relative;
+  display: flex;
+}
+
+.bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #4fc3dc,
+  0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even)
+{
+  background: #16ffd3;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #16ffd3,
+  0 0 100px #16ffd3;
+}
+
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+     transform: translateY(-10vh) scale(1);
+  }
+}
+
+
+/* 
+.box {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0, 75 );
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(transparent,
+  transparent,transparent,#d400d4);
+  animation: animatebox 4s linear infinite;
+  animation-delay: -2s;
+}
+.box::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(transparent,transparent,
+  transparent,#00ccff);
+  animation: animatebox 4s linear infinite;
+}
+@keyframes animatebox {
+  0% 
+  {
+    transform: rotate(0deg);
+  }
+  100% 
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.box span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 16px;
+  background: #040123;
+  z-index: 1;
+}
+
+
+
+
+.box1 {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0, 75 );
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+}
+
+.box1::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(transparent,
+  transparent,transparent,#d400d4);
+  animation: animatebox 4s linear infinite;
+  animation-delay: -2s;
+}
+.box1::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(transparent,transparent,
+  transparent,#00ccff);
+  animation: animatebox 4s linear infinite;
+}
+@keyframes animatebox {
+  0% 
+  {
+    transform: rotate(0deg);
+  }
+  100% 
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.box1 span { 
+  position: absolute;
+  inset: 5px;
+  border-radius: 16px;
+  background: #040123;
+  z-index: 1;
+} */
+
+
+
+.tranbackground span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent,#1779ff);
+  animation: animate_border1 2s linear infinite;
+}
+
+@keyframes animate_border1 {
+  0% 
+  {
+    transform: translateX(-100%);
+  }
+  100% 
+  {
+    transform: translateX(100%);
+  }
+}
+
+
+
+.tranbackground span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #1779ff);
+  animation: animate_border2 2s linear infinite;
+  animation-delay:  1s;
+}
+
+@keyframes animate_border2 {
+  0% 
+  {
+    transform: translateY(-100%);
+  }
+  100% 
+  {
+    transform: translateY(100%);
+  }
+}
+
+
+
+
+.tranbackground span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+ 
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #1779ff);
+  animation: animate_border3 2s linear infinite;
+}
+
+@keyframes animate_border3   {
+  0% 
+  {
+    transform: translateX(100%);
+  }
+  100% 
+  {
+    transform: translateX(-100%);
+  }
+}
+
+
+.tranbackground span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left:  0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #1779ff);
+  animation: animate_border4 2s linear infinite;
+  animation-delay:  1s;
+}
+
+@keyframes animate_border4 {
+  0% 
+  {
+    transform: translateY(100%);
+  }
+  100% 
+  {
+    transform: translateY(-100%);
+  }
+}

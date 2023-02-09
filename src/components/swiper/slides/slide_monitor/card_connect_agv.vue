@@ -1,5 +1,11 @@
 <template>
     <div class="card">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h5>
                 CONNECT AGV
@@ -9,7 +15,7 @@
                     <ul class="list-ticked text-muted m-0">
                         <li>
                             <div class="text-muted align-self-center">
-                                TOTAL AGV
+                                <small>TOTAL AGV</small>
                             </div>
                         </li>
                     </ul>
@@ -26,7 +32,7 @@
                     <ul class="list-ticked text-muted m-0">
                         <li>
                             <div class="text-muted">
-                                AGV Online
+                                <small>AGV Online</small>
                             </div>
                         </li>
                     </ul>
@@ -43,7 +49,7 @@
                     <ul class="list-ticked text-muted m-0">
                         <li>
                             <div class="text-muted">
-                                AGV Offline
+                                <small>AGV Offline</small>
                             </div>
                         </li>
                     </ul>
@@ -58,7 +64,7 @@
                 </div>
                 <div class="pt-2 text-danger text-center">
                     <div>
-                        For Maximum AGV : 3 connects
+                        <small>For Maximum AGV : 3 connects</small>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,11 @@
 <template>
     <div class="card mb-4">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h5 class="mb-0">
                 DATA AGV TRACK
@@ -8,7 +14,7 @@
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Transpot today
+                            <small>Transpot today</small>
                         </div>
                     </li>
                 </ul>
@@ -20,7 +26,7 @@
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Working mode
+                           <small> Working mode</small>
                         </div>
                     </li>
                 </ul>
@@ -32,7 +38,7 @@
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Status cycle
+                           <small> Status cycle</small>
                         </div>
                     </li>
                 </ul>
@@ -44,7 +50,7 @@
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Maximum load
+                           <small> Maximum load</small>
                         </div>
                     </li>
                 </ul>
@@ -56,7 +62,7 @@
                 <ul class="list-ticked text-muted mb-0 justify-centent-between">
                     <li>
                         <div class="text-muted d-flex justify-centent-between">
-                            Tracking guide
+                           <small> Tracking guide</small>
                         </div>
                     </li>
                 </ul>

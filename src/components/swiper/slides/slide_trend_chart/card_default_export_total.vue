@@ -1,5 +1,11 @@
 <template>
     <div class="card">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h6>
                 DEFAULT EXPORT TOTAL

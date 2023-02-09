@@ -1,5 +1,11 @@
 <template>
     <div class="card mb-4">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h5>
                 AGV RUNNING NOW

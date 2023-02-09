@@ -1,5 +1,11 @@
 <template>
     <div class="card">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <div class="col-12 d-flex justify-content-between">
                 <h5 class="d-flex">

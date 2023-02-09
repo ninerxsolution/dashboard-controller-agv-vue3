@@ -1,12 +1,15 @@
 <template>
     <SwiperNav />
     <div class="content  mb-4">
+       
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
+            
             <!-- <SwiperSlide>
                 <SlideCustomChart/>
             </SwiperSlide> -->
             <swiper-slide>
+                
                 <SlideComsumption :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
