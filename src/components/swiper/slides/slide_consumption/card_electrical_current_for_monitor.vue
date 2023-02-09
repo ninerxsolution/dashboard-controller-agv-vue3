@@ -7,8 +7,9 @@
             <div class="row">
                 <div class="col-6 text-center">
                     <div>
-                        <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
-                            :class="circle - progress" class="dummy-meter" />
+                        <currentNow :get-current-now="current_now"/>
+                        <!-- <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
+                            :class="circle - progress" class="dummy-meter" /> -->
                     </div>
                     <div class="pt-1 text-muted">
                         <small>
@@ -16,7 +17,8 @@
                         </small>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <div class="display-4">
                         {{ current_now }} A
                     </div>
@@ -46,10 +48,13 @@
 
 <script>
 import "vue3-circle-progress/dist/circle-progress.css";
-import CircleProgress from "vue3-circle-progress";
+// import CircleProgress from "vue3-circle-progress";
+import currentNow from "@/components/speedOmeter/currentNowMeter.vue";
+
 export default {
     components: {
-        CircleProgress,
+        // CircleProgress,
+        currentNow
     },
     data() {
         return {
