@@ -1,6 +1,16 @@
 <template>
     <div class="card">
+
+        {{ get_TREND_CHART.monthly }}
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
         <!-- {{ get_TREND_CHART.monthly }} -->
+
         <div class="card-body">
             <div class="col-12 d-flex justify-content-between">
                 <h5 class="d-flex">

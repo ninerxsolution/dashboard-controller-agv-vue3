@@ -1,5 +1,11 @@
 <template>
     <div class="card  mb-4">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
 
             <div class="d-flex justify-content-between">
@@ -174,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3  bg-dark pt-4">
+                    <div class="col-3  bg-dark mt-4 pt-4">
                         <div class="d-flex">
                             <ul class="mb-0">
                                 <li>
@@ -219,7 +225,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3  bg-dark pt-4">
+                    <div class="col-3  bg-dark pt-4 mt-4">
                         <div class="d-flex text-warning justify-content-between">
                             <ul class="mb-0">
                                 <li>

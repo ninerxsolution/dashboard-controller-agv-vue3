@@ -1,5 +1,11 @@
 <template>
     <div class="card mb-4">
+        <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <div class="row px-2">
                 <div class="col-9 d-flex justify-content-start px-0">
@@ -7,7 +13,7 @@
                         SET PARAMETER AGV
                     </div>
                     <div class="d-flex">
-                        <div class="btn btn-dark text text-warning mx-3">
+                        <div class="btn  text text-warning mx-3">
                             CONFIRM STANDBY AGV 1
                         </div>
                     </div>
@@ -17,7 +23,7 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mt-0">
                 <div class="col-9">
                     <div class="agv-set-param">
                         <com-set-param :getParamAgv="getSetParamAgv" :getAgvSpeed="getAgvSpeed" :getAgvBatt="getAgvBatt" />
@@ -29,12 +35,13 @@
                         <com-set-param :getParamAgv="getSetParamAgv" :getAgvSpeed="getAgvSpeed" :getAgvBatt="getAgvBatt" />
                     </div>
                 </div>
-                <div class="col-3 bg-dark d-flex">
-                    <div class="d-flex flex-column  card-option-content">
+                <div class="col-3  bg-dark  card  d-flex">
+                    <div class="d-flex flex-column  card-option-content ">
                         <div class="text-primary text-center ">
                             <small>WORNNING REPORT</small>
                         </div>
-                        <div class="app-option mt-2">
+                       <div class="row ">
+                        <div class="app-option mt-5">
                             <div class="container card-option-content ">
                                 <div class="row option-item-row">
                                     <div class="col-sm-6 d-flex flex-column justify-content-center">
@@ -70,6 +77,7 @@
                                 </div>
                             </div>
                         </div>
+                       </div>
                     </div>
                 </div>
             </div>
@@ -114,6 +122,7 @@ export default {
 <style lang="scss" scoped>
 .img-social {
     width: 100%;
+    height: 96%;
     
     border-radius: 20px;
 }

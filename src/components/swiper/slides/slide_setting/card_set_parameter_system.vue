@@ -1,5 +1,11 @@
 <template>
     <div class="card">
+    <div class="tranbackground">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
         <div class="card-body">
             <h5 class="d-flex">
                 SET PARAMETER SYSTEM
