@@ -5,7 +5,7 @@
                 <CardDefExportTotal/>
             </div>
             <div class="col-md-9 grid-margin stretch-card">
-                <CardTrendTotal :barchartData="trendEnergy"/>
+                <CardTrendTotal :barchartData="allChart"/>
                 <!-- <span>{{ trendEnergy }}</span> -->
             </div>
         </div>
@@ -44,7 +44,7 @@ export default {
             powerChart:'',
             speedchart:'',
             currentChart:'',
-            trendEnergy:'',
+            allChart:'',
             detail_export: [
                 { name: 'ENERGY AGV TOTAL', check: true },
                 { name: 'PRODUCTION TOTAL', check: true },
@@ -72,7 +72,7 @@ export default {
     },
     created(){
         setInterval(()=>{
-            this.trendEnergy = this.getJson.graph.monthly
+            this.allChart = this.getJson.graph
             this.powerChart = this.getJson.return.data.pages.page4.TREND_SELECT.power_trend.value
             this.speedchart = this.getJson.return.data.pages.page4.TREND_SELECT.speed_trend.value
             this.currentChart = this.getJson.return.data.pages.page4.TREND_SELECT.current_trend.value

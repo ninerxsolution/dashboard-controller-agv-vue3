@@ -58,6 +58,7 @@ export default {
     props:['barchartData'],
     data(){
         return{
+            ToSwitch: 'Day',
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
@@ -73,7 +74,37 @@ export default {
                     }
                 ],
             },
-            chartDataOne: {
+            dayDataOne: {
+                labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+                datasets: [
+                    {
+                        label: 'Yield',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: 'yellow',
+                    },
+                    {
+                        label: 'Enegy',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: 'white',
+                    }
+                ],
+            },
+            dayDataTwo: {
+                labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+                datasets: [
+                    {
+                        label: 'Yield',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: 'yellow',
+                    },
+                    {
+                        label: 'Enegy',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        backgroundColor: 'white',
+                    }
+                ],
+            },
+            monthDataOne: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
                     {
@@ -88,7 +119,7 @@ export default {
                     }
                 ],
             },
-            chartDataTwo: {
+            monthDataTwo: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
                     {
@@ -105,25 +136,42 @@ export default {
             },
         }
     },
-    created(){
-        setInterval(()=>{
+    created() {
+        setInterval(() => {
             setTimeout(() => {
-                this.updateChartOne()
-            }, 6000);
-            this.updateCharTwo()
-        },6000)
+                this.updateChartOne(this.ToSwitch)
+            }, 2500);
+            this.updateChartTwo(this.ToSwitch)
+        }, 2500)
     },
-    methods:{
-        updateChartOne(){
-            this.chartDataOne.datasets[0].data = this.barchartData.yield
-            this.chartDataOne.datasets[1].data = this.barchartData.energy
-            this.chartData = this.chartDataOne
+    methods: {
+        updateChart(clicked) {
+            this.ToSwitch = clicked
+            this.updateChartOne(this.ToSwitch)
         },
-        updateCharTwo(){
-            this.chartDataTwo.datasets[0].data = this.barchartData.yield
-            this.chartDataTwo.datasets[1].data = this.barchartData.energy
-            this.chartData = this.chartDataTwo
-        }
+        updateChartOne(ToSwitch) {
+            if (ToSwitch == 'Month') {
+                this.monthDataOne.datasets[0].data = this.barchartData.monthly.yield
+                this.monthDataOne.datasets[1].data = this.barchartData.monthly.energy
+                this.chartData = this.monthDataOne
+            } else if (ToSwitch == 'Day') {
+                this.dayDataOne.datasets[0].data = this.barchartData.daily.yield
+                this.dayDataOne.datasets[1].data = this.barchartData.daily.energy
+                this.chartData = this.dayDataOne
+            }
+        },
+        updateChartTwo(ToSwitch) {
+            if (ToSwitch == 'Month') {
+                this.monthDataTwo.datasets[0].data = this.barchartData.monthly.yield
+                this.monthDataTwo.datasets[1].data = this.barchartData.monthly.energy
+                this.chartData = this.monthDataTwo
+
+            } else if (ToSwitch == 'Day') {
+                this.dayDataTwo.datasets[0].data = this.barchartData.daily.yield
+                this.dayDataTwo.datasets[1].data = this.barchartData.daily.energy
+                this.chartData = this.dayDataTwo
+            }
+        },
     }
 }
 </script>
