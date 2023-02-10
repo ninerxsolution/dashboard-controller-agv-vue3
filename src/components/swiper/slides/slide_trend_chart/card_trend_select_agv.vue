@@ -28,10 +28,10 @@
                 </div>
                 
                 <div class="d-flex">
-                    {{ dateUse }}
+                    <!-- {{ dateUse }} -->
                 </div>
                 <div class="d-flex">
-                    <datepicker :value="date" name="uniquename" v-model="date" @click="splitDate()" class="text-dark"/>
+                    <datepicker :value="date" name="uniquename" v-model="date" @click="splitDate()" class="bg bg-dark text-dark mx-2"/>
                     <span class="text-warning mx-0 align-self-center">STATUS: </span>
                     <span class="text-success mx-4 align-self-center">Online</span>
                 </div>

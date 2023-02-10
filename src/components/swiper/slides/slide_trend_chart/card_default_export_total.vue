@@ -29,12 +29,20 @@
                                         </div>
                                     </td>
                                 </tr>
+
                             </tbody>
+                            <div class="btn-groug col-12 d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-secondary" @click="updateChart('Year')">
+                                    Year
+                                </button>
+                                "{{ ChartType }}"
+                                <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
+                                    Month
+                                </button>
+                            </div>
                         </table>
                     </div>
-                    {{ watchIndex }} {{ detail_export[0].check }} {{ detail_export[1].check }} {{
-                        detail_export[2].check
-                    }}
+                    <!-- {{ watchIndex }} {{ detail_export[0].check }} {{ detail_export[1].check }} {{ detail_export[2].check }} -->
                     <div class="col-12 d-flex justify-content-between p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
                         <button class="btn btn-sm btn-primary text-dark" @click="exportExcel()">EXPORT EXCEL</button>
@@ -50,6 +58,7 @@ import axios from 'axios'
 export default {
     data() {
         return {
+            ChartType: 'Month',
             getExport: '',
             ToSwitch: 'Default',
             watchIndex: '',
@@ -64,7 +73,7 @@ export default {
     methods: {
         async exportExcel() {
             try {
-                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + '&product=' + this.detail_export[1].check + '&cycle=' + this.this.detail_export[2].check + '&type=' + this.typeChart)
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + '&product=' + this.detail_export[1].check + '&cycle=' + this.this.detail_export[2].check + '&type=' + this.ChartType)
                 this.getExport = response.data
                 this.ToSwitch = "GGEZ"
             } catch (error) {
@@ -75,6 +84,9 @@ export default {
             this.watchIndex = index
             this.afterCheck = checked
             this.detail_export[index].check = !checked
+        },
+        updateChart(choose) {
+            this.ChartType = choose
         }
     },
 

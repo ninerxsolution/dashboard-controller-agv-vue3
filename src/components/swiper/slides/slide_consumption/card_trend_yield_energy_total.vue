@@ -1,7 +1,7 @@
 <template>
     <div class="card">
 
-        {{ get_TREND_CHART.monthly }}
+        <!-- {{ get_TREND_CHART.monthly }} -->
         <div class="tranbackground">
         <span></span>
         <span></span>
