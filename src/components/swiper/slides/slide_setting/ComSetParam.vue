@@ -36,11 +36,11 @@
                         <table class="table table-sm table-borderless table-setparam text-warning px-0">
                             <tbody>
                                 <tr>
-                                    <td class="px-0"><button-toggle :buttValue="funcCamera" /></td>
+                                    <td class="px-0"><button-toggle :buttValue="funcCamera" @click="funcCamera = !funcCamera"/></td>
                                     <td class="px-0 text-center">FUNCTION CAMERA</td>
                                 </tr>
                                 <tr>
-                                    <td class="p-0"><button-toggle :buttValue="funcLidar" /></td>
+                                    <td class="p-0"><button-toggle :buttValue="funcLidar" @click="funcLidar = !funcLidar"/></td>
                                     <td class="p-0 text-center">FUNCTION LIDAR</td>
                                 </tr>
                             </tbody>
@@ -50,11 +50,11 @@
                         <table class="table table-sm table-borderless table-setparam text-warning px-0">
                             <tbody>
                                 <tr>
-                                    <td class="px-0"><button-toggle :buttValue="autoMode"/></td>
+                                    <td class="px-0"><button-toggle :buttValue="autoMode" @click="autoMode = !autoMode"/></td>
                                     <td class="px-0 text-center">AUTO MODE</td>
                                 </tr>
                                 <tr>
-                                    <td class="px-0"><button-toggle :butt-value="network" /></td>
+                                    <td class="px-0"><button-toggle :butt-value="network" @click="network = !network" /></td>
                                     <td class="px-0 text-center">NETWORK</td>
                                 </tr>
                             </tbody>
@@ -86,17 +86,25 @@ export default {
             funcLidar:{type:Boolean},
             autoMode:{type:Boolean},
             network:{type:Boolean},
+            tmpParamAgv:''
         }
     },
     created(){
         setInterval(()=>{
-            // this.maxSpeed = this.setParamAgv.function_camera_setting.value
-            // this.maxBatt = this.setParamAgv.
-            this.funcCamera = this.getParamAgv.function_camera_setting.value
-            this.funcLidar = this.getParamAgv.function_lidar_setting.value
-            this.autoMode = this.getParamAgv.function_auto_mode_setting.value
-            this.network = this.getParamAgv.function_network_setting.value
-        },1000)
+            if(JSON.stringify(this.tmpParamAgv) !== JSON.stringify(this.getParamAgv)){
+                this.tmpParamAgv = this.getParamAgv
+                this.setData()
+            }
+        },3000)
+    },
+    methods:{
+        setData(){
+            this.funcCamera = this.tmpParamAgv.function_camera_setting.value
+            this.funcLidar = this.tmpParamAgv.function_lidar_setting.value
+            this.autoMode = this.tmpParamAgv.function_auto_mode_setting.value
+            this.network = this.tmpParamAgv.function_network_setting.value
+
+        }
     }
 }
 </script>

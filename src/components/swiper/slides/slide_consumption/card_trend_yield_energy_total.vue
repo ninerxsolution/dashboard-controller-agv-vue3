@@ -20,10 +20,10 @@
                     <!-- <button type="button" class="btn btn-outline-secondary">
                         Year 
                     </button> -->
-                    <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
+                    <button ref="Month" type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
                         Month
                     </button>
-                    <button type="button" class="btn btn-outline-secondary" @click="updateChart('Day')">
+                    <button ref="Day" type="button" class="btn btn-light" @click="updateChart('Day')">
                         Day
                     </button>
                 </div>
@@ -47,6 +47,7 @@ export default {
             num: 0,
             Hithere: 'Default',
             ToSwitch: 'Day',
+            monthSelected:true,
             chartData: {
                 labels: ['Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Api', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',],
                 datasets: [
@@ -141,6 +142,14 @@ export default {
         updateChart(clicked) {
             this.ToSwitch = clicked
             this.updateChartOne(this.ToSwitch)
+            this.monthSelected = !this.monthSelected
+            if(this.monthSelected){
+                this.$refs.Month.className = "btn btn-light"
+                this.$refs.Day.className = "btn btn-outline-secondary"
+            }else{
+                this.$refs.Day.className = "btn btn-light"
+                this.$refs.Month.className = "btn btn-outline-secondary"
+            }
         },
         updateChartOne(ToSwitch) {
             if (ToSwitch == 'Month') {

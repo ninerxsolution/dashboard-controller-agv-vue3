@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>LINE APP</small> </div>
-                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="lineOption" /></div>
+                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="lineOption" @click="lineOption = !lineOption"/></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="col-sm-6 d-flex flex-column justify-content-center text-center">
                                         <div class="text-warning mb-2"><small>GMAIL</small> </div>
-                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="gmailOption" /></div>
+                                        <div class="mb-2 mx-auto"><button-toggle :buttValue="gmailOption" @click="gmailOption = !gmailOption"/></div>
                                         <div class="text-warning"><small>CONFIRM</small> </div>
                                     </div>
                                 </div>
@@ -88,6 +88,7 @@
 
 <script>
 import ButtonToggle from '@/components/button/buttonToggle.vue';
+// import { click } from 'dom7';
 import ComSetParam from './ComSetParam.vue';
 
 export default {
@@ -104,17 +105,24 @@ export default {
     ,
     data() {
         return {
-            setParamAgv:'',
             lineOption:'',
-            gmailOption:''
+            gmailOption:'',
+            tmpOption:''
         }
     },
     created(){
         setInterval(()=>{
-            this.setParamAgv = this.getSetParamAgv
-            this.lineOption = this.getOption.line_app_setting
-            this.gamilPotion = this.getOption.gmail_setting
+            if(JSON.stringify(this.tmpOption) !== JSON.stringify(this.getOption)){
+                this.tmpOption = this.getOption
+                this.setOptionData()
+            }
         },3000)
+    },
+    methods:{
+        setOptionData(){
+            this.lineOption = this.tmpOption.line_app_setting
+            this.gamilPotion = this.tmpOption.gmail_setting
+        },
     }
 }
 </script>
