@@ -26,18 +26,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex text-dark">
-                    <datepicker :value="date" name="uniquename" v-model="date" />
+                
+                <div class="d-flex">
+                    {{ dateUse }}
                 </div>
                 <div class="d-flex">
-                    <!-- {{ date }} -->
-                    <button class="btn btn-light" @click="splitDate()">
-                        Get date split
-                    </button>
-                    {{ dateUse }} / {{ arr }} / {{ id }}
-                </div>
-                <div class="d-flex">
-                    <button class="btn btn-dark mx-3 align-self-center">Date-time</button>
+                    <datepicker :value="date" name="uniquename" v-model="date" @click="splitDate()" class="text-dark"/>
                     <span class="text-warning mx-0 align-self-center">STATUS: </span>
                     <span class="text-success mx-4 align-self-center">Online</span>
                 </div>
@@ -96,6 +90,7 @@
 // import CurrentChart from '@/components/Chart/CurrentChart.vue';
 import LineChart from '@/components/Chart/LineChart.vue'
 import Datepicker from 'vuejs3-datepicker';
+import axios from 'axios';
 
 export default {
     components: {
@@ -112,6 +107,7 @@ export default {
             id: 'Default',
             arr: 'Default',
             dateUse: 'Default',
+            getExport: 'Default',
             trend_select_agv: [
                 { name: 'SPEED AGV 1', check: true },
                 { name: 'SPEED AGV 2', check: false },
@@ -261,7 +257,9 @@ export default {
             // end dataset current 
         }
     }, created() {
-
+        this.id = this.date.toString()
+        this.arr = this.id.split(" ");
+        this.dateUse = (this.arr[3] + " " + this.arr[1] + " " + this.arr[2])
         setInterval(() => {
             setTimeout(() => {
                 this.updateCurrentOne()
@@ -274,13 +272,17 @@ export default {
         }, 3000)
     },
     methods: {
-        splitDate() {
-            this.dateUse = this.date
-            // this.id = "GUN-ANNA-MATTRA"
+        async splitDate() {
             this.id = this.date.toString()
             this.arr = this.id.split(" ");
-            this.dateUse = 'Clicked Two'
-            this.dateUse = (this.arr[1]+" "+this.arr[2]+" "+this.arr[3])
+            this.dateUse = (this.arr[3] + " " + this.arr[1] + " " + this.arr[2])
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?year='+this.dateUse[3]+'&month='+this.dateUse[1]+'&day='+this.dateUse[2])
+                this.getExport = response.data
+                // this.ToSwitch = "GGEZ"
+            } catch (error) {
+                console.error(error)
+            }
         },
         //speed 
         //for speed dataset one

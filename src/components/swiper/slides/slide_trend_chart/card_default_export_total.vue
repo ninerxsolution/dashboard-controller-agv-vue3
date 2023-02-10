@@ -64,7 +64,7 @@ export default {
     methods: {
         async exportExcel() {
             try {
-                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + 'product=' + this.detail_export[1].check + 'cycle=' + this.this.detail_export[2].check + 'type=' + this.typeChart)
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + '&product=' + this.detail_export[1].check + '&cycle=' + this.this.detail_export[2].check + '&type=' + this.typeChart)
                 this.getExport = response.data
                 this.ToSwitch = "GGEZ"
             } catch (error) {
