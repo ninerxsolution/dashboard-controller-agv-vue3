@@ -1,11 +1,11 @@
 <template>
     <div class="card">
         <div class="tranbackground">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="card-body">
             <h6>
                 DEFAULT EXPORT TOTAL
@@ -15,7 +15,7 @@
                     <div class="scrollbar scrollbar-success mb-3 bg-dark" style="height:10rem;">
                         <table class="table table-sm table-borderless mt-2">
                             <tbody>
-                                <tr v-for="tsa in detail_export" :key="tsa">
+                                <tr v-for="(tsa, index) in detail_export" :key="tsa">
                                     <td scope="row" class="text-left text-warning d-flex justify-content-between">
                                         <ul class="mb-2">
                                             <li style="font-size: 10px">
@@ -23,16 +23,21 @@
                                             </li>
                                         </ul>
                                         <div class="form-check p-0 m-0">
-                                            <input type="checkbox" class="form-check-input my-0" :checked="tsa.check">
+                                            <!-- <input type="checkbox" class="form-check-input my-0" :checked="tsa.check"> -->
+                                            <input type="checkbox" class="form-check-input my-0"
+                                                @click="checked(index, tsa.check)">
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+                    {{ watchIndex }} {{ detail_export[0].check }} {{ detail_export[1].check }} {{
+                        detail_export[2].check
+                    }}
                     <div class="col-12 d-flex justify-content-between p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
-                        <button class="btn btn-sm btn-primary text-dark">EXPORT EXCEL</button>
+                        <button class="btn btn-sm btn-primary text-dark" @click="exportExcel()">EXPORT EXCEL</button>
                     </div>
                 </div>
             </div>
@@ -41,22 +46,38 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
+            getExport: '',
+            ToSwitch: 'Default',
+            watchIndex: '',
+            afterCheck: 'Before',
             detail_export: [
-                { name: 'ENERGY AGV TOTAL', check: true },
-                { name: 'PRODUCTION TOTAL', check: true },
+                { name: 'ENERGY AGV TOTAL', check: false },
+                { name: 'PRODUCTION TOTAL', check: false },
                 { name: 'CYCLE TRANSPORT', check: false },
-                { name: 'POWER AGV TOTAL', check: true },
-                { name: 'TEST', check: false },
-                { name: 'TEST', check: false },
-                { name: 'TEST', check: true },
-                { name: 'TEST', check: false },
-                { name: 'TEST', check: false },
             ]
         }
-    }
+    },
+    methods: {
+        async exportExcel() {
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + 'product=' + this.detail_export[1].check + 'cycle=' + this.this.detail_export[2].check + 'type=' + this.typeChart)
+                this.getExport = response.data
+                this.ToSwitch = "GGEZ"
+            } catch (error) {
+                console.error(error)
+            }
+        },
+        checked(index, checked) {
+            this.watchIndex = index
+            this.afterCheck = checked
+            this.detail_export[index].check = !checked
+        }
+    },
+
 }
 </script>
 

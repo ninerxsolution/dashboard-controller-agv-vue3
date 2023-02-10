@@ -1,11 +1,11 @@
 <template>
     <div class="card mb-4">
         <div class="tranbackground">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="card-body">
             <div class="col-12 d-flex justify-content-between px-0">
                 <div class="d-flex h5 mx-0 mt-1">
@@ -26,6 +26,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="d-flex text-dark">
+                    <datepicker :value="date" name="uniquename" v-model="date" />
+                </div>
+                <div class="d-flex">
+                    <!-- {{ date }} -->
+                    <button class="btn btn-light" @click="splitDate()">
+                        Get date split
+                    </button>
+                    {{ dateUse }} / {{ arr }} / {{ id }}
+                </div>
                 <div class="d-flex">
                     <button class="btn btn-dark mx-3 align-self-center">Date-time</button>
                     <span class="text-warning mx-0 align-self-center">STATUS: </span>
@@ -33,7 +43,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-9 mt-2">
+                <div class="col-12 mt-2">
                     <div class="row" style="height:120px;">
                         <LineChart :chartval="speedData" />
                     </div>
@@ -44,14 +54,13 @@
                         <LineChart :chartval="currentData" />
                     </div>
                 </div>
-                <div class="col-3">
+                <!-- <div class="col-3">
                     <div class="scrollbar scrollbar-success my-2 bg-dark" style="height:90%;">
                         <div class="col">
                             <div class="scrollbar scrollbar-success my-3 bg-dark" style="height:90%;">
                                 <table class="table table-sm table-borderless mt-2">
                                     <tbody>
                                         <tr v-for="tsa in trend_select_agv" :key="tsa">
-                                            <!-- <td class="text-warning p-0">·</td> -->
                                             <td scope="row"
                                                 class="text-left text-warning d-flex justify-content-between">
                                                 <ul class="mb-2">
@@ -75,7 +84,7 @@
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
                         <button class="btn btn-sm btn-primary text-dark">EXPORT EXCEL</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -86,6 +95,7 @@
 // import PowerChart from '@/components/Chart/PowerChart.vue';
 // import CurrentChart from '@/components/Chart/CurrentChart.vue';
 import LineChart from '@/components/Chart/LineChart.vue'
+import Datepicker from 'vuejs3-datepicker';
 
 export default {
     components: {
@@ -93,10 +103,15 @@ export default {
         // PowerChart,
         // CurrentChart,
         LineChart,
+        Datepicker
     },
-    props: ['powerChart','speedchart','currentChart',],
+    props: ['powerChart', 'speedchart', 'currentChart',],
     data() {
         return {
+            date: new Date(),
+            id: 'Default',
+            arr: 'Default',
+            dateUse: 'Default',
             trend_select_agv: [
                 { name: 'SPEED AGV 1', check: true },
                 { name: 'SPEED AGV 2', check: false },
@@ -246,6 +261,7 @@ export default {
             // end dataset current 
         }
     }, created() {
+
         setInterval(() => {
             setTimeout(() => {
                 this.updateCurrentOne()
@@ -258,6 +274,14 @@ export default {
         }, 3000)
     },
     methods: {
+        splitDate() {
+            this.dateUse = this.date
+            // this.id = "GUN-ANNA-MATTRA"
+            this.id = this.date.toString()
+            this.arr = this.id.split(" ");
+            this.dateUse = 'Clicked Two'
+            this.dateUse = (this.arr[1]+" "+this.arr[2]+" "+this.arr[3])
+        },
         //speed 
         //for speed dataset one
         updatespeedOne() {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid content pt-3">
+  <!-- <div class="container-fluid content pt-3">
     <div class="row">
       {{ userId }} {{ jsonData }}
       <div v-for="user in users" v-bind:key="user.id">
@@ -10,7 +10,7 @@
   <div>
     <p>{{ message }}</p>
     <p>Last update: {{ time }}</p>
-  </div>
+  </div> -->
   <div id="app">
     {{ forceData }}
     <div @click="downloadFile()" class="np-btn btn-success">Export to excel</div>
@@ -23,9 +23,7 @@
     </div> -->
     {{ setJson }} {{ all_chart }}
   </div>
-</template>
-
-
+</template> 
 
 <script>
 import exportFromJSON from "export-from-json";
@@ -40,9 +38,9 @@ export default {
     // this.id = this.getJson.return.data.id;
     // this.arr = this.id.split("-");
     // this.forceData = (this.arr[0] + this.arr[1] + this.arr[2]);
-    setInterval(() => {
-            this.all_chart = this.getJson.graph.monthly.yield
-        }, 1000)
+    // setInterval(() => {
+    //   this.all_chart = this.getJson.graph.monthly.yield
+    // }, 1000)
   },
   methods: {
 
@@ -56,12 +54,12 @@ export default {
       this.forceData = 'Reset'
     },
     downloadFile() {
-      this.id = this.getJson.return.data.id;
+      // this.id = this.getJson.return.data.id;
       this.id = this.all_chart
       this.arr = this.id.split("-");
       this.forceData = (this.arr[0] + " " + this.arr[1] + " " + this.arr[2]);
-
-      const data = this.investorsList
+      this.setList[0].name = this.all_chart
+      const data = this.setList
       const fileName = "agv-default-export-data";
       const exportType = exportFromJSON.types.csv;
 
@@ -74,11 +72,12 @@ export default {
       forceData: 'Default',
       id: '',
       arr: '',
+      singleData: [69],
       all_chart: '',
       setList: [
         {
           id: 0,
-          name: "annlists",
+          name: [10, 20, 30],
         },
         {
           ui: 1,
@@ -150,7 +149,7 @@ export default {
     };
   },
 };
-</script>
+</script> 
 <style>
 .np-list {
   padding: 2px 8px;

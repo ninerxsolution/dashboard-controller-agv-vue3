@@ -83,7 +83,7 @@ export default {
         setInterval(()=>{
             this.fetchData()
         },1000)
-    },  
+    },
     methods: {
         async fetchData() {
             try {
