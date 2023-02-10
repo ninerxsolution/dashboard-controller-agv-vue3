@@ -2,10 +2,10 @@
     <div class="container-fluid content  pt-3">
         <div class="row">
             <div class="col-md-3 grid-margin stretch-card">
-                <CardDefExportTotal/>
+                <CardDefExportTotal :v-bind="ChartChoose"/>
             </div>
             <div class="col-md-9 grid-margin stretch-card">
-                <CardTrendTotal :barchartData="allChart"/>
+                <CardTrendTotal :barchartData="allChart" :v-model="ChartChoose"/>
                 <!-- <span>{{ trendEnergy }}</span> -->
             </div>
         </div>

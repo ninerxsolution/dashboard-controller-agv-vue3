@@ -1,11 +1,11 @@
 <template>
     <div class="card">
         <div class="tranbackground">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <div class="card-body">
             <div class="col-12 d-flex justify-content-between">
                 <h5 class="d-flex">
@@ -55,9 +55,13 @@ export default {
     components: {
         BarChart,
     },
-    props:['barchartData'],
-    data(){
-        return{
+    props: {
+        barchartData: {
+            type: Object
+        }
+    },
+    data() {
+        return {
             ToSwitch: 'Day',
             monthSelected:true,
             chartData: {
@@ -144,6 +148,7 @@ export default {
             }, 2500);
             this.updateChartTwo(this.ToSwitch)
         }, 2500)
+        
     },
     methods: {
         updateChart(clicked) {
