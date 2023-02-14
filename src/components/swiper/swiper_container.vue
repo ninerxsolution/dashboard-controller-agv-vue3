@@ -1,17 +1,15 @@
 <template>
-    <SwiperNav />
+    <div>
+        <!-- Bind test : {{ headerSet }} -->
+    </div>
+    <SwiperNav v-modal="headerTopic" />
     <div class="content  mb-4">
-       
         <swiper :pagination="pagination" :spaceBetween="0" :hashNavigation="{ watchState: true, }" :navigation="true"
             :modules="modules" class="mySwiper">
-            
-
             <!-- <SwiperSlide>
                 <SlideCustomChart/>
             </SwiperSlide> -->
-
             <swiper-slide>
-                
                 <SlideComsumption :getJson="AllJson" />
             </swiper-slide>
             <swiper-slide>
@@ -24,17 +22,18 @@
                 <SlideSetting :getJson="AllJson" />
             </swiper-slide>
             <SwiperSlide>
-                <SlideCustomChart :getJson="AllJson"/>
+                <SlideCustomChart :getJson="AllJson" />
             </SwiperSlide>
             <swiper-slide>
                 Slide 5
             </swiper-slide>
         </swiper>
     </div>
-    <!-- hi there -->
 </template>
 
 <script>
+import { provide } from "vue";
+import { inject } from 'vue';
 
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -63,13 +62,22 @@ export default {
         SlideCustomChart,
         SwiperNav,
     },
-    data(){
+    
+    data() {
         return {
             AllJson: '',
+            headerTopic: this.parentData,
         }
     },
     setup() {
+        const parentData = 'Hello from parent';
+        provide('parentData', parentData);
+
+        const headerSet = inject('setHeader');
         return {
+            headerSet,
+
+            parentData,
             pagination: {
                 clickable: true,
                 renderBullet: function (index, className) {
@@ -79,10 +87,10 @@ export default {
             modules: [Pagination, Navigation],
         };
     },
-    created(){
-        setInterval(()=>{
+    created() {
+        setInterval(() => {
             this.fetchData()
-        },1000)
+        }, 1000)
     },
     methods: {
         async fetchData() {
@@ -100,7 +108,7 @@ export default {
 .content {
     background-size: 100%;
     background-position: center;
-    
+
 }
 
 .swiper-nav {
@@ -178,10 +186,10 @@ body {
 }
 
 .swiper-slide {
-    
+
     text-align: center;
     font-size: 1vw;
-    
+
     height: 870px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -219,5 +227,4 @@ body {
     color: rgb(255, 255, 255);
     background: #007aff;
 } */
-
 </style>

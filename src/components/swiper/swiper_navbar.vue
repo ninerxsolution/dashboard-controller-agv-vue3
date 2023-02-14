@@ -1,6 +1,5 @@
 <template>
     <nav class="navbar swiper-nav ">
-
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../assets/images/logo-mini.svg"
                     alt="logo" /></a>
@@ -12,7 +11,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <h3 class="m-0 align-self-center">
-                        COMSUMPTION
+                        CONSUMPTION
                     </h3>
                 </li>
             </ul>
@@ -35,14 +34,41 @@
 </template>
 
 <script>
+import { inject } from 'vue';
+import { provide } from 'vue';
 export default {
+    props: {
+        headerSet: {
+            type: String
+        }
+    },
+    setup() {
+        const headerSet = "CONSUMPTION";
+        provide('setHeader',headerSet);
+
+        const parentData = inject('parentData');
+        return {
+            parentData
+        };
+    },
+    emits: ['update:headerSet'],
     data() {
         return {
             currentDate: new Date(),
+            returnHeader: this.headerSet,
         }
     },
-    created(){
-        this.currentDate = 
+    computed: {
+        localMessage: {
+            get() {
+                return this.headerSet
+            },
+            set() {
+                this.$emit('update:headerSet', "CONSUMPTION")
+            }
+        }
+    },
+    created() {
         setInterval(() => {
             this.currentDate = new Date()
         }, 1000);
