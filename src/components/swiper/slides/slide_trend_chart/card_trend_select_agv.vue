@@ -26,23 +26,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex text-dark">
-                    <datepicker :value="date" name="uniquename" v-model="date" />
+
+                <div class="d-flex">
+                    <!-- {{ dateUse }} -->
                 </div>
                 <div class="d-flex">
-                    <!-- {{ date }} -->
-                    <button class="btn btn-light" @click="splitDate()">
-                        Get date split
-                    </button>
-                    {{ dateUse }} / {{ arr }} / {{ id }}
-                </div>
-                <div class="d-flex">
-                    <button class="btn btn-dark mx-3 align-self-center">Date-time</button>
+                    <datepicker :value="date" name="uniquename" v-model="date" @click="splitDate()"
+                        class="bg bg-dark text-dark mx-2" />
                     <span class="text-warning mx-0 align-self-center">STATUS: </span>
                     <span class="text-success mx-4 align-self-center">Online</span>
                 </div>
             </div>
             <div class="row">
+                <!-- Data check : {{ dateUse }} | {{ currentDate }} | {{ dateChecker }} | {{ getExport }} -->
                 <div class="col-12 mt-2">
                     <div class="row" style="height:120px;">
                         <LineChart :chartval="speedData" />
@@ -96,6 +92,7 @@
 // import CurrentChart from '@/components/Chart/CurrentChart.vue';
 import LineChart from '@/components/Chart/LineChart.vue'
 import Datepicker from 'vuejs3-datepicker';
+import axios from 'axios';
 
 export default {
     components: {
@@ -112,6 +109,10 @@ export default {
             id: 'Default',
             arr: 'Default',
             dateUse: 'Default',
+            getExport: 'Default',
+            currentDate: 'Default',
+            if_check: 'Default',
+            dateChecker: 'Default',
             trend_select_agv: [
                 { name: 'SPEED AGV 1', check: true },
                 { name: 'SPEED AGV 2', check: false },
@@ -133,7 +134,7 @@ export default {
                         label: 'Speed',
                         borderColor: '#0090e7',
                         backgroundColor: '#0090e7',
-                        data: [],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         lineTension: 0.4,
                         borderWidth: 2.0,
                         pointRadius: 0,
@@ -178,7 +179,7 @@ export default {
                         label: 'Power',
                         borderColor: '#ffab00',
                         backgroundColor: '#ffab00',
-                        data: [],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         lineTension: 0.4,
                         borderWidth: 2.0,
                         pointRadius: 0,
@@ -223,7 +224,7 @@ export default {
                         label: 'Current',
                         borderColor: '#00d25b',
                         backgroundColor: '#00d25b',
-                        data: [],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         lineTension: 0.4,
                         borderWidth: 2.0,
                         pointRadius: 0,
@@ -260,28 +261,82 @@ export default {
             },
             // end dataset current 
         }
-    }, created() {
+    },
+    created() {
+        this.setCurrentDate()
+        this.splitDate()
+        setInterval(() => {
+            if (this.dateChecker == 1) {
+                this.getData(this.dateUse)
+            } else if (this.dateChecker == 0){
+                this.getData(this.currentDate)
+            }
+        }, 1000);
 
         setInterval(() => {
             setTimeout(() => {
-                this.updateCurrentOne()
-                this.updatepowerOne()
-                this.updatespeedOne()
-            }, 3000)
-            this.updateCurrentTwo()
-            this.updatepowerTwo()
-            this.updatespeedTwo()
-        }, 3000)
+                this.updateChartSpeedOne()
+                this.updateChartPowerOne()
+                this.updateChartCurrentOne()
+            }, 2000)
+            this.updateChartSpeedTwo()
+            this.updateChartPowerTwo()
+            this.updateChartCurrentTwo()
+        }, 2000)
+        // this.currentDateCheck()
     },
     methods: {
+        async getData(dateUse) {
+            dateUse
+            try {
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/spc?year=' + dateUse[3] + '&month=' + dateUse[1] + '&day=' + dateUse[2])
+                this.getExport = response.data.return
+            } catch (error) {
+                console.error(error)
+            }
+        },
         splitDate() {
-            this.dateUse = this.date
-            // this.id = "GUN-ANNA-MATTRA"
             this.id = this.date.toString()
             this.arr = this.id.split(" ");
-            this.dateUse = 'Clicked Two'
-            this.dateUse = (this.arr[1]+" "+this.arr[2]+" "+this.arr[3])
+            this.dateUse = (this.arr[3] + " " + this.arr[1] + " " + this.arr[2])
+            if (this.currentDate == this.dateUse) {
+                this.if_check = "Checked!"
+                this.dateChecker = 1
+            } else if (this.currentDate != this.dateUse) {
+                this.if_check = "Unchecked"
+                this.dateChecker = 0
+            }
         },
+        setCurrentDate() {
+            this.id = this.date.toString()
+            this.arr = this.id.split(" ");
+            this.currentDate = (this.arr[3] + " " + this.arr[1] + " " + this.arr[2])
+        },
+        updateChartSpeedOne() {
+            this.speedDataFirst.datasets[0].data = this.getExport.speed
+            this.speedData = this.speedDataFirst
+        },
+        updateChartSpeedTwo() {
+            this.speedDataSecond.datasets[0].data = this.getExport.speed
+            this.speedData = this.speedDataSecond
+        },
+        updateChartPowerOne() {
+            this.powerDataFirst.datasets[0].data = this.getExport.power
+            this.powerData = this.powerDataFirst
+        },
+        updateChartPowerTwo() {
+            this.powerDataSecond.datasets[0].data = this.getExport.power
+            this.powerData = this.powerDataSecond
+        },
+        updateChartCurrentOne() {
+            this.currentDataFirst.datasets[0].data = this.getExport.cycle
+            this.currentData = this.currentDataFirst
+        },
+        updateChartCurrentTwo() {
+            this.currentDataSecond.datasets[0].data = this.getExport.cycle
+            this.currentData = this.currentDataSecond
+        },
+
         //speed 
         //for speed dataset one
         updatespeedOne() {

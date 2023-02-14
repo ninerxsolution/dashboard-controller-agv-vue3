@@ -10,42 +10,125 @@
             <h5 class="d-flex">
                 SET PARAMETER SYSTEM
             </h5>
-            <span>{{set_param_sys}}</span>
-            <!-- <div class="col-12">
+            <div class="col-12">
                 <div class="scrollbar scrollbar-setting-setpara" style="height:10rem;">
                     <table class="table table-sm table-borderless force-overflow-setting mt-2">
                         <tbody>
-                            <tr v-for="sps in set_param_sys" :key="sps">
-                                <td scope="row" class="text-left text-warning p-0">
-                                    <ul class="mb-2">
-                                        <li>
-                                            {{ sps.name_left }}
+                            <tr>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            <span class="text-sm">AGV</span>
                                         </li>
                                     </ul>
                                 </td>
-                                <td class="text-center text-primary sup-val">
-                                    <div class="val bg-dark p-2">
-                                        {{ sps.val_left }}
-                                    </div>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="agv_setting">
                                 </td>
-                                <td class="space"></td>
-                                <td scope="row" class="text-left text-warning p-0">
-                                    <ul>
-                                        <li>
-                                            {{ sps.name_right }}
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            <span>PRODUCTION</span>
                                         </li>
                                     </ul>
                                 </td>
-                                <td class="text-center text-primary sup-val">
-                                    <div class="val bg-dark p-2">
-                                        {{ sps.val_right }}
-                                    </div>
+                                <td >
+                                    <input :class="classInput" type="text" name="" id="" v-model="product_setting">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                             <span>MAX SPEED</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="max_speed_setting">
+                                </td>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            MAX LOAD
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="max_load_setting">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            CYCKE TIME
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="cycle_time_setting">
+                                </td>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            LOOP CYCLE
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="loop_cycle_setting">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            DISTANCE
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="distance_setting">
+                                </td>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            CAMERA
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="button" name="" id="" v-model="camera_setting" @click="(this.camera_setting == 'YES')? camera_setting = 'NO':camera_setting = 'YES'">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            BATTERY TIME
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="text" name="" id="" v-model="batter_time_setting">
+                                </td>
+                                <td scope="row" class="text-left text-warning">
+                                    <ul class="m-auto">
+                                        <li >
+                                            LIDAR
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <input :class="classInput" type="button" name="" id="" v-model="lidar_setting" @click="(this.lidar_setting == 'YES')? lidar_setting = 'NO':lidar_setting ='YES'">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div> -->
+            </div>
+            <!-- <span>{{ tmpJson }}</span> -->
         </div>
     </div>
 </template>
@@ -59,27 +142,55 @@ export default {
     },
     data() {
         return {
-            set_param_sys:''
-            // set_param_sys: [
-            //     { name_left: 'AGV', val_left: '1', name_right: 'PRODUCTION', val_right: '400 ton.' },
-            //     { name_left: 'MAX SPEED', val_left: '2 m/s', name_right: 'MAX LOAD', val_right: '4 ton.' },
-            //     { name_left: 'CYCLE TIME', val_left: '10 min.', name_right: 'LOOP CYCLE', val_right: '100 cyc.' },
-            //     { name_left: 'DISTANCE', val_left: '500 m', name_right: 'CAMERA', val_right: 'YES' },
-            //     { name_left: 'BATTERY TIME', val_left: '8 hour', name_right: 'LIDAR', val_right: 'YES' },
-            //     { name_left: 'test', val_left: '0', name_right: 'test', val_right: '0' },
-            //     { name_left: 'test', val_left: '0', name_right: 'test', val_right: '0' },
-            //     { name_left: 'test', val_left: '0', name_right: 'test', val_right: '0' },
-            // ]
+            intervalTime:3000,
+            classInput:"form-control form-control-sm input-param text-center text-primary",
+            agv_setting:'default',
+            product_setting:'default',
+            max_speed_setting:'default',
+            max_load_setting:'default',
+            cycle_time_setting:'default',
+            loop_cycle_setting:'default',
+            distance_setting:'default',
+            camera_setting:'default',
+            batter_time_setting:'default',
+            lidar_setting:'default',
+            tmpJson:''
         }
     },
     created(){
         setInterval(()=>{
-            this.set_param_sys = this.getSetParamSys;
-        },3000)
+            if(JSON.stringify(this.tmpJson) !== JSON.stringify(this.getSetParamSys))
+            { 
+                this.tmpJson = this.getSetParamSys
+                this.setValue()
+            }
+        },3000);
+    },
+    methods:{
+        setValue(){
+            this.agv_setting = this.tmpJson.agv_setting.value || 0
+            this.product_setting = this.tmpJson.product_setting.value || 0
+            this.max_speed_setting = this.tmpJson.max_speed_setting.value || 0
+            this.max_load_setting = this.tmpJson.max_load_setting.value || 0
+            this.cycle_time_setting = this.tmpJson.cycle_time_setting.value || 0
+            // this.loop_cycle_setting = this.tmpJson.loop_cycle_setting.value || 0
+            this.distance_setting = this.tmpJson.distance_setting.value || 0
+            this.camera_setting = this.tmpJson.camera_setting.label || 0
+            this.batter_time_setting = this.tmpJson.batter_time_setting.value || 0
+            this.lidar_setting = this.tmpJson.lidar_setting.label || 0
+        },
+        cameraButtonClick(){
+            (this.camera_setting == "YES") ? "NO":"YES"
+        },
+        lidarButtonClick(){
+
+        }
     }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style  scoped>
+.input-param{
+    width: 100%;
+}
 </style>

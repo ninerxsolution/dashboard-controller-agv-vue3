@@ -1,6 +1,5 @@
 <template>
     <nav class="navbar swiper-nav ">
-        
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../assets/images/logo-mini.svg"
                     alt="logo" /></a>
@@ -12,6 +11,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <h3 class="m-0 align-self-center">
+
                         
                         <span style="--i:1;">C</span>
                         <span style="--i:2;">O</span>
@@ -24,6 +24,7 @@
                         <span style="--i:9;">I</span>
                         <span style="--i:10;">O</span>
                         <span style="--i:11;">N</span>
+
                     </h3>
                 </li>
             </ul>
@@ -34,7 +35,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    TIME DATE : 20/10/2023 15:30:45
+                    TIME DATE : {{ currentDate.toLocaleString('en-GB') }}
                 </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
@@ -46,8 +47,45 @@
 </template>
 
 <script>
+import { inject } from 'vue';
+import { provide } from 'vue';
 export default {
+    props: {
+        headerSet: {
+            type: String
+        }
+    },
+    setup() {
+        const headerSet = "CONSUMPTION";
+        provide('setHeader',headerSet);
 
+        const parentData = inject('parentData');
+        return {
+            parentData
+        };
+    },
+    emits: ['update:headerSet'],
+    data() {
+        return {
+            currentDate: new Date(),
+            returnHeader: this.headerSet,
+        }
+    },
+    computed: {
+        localMessage: {
+            get() {
+                return this.headerSet
+            },
+            set() {
+                this.$emit('update:headerSet', "CONSUMPTION")
+            }
+        }
+    },
+    created() {
+        setInterval(() => {
+            this.currentDate = new Date()
+        }, 1000);
+    }
 }
 </script>
 

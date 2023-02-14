@@ -25,7 +25,7 @@
             </div>
             <br>
         </div>
-        {{ consumpTotal }}
+        <!-- {{ consumpTotal }} -->
     </div>
 </template>
 

@@ -22,20 +22,14 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-around p-3">
-                <div class="mx-3">
-                    <button class="btn btn-inverse-light text-warning">
+            <div class="row mt-3">
+                <div class="col-6 d-flex justify-content-center">
+                    <button class="ml-4 btn btn-inverse-light text-warning m-auto">
                         STATUS: <small>{{label}}</small>
                     </button>
                 </div>
-                <div class="mt-2">
-                    <ButtonToggle :buttValue="buttonValue"/>
-                </div>
-                <div class="h6 text-warning mt-2 mx-3">
-                    CONFIRM
-                </div>
-                <div>
-                    <!-- {{ buttonValue }} -->
+                <div class="col-6">
+                    <button class="btn btn-primary m-auto full-width">  CONFIRM  </button>
                 </div>
             </div>
         </div>
@@ -43,7 +37,7 @@
 </template>
 
 <script>
-import ButtonToggle from '@/components/button/buttonToggle.vue'
+// import ButtonToggle from '@/components/button/buttonToggle.vue'
 export default {
     data(){
         return{
@@ -52,7 +46,7 @@ export default {
         }
     },
     components:{
-        ButtonToggle,
+        // ButtonToggle,
     },
     props:{
         getJson:{
@@ -70,5 +64,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.full-width{
+    width: 100%;
+}
 </style>

@@ -29,16 +29,25 @@
                                         </div>
                                     </td>
                                 </tr>
+
                             </tbody>
+                            <div class="btn-groug col-12 d-flex justify-content-between">
+                                <button type="button" class="btn btn-outline-secondary" @click="updateChart('year')">
+                                    Year
+                                </button>
+                                "{{ ChartType }}"
+                                <button type="button" class="btn btn-outline-secondary" @click="updateChart('month')">
+                                    Month
+                                </button>
+                            </div>
                         </table>
                     </div>
-                    {{ watchIndex }} {{ detail_export[0].check }} {{ detail_export[1].check }} {{
-                        detail_export[2].check
-                    }}
+                    <!-- {{ watchIndex }} {{ detail_export[0].check }} {{ detail_export[1].check }} {{ detail_export[2].check }} -->
                     <div class="col-12 d-flex justify-content-between p-0 m-0">
                         <button class="btn btn-sm btn-warning text-dark">SELECT ALL</button>
                         <button class="btn btn-sm btn-primary text-dark" @click="exportExcel()">EXPORT EXCEL</button>
                     </div>
+                    <!-- {{ tmpExpt_1 }} {{ tmpExpt_2 }} {{ tmpExpt_3 }} {{ ChartType }} {{ getExport }} -->
                 </div>
             </div>
         </div>
@@ -47,13 +56,19 @@
 
 <script>
 import axios from 'axios'
+import exportFromJSON from "export-from-json";
+
 export default {
     data() {
         return {
+            ChartType: 'month',
             getExport: '',
             ToSwitch: 'Default',
             watchIndex: '',
             afterCheck: 'Before',
+            tmpExpt_1: 'Default_1',
+            tmpExpt_2: 'Default_2',
+            tmpExpt_3: 'Default_3',
             detail_export: [
                 { name: 'ENERGY AGV TOTAL', check: false },
                 { name: 'PRODUCTION TOTAL', check: false },
@@ -61,20 +76,35 @@ export default {
             ]
         }
     },
+    created() {
+        this.tmpExpt_1 = this.detail_export[0].check
+        this.tmpExpt_2 = this.detail_export[1].check
+        this.tmpExpt_3 = this.detail_export[2].check
+    },
     methods: {
         async exportExcel() {
             try {
-                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/-1?energy=' + this.detail_export[0].check + 'product=' + this.detail_export[1].check + 'cycle=' + this.this.detail_export[2].check + 'type=' + this.typeChart)
-                this.getExport = response.data
-                this.ToSwitch = "GGEZ"
+                const response = await axios.get('https://se-sskru.com/ev-rail/json/AGV_1/export?energy=' + this.tmpExpt_1 + '&product=' + this.tmpExpt_2 + '&cycle=' + this.tmpExpt_3 + '&type=' + this.ChartType)
+                this.getExport = response.data.return.export
+                this.ToSwitch = "Incorrected!"
             } catch (error) {
                 console.error(error)
             }
+            const data = this.getExport
+            const fileName = "agv-default-export-data";
+            const exportType = exportFromJSON.types.csv;
+            if (data) exportFromJSON({ data, fileName, exportType });
         },
         checked(index, checked) {
             this.watchIndex = index
             this.afterCheck = checked
             this.detail_export[index].check = !checked
+            this.tmpExpt_1 = this.detail_export[0].check
+            this.tmpExpt_2 = this.detail_export[1].check
+            this.tmpExpt_3 = this.detail_export[2].check
+        },
+        updateChart(choose) {
+            this.ChartType = choose
         }
     },
 
