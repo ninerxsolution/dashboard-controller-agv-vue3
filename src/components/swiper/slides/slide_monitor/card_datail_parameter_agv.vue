@@ -44,8 +44,7 @@
             <div class="row mt-3">
                 <div class="col-3">
                     <div class="justify-content-between">
-                        <circle-progress :percent="15" :unit="kg / hr" :show-percent="false" :size="100"
-                            :fill-color="'#89b8e0'" class="dummy-meter" />
+                        <CurrentMeter :getSpeedCurrent="speedCurrent"/>
                     </div>
                     <div class="pt-1 text-muted text-center">
                         <div>
@@ -63,8 +62,7 @@
                 </div>
                 <div class="col-3">
                     <div class="justify-content-between">
-                        <circle-progress :percent="80" :unit="kg / hr" :show-percent="false" :size="100"
-                            :fill-color="'#ffd000'" class="dummy-meter" />
+                        <ElectricalValtageMeter :getValtageEverage="valtageEverage"/>
                     </div>
                     <div class="pt-1 text-muted text-center">
                         <div>
@@ -82,8 +80,7 @@
                 </div>
                 <div class="col-3">
                     <div class="justify-content-between">
-                        <circle-progress :percent="80" :unit="kg / hr" :show-percent="false" :size="100"
-                            :fill-color="'#00a2ff'" class="dummy-meter" />
+                        <CurrentNow :getCurrentNow="currentNow" />
                     </div>
                     <div class="pt-1 text-muted text-center">
                         <div>
@@ -101,8 +98,7 @@
                 </div>
                 <div class="col-3">
                     <div class="justify-content-between">
-                        <circle-progress :percent="45" :unit="kg / hr" :show-percent="false" :size="100"
-                            :fill-color="'#4cff45'" class="dummy-meter" />
+                        <PowerNow :getPowerNow="powerNow"/>
                     </div>
                     <div class="pt-1 text-muted text-center">
                         <div>
@@ -125,11 +121,27 @@
 
 <script>
 import "vue3-circle-progress/dist/circle-progress.css";
-import CircleProgress from "vue3-circle-progress";
+// import CircleProgress from "vue3-circle-progress";
+import PowerNow from "@/components/speedOmeter/powerNow.vue";
+import CurrentMeter from "@/components/speedOmeter/currentMeter.vue"
+import ElectricalValtageMeter from "@/components/speedOmeter/electricalValtageMeter.vue";
+import CurrentNow from "@/components/speedOmeter/currentNowMeter.vue";
+CurrentMeter
 export default {
     components: {
-        CircleProgress,
-
+        // CircleProgress,
+        PowerNow,
+        CurrentMeter,
+        ElectricalValtageMeter,
+        CurrentNow
+    },
+    data(){
+        return{
+            powerNow:2.5,
+            speedCurrent:0.5,
+            valtageEverage:50.6,
+            currentNow:49.9
+        }
     }
 }
 </script>
