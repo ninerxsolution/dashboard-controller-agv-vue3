@@ -32,10 +32,14 @@
                         CONNECT :
                     </div>
                     <button-toggle class="mx-2 align-self-center" />
-                    <button class="btn btn-warning text-dark mx-2 px-4">
-                        UPDATE MAP
-                    </button>
+                    <!-- <button class="btn btn-warning text-dark mx-2 px-4" >
+                      UPDATE MAP
+                    </button> -->
+                    <a href="#" style="--clr:#00ccbb;--i:1;"><span>UPDATE MAP</span></a>
+                    
+
                 </div>
+                
             </div>
             <div class="row">
                 <div class="col-12 mt-4">
@@ -286,5 +290,83 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+a {
+   
+   position: relative;
+   padding: 10px 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(0, 0, 0, 0.5);
+   transition: 1s;
+   overflow: hidden;
+   text-decoration: none;
+   -webkit-box-reflect: below 1px linear-gradient(transparent,
+   transparent,#0004);
+   border-radius: 20px;
+}
+
+a:hover {
+   background: var(--clr);
+   box-shadow: 0 0 10px var(--clr),
+   0 0 30px var(--clr),
+   0 0 60px var(--clr),
+   0 0 100px var(--clr);
+}
+
+a::before {
+   content: '';
+   position: absolute;
+   width: 50px;
+   height: 900%;
+   background: var(--clr);
+   transition: 1s;
+   animation: animate 2s linear infinite;
+   animation-delay: calc(0.33s * var(--i));
+   
+}
+a:hover:before{
+   width: 120%;
+}
+@keyframes animate {
+   0%
+   {
+       transform: rotate(0deg);
+   }
+   100%
+   {
+       transform: rotate(360deg);
+   }
+}
+
+a::after {
+   content: '';
+   position: absolute;
+   inset: 4px;
+   background: #191c24;
+
+   transition: 0.5;
+   border-radius: 20px;
+}
+a:hover::after {
+   background: var(--clr);
+}
+
+a span {
+   position: relative;
+   z-index: 1;
+   font-size: 1 vw;
+   color: #fff;
+   opacity: 0.5;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   transition: 0.5s;
+}
+
+a:hover span {
+   opacity: 1;
+}
+
 
 </style>

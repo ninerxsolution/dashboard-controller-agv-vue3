@@ -12,7 +12,18 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <h3 class="m-0 align-self-center">
-                        COMSUMPTION
+                        
+                        <span style="--i:1;">C</span>
+                        <span style="--i:2;">O</span>
+                        <span style="--i:3;">M</span>
+                        <span style="--i:4;">S</span>
+                        <span style="--i:5;">U</span>
+                        <span style="--i:6;">M</span>
+                        <span style="--i:7;">P</span>
+                        <span style="--i:8;">T</span>
+                        <span style="--i:9;">I</span>
+                        <span style="--i:10;">O</span>
+                        <span style="--i:11;">N</span>
                     </h3>
                 </li>
             </ul>

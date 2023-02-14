@@ -15820,6 +15820,7 @@ input[type="button"].btn-block {
 }
 
 .card {
+  
   /* background:#1c1c1c; */
   color: #fff;
   position: relative;
@@ -15827,7 +15828,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #191c24;
+  background: #191c24;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -30896,7 +30897,7 @@ div.tagsinput span.tag a {
 /*# sourceMappingURL=maps/style.css.map */
 
 
-.bubbles {
+ .bubbles {
   position: relative;
   display: flex;
 }
@@ -30932,7 +30933,7 @@ div.tagsinput span.tag a {
   100%{
      transform: translateY(-10vh) scale(1);
   }
-}
+} 
 
 
 /* 
@@ -31129,3 +31130,47 @@ div.tagsinput span.tag a {
     transform: translateY(-100%);
   }
 }
+
+
+
+
+h3 span {
+  animation: textanimate 3s linear infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes textanimate {
+  0% 
+  {
+    color: #fff;
+    filter: blur(2px) hue-rotate(0dge);
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 10px #0011ff,
+    0 0 20px #9900ff,
+    0 0 40px #e100ff,
+    0 0 60px #ff0095,
+    0 0 80px #ff0000,
+    0 0 10px #fffb00;
+  }
+  30%,70%
+  {
+    color: #fff;
+    filter: blur(2px) hue-rotate(360drg);
+    text-shadow: 0 0 10px #00b3ff,
+    0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 40px #00b3ff,
+    0 0 60px #00b3ff,
+    0 0 80px #00b3ff,
+    0 0 100px #00b3ff;
+    
+  }
+   100%
+  {
+    color: transparent;
+    box-shadow: none;
+    filter: blur(2px) hue-rotate(260dge);
+  }
+}
+
+
