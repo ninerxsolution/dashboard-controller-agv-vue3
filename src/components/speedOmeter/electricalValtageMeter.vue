@@ -18,7 +18,7 @@
 
 <script>
 export default{
-    name:'electricalVal',
+    // name:'electricalVal',
     props:['getValtageEverage'],
     data(){
         return{

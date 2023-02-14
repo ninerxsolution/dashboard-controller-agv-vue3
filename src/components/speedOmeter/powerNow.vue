@@ -5,12 +5,12 @@
             <div ref="meter" class="needle"></div>
             <div class="middle-dot"></div>
             <span class="value-1">0</span>
-            <span class="value-2">20</span>
-            <span class="value-3">40</span>
-            <span class="value-4">60</span>
-            <span class="value-5">80</span>
-            <span class="value-6">100</span>
-            <span class="value-7">120</span>
+            <span class="value-2">1</span>
+            <span class="value-3">2</span>
+            <span class="value-4">3</span>
+            <span class="value-5">4</span>
+            <span class="value-6">5</span>
+            <span class="value-7">6</span>
         </div>
     </div>
     <!-- <span>{{ speedCurrent }}</span> -->
@@ -18,20 +18,20 @@
 
 <script>
 export default{
-    // name:'electricalVal',
-    props:['getCurrentNow'],
+    // name:'greenMeter',
+    props:['getPowerNow'],
     data(){
         return{
-            speedCurrent:50,
+            powerNow:50,
             progressVal:"rotate(0.25turn)",
             meterVal:"rotate(90deg)",
         }
     },
     created(){
         setInterval(()=>{
-            this.speedCurrent = this.getCurrentNow * (0.83);
-            this.progressVal = "rotate("+(this.speedCurrent * 0.005).toFixed(2).toString()+"turn)";
-            this.meterVal = "rotate("+Math.round(this.speedCurrent * 1.8).toString()+"deg)";
+            this.powerNow = this.getPowerNow * 16.6;
+            this.progressVal = "rotate("+(this.powerNow * 0.005).toFixed(2).toString()+"turn)";
+            this.meterVal = "rotate("+Math.round(this.powerNow * 1.8).toString()+"deg)";
             this.setSpeedCurrent()
         },1000)
     },
@@ -75,7 +75,7 @@ export default{
     width: inherit;
     /* left: 0; */
     height: 100%;
-    background: #5d99cd;
+    background: #9ACD63;
     transform-origin:center top;
     transform: rotate(0.25turn);
     transition: all 0.5s ease-in-out;
@@ -87,7 +87,7 @@ export default{
     /* bottom: 7%; */
     width: 50%;
     height: 100%;
-    background-color: #e6e6e6;
+    background-color: #9ACD63;
     clip-path: polygon(0 50%,0 50%,100% 52%,100% 40%);
     transform: rotate(90deg);
     transform-origin: right center;
@@ -97,7 +97,7 @@ export default{
 .middle-dot{
     width: 15%;
     height: 30%;
-    background-color: #e6e6e6;
+    background-color: #9ACD63;
     position: absolute;
     top: 85%;
     left: 44%;
@@ -127,21 +127,21 @@ span{
 .value-4{
     position: absolute;
     top: 8%;
-    left: 46%;
+    left: 49%;
 }
 .value-5{
     position: absolute;
     top: 23%;
-    left: 66%;
+    left: 70%;
 }
 .value-6{
     position: absolute;
     top: 50%;
-    left: 73%;
+    left: 82%;
 }
 .value-7{
     position: absolute;
-    left: 78%;
+    left: 87%;
     top: 80%;
 }
 </style>

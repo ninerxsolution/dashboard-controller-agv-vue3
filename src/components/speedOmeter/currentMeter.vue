@@ -18,7 +18,7 @@
 
 <script>
 export default{
-    name:'greenMeter',
+    // name:'greenMeter',
     props:['getSpeedCurrent'],
     data(){
         return{
