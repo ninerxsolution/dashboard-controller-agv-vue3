@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar swiper-nav ">
-        
+
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../assets/images/logo-mini.svg"
                     alt="logo" /></a>
@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    TIME DATE : 20/10/2023 15:30:45
+                    TIME DATE : {{ currentDate.toLocaleString('en-GB') }}
                 </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
@@ -36,7 +36,17 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            currentDate: new Date(),
+        }
+    },
+    created(){
+        this.currentDate = 
+        setInterval(() => {
+            this.currentDate = new Date()
+        }, 1000);
+    }
 }
 </script>
 
