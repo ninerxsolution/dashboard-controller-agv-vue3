@@ -20,19 +20,11 @@
                     <!-- <button type="button" class="btn btn-outline-secondary">
                         Year 
                     </button> -->
-<<<<<<< HEAD
-                    <button ref="Month" type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
-                        Month
-                    </button>
-                    <button ref="Day" type="button" class="btn btn-light" @click="updateChart('Day')">
-                        Day
-=======
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Month')">
                         Year
                     </button>
                     <button type="button" class="btn btn-outline-secondary" @click="updateChart('Day')">
                         Month
->>>>>>> 3159c0ef75cddf1a8912c0ca8972852ef42e0d00
                     </button>
                 </div>
             </div>
