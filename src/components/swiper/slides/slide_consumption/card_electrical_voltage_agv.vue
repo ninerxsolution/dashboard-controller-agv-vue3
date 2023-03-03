@@ -12,7 +12,7 @@
             </h5>
             <div class="row">
                 <div class="col-6 text-center">
-                    <div>
+                    <div class="mr-2">
                         <electricalVal :getValtageEverage="voltage_average"/>
                         <!-- <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
                             :fill-color="'#ffd000'" class="dummy-meter" /> -->

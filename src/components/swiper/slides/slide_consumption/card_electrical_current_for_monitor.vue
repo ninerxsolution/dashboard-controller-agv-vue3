@@ -12,7 +12,7 @@
             </h6>
             <div class="row">
                 <div class="col-6 text-center">
-                    <div>
+                    <div class="mr-2">
                         <currentNow :get-current-now="current_now"/>
                         <!-- <circle-progress :percent="80" :unit="kg / hr" :show-percent="true" :size="100"
                             :class="circle - progress" class="dummy-meter" /> -->

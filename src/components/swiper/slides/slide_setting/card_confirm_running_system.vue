@@ -30,6 +30,13 @@
                 </div>
                 <div class="col-6">
                     <button class="btn btn-primary m-auto full-width">  CONFIRM  </button>
+                    <!-- <button class="btn-animet">
+                    CONFIRM
+                    <span class="first"></span>
+                    <span class="second"></span>
+                    <span class="third"></span>
+                    <span class="fourth"></span>
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -67,4 +74,5 @@ export default {
 .full-width{
     width: 100%;
 }
+
 </style>
